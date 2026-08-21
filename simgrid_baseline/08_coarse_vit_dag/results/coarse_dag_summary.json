@@ -1,0 +1,11 @@
+{
+  "coarse_tasks": 125,
+  "coarse_edges": 148,
+  "gpu_fpga_linear_tasks": 49,
+  "gpu_only_tasks": 76,
+  "grouped_runtime_onnx_nodes": 646,
+  "ignored_weight_identity_nodes": 94,
+  "empty_coarse_groups": 0,
+  "acyclic": true,
+  "output": "D:\\VS_project\\heterogeneous\\simgrid_baseline\\08_coarse_vit_dag\\results\\vit_batch1_coarse_dag.json"
+}

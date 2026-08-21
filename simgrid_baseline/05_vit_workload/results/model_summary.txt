@@ -1,0 +1,10 @@
+model_path=D:\VS_project\heterogeneous\vit.onnx
+file_size_bytes=345952591
+graph_inputs=[('input', ['batch', 3, 224, 224])]
+graph_outputs=[('output', ['batch', 1000])]
+parameter_count=86453224
+hidden_dim=768
+transformer_blocks=12
+linear_nodes_with_constant_weights=49
+inferred_variant=ViT-Base/16-like
+operation_counts=Add:85,Cast:24,Concat:27,Constant:263,ConstantOfShape:1,Conv:1,Div:24,Equal:1,Erf:12,Expand:1,Gather:38,Gemm:1,Identity:94,LayerNormalization:25,MatMul:72,Mul:49,Reshape:26,Shape:51,Slice:13,Softmax:12,Split:12,Sqrt:36,Squeeze:36,Transpose:37,Unsqueeze:61,Where:1

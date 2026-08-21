@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "profile_kind": "sensitivity",
+  "profile_name": "shared_mapped_one_copy",
+  "valid_for_target_prediction": false,
+  "description": "Analytical reference values for scheduler validation; not Jetson or FPGA measurements.",
+  "activation": {
+    "precision": "FP32",
+    "bytes_per_element": 4
+  },
+  "gpu": {
+    "matmul_effective_tflops": 2.0,
+    "attention_effective_tflops": 1.0,
+    "memory_bandwidth_GBps": 50.0,
+    "launch_overhead_us": 5.0
+  },
+  "fpga": {
+    "linear_speedup_over_gpu": 4.0,
+    "dispatch_overhead_us": 8.0,
+    "elementwise_speedup_over_gpu": 1.0
+  },
+  "communication_path": {
+    "kind": "shared_mapped_one_copy",
+    "host_fpga_pcie": {
+      "effective_bandwidth_GBps": 4.0,
+      "fixed_latency_us": 20.0
+    },
+    "links_share_both_directions": true
+  },
+  "activation_compression": {
+    "ratio": 1.0,
+    "encode_fixed_us": 0.0,
+    "decode_fixed_us": 0.0,
+    "encode_bandwidth_GBps": 0.0,
+    "decode_bandwidth_GBps": 0.0
+  },
+  "pipeline": {
+    "fpga_input_buffers": 1
+  },
+  "optimization_case": {
+    "name": "shared_mapped_one_copy",
+    "fusion": false,
+    "path_kind": "shared_mapped_one_copy",
+    "compression": "none",
+    "fpga_input_buffers": 1
+  }
+}

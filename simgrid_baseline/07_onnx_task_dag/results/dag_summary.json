@@ -1,0 +1,11 @@
+{
+  "onnx_nodes": 1003,
+  "runtime_nodes": 740,
+  "constant_nodes": 263,
+  "offloadable_linear_nodes": 49,
+  "tensor_dependency_edges": 1151,
+  "edges_with_known_batch1_bytes": 1151,
+  "edges_with_unresolved_bytes": 0,
+  "acyclic": true,
+  "output": "D:\\VS_project\\heterogeneous\\simgrid_baseline\\07_onnx_task_dag\\results\\vit_batch1_raw_dag.json"
+}

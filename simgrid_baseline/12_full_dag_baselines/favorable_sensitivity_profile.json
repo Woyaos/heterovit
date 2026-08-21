@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "profile_kind": "sensitivity",
+  "profile_name": "host_staged_fp32_favorable",
+  "valid_for_target_prediction": false,
+  "description": "Optimistic FP32 sensitivity point used to verify profitable-offload decisions; not a hardware measurement.",
+  "activation": {
+    "precision": "FP32",
+    "bytes_per_element": 4
+  },
+  "gpu": {
+    "matmul_effective_tflops": 2.0,
+    "attention_effective_tflops": 1.0,
+    "memory_bandwidth_GBps": 50.0,
+    "launch_overhead_us": 5.0
+  },
+  "fpga": {
+    "linear_speedup_over_gpu": 8.0,
+    "dispatch_overhead_us": 3.0
+  },
+  "communication_path": {
+    "kind": "host_staged_two_copy",
+    "gpu_host": {
+      "effective_bandwidth_GBps": 40.0,
+      "fixed_latency_us": 2.0
+    },
+    "host_fpga_pcie": {
+      "effective_bandwidth_GBps": 16.0,
+      "fixed_latency_us": 5.0
+    },
+    "links_share_both_directions": true
+  }
+}

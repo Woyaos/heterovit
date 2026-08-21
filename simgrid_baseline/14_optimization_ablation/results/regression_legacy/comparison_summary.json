@@ -1,0 +1,59 @@
+{
+  "profile_kind": "sensitivity",
+  "profile_name": "host_staged_fp32_reference",
+  "valid_for_target_prediction": false,
+  "policies": [
+    {
+      "policy": "gpu_only",
+      "simgrid_makespan_us": 22184.375871999982,
+      "speedup_vs_gpu_only": 1.0,
+      "offloaded_linear_tasks": 0,
+      "cross_device_edges": 0,
+      "logical_cross_device_bytes": 0,
+      "host_staged_link_bytes": 0,
+      "valid_for_target_prediction": false
+    },
+    {
+      "policy": "static_all_fpga",
+      "simgrid_makespan_us": 48870.45044799986,
+      "speedup_vs_gpu_only": 0.45394252904636223,
+      "offloaded_linear_tasks": 49,
+      "cross_device_edges": 97,
+      "logical_cross_device_bytes": 116198400,
+      "host_staged_link_bytes": 232396800,
+      "valid_for_target_prediction": false
+    },
+    {
+      "policy": "iris_profile_compute_only",
+      "simgrid_makespan_us": 48840.808767999864,
+      "speedup_vs_gpu_only": 0.45421802856252086,
+      "offloaded_linear_tasks": 48,
+      "cross_device_edges": 96,
+      "logical_cross_device_bytes": 116195328,
+      "host_staged_link_bytes": 232390656,
+      "valid_for_target_prediction": false
+    },
+    {
+      "policy": "iris_data_locality",
+      "simgrid_makespan_us": 22184.375871999982,
+      "speedup_vs_gpu_only": 1.0,
+      "offloaded_linear_tasks": 0,
+      "cross_device_edges": 0,
+      "logical_cross_device_bytes": 0,
+      "host_staged_link_bytes": 0,
+      "valid_for_target_prediction": false
+    },
+    {
+      "policy": "communication_eft",
+      "simgrid_makespan_us": 22184.375871999982,
+      "speedup_vs_gpu_only": 1.0,
+      "offloaded_linear_tasks": 0,
+      "cross_device_edges": 0,
+      "logical_cross_device_bytes": 0,
+      "host_staged_link_bytes": 0,
+      "valid_for_target_prediction": false
+    }
+  ],
+  "best_policy_under_sensitivity_profile": "gpu_only",
+  "comparison_csv": "/mnt/d/VS_project/heterogeneous/simgrid_baseline/14_optimization_ablation/results/regression_legacy/policy_comparison.csv"
+}

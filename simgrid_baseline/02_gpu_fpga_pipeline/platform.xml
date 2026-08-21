@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!DOCTYPE platform SYSTEM "https://simgrid.org/simgrid.dtd">
+<platform version="4.1">
+  <zone id="jetson_fpga" routing="Full">
+    <!-- Speeds are virtual scales used to turn work amounts into durations. -->
+    <host id="GPU" speed="1Gf"/>
+    <host id="FPGA" speed="1Gf"/>
+
+    <!-- A simple PCIe model: 4 GB/s effective bandwidth and 20 us latency. -->
+    <link id="PCIe" bandwidth="4GBps" latency="20us" sharing_policy="SHARED"/>
+    <route src="GPU" dst="FPGA">
+      <link_ctn id="PCIe"/>
+    </route>
+  </zone>
+</platform>

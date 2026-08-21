@@ -1,0 +1,37 @@
+# Python environments and caches
+.venv/
+**/__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+
+# IDE and operating-system files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Native build products
+*.o
+*.obj
+*.a
+*.lib
+*.so
+*.dll
+*.exe
+iris-main/build-cpu/
+iris-main/install-cpu/
+
+# Large model artifacts are tracked by checksum in the change report.
+*.onnx
+
+# Detailed simulation traces are reproducible from the tracked configs.
+simgrid_baseline/15_dynamic_runtime/test_case/
+simgrid_baseline/15_dynamic_runtime/results/rate_*/
+simgrid_baseline/15_dynamic_runtime/results_thresholds/rate_*/
+
+# Temporary files and logs
+*.log
+*.tmp
+*.bak
+*~

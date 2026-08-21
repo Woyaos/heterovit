@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "profile_kind": "target_measurement",
+  "status": "incomplete",
+  "batch": 1,
+  "devices": {
+    "GPU": {
+      "model": null,
+      "power_mode": null,
+      "software_stack": null
+    },
+    "FPGA": {
+      "model": null,
+      "bitstream_or_design": null,
+      "clock_mhz": null
+    }
+  },
+  "communication": {
+    "path": null,
+    "GPU_to_FPGA": {
+      "fixed_latency_us": null,
+      "effective_bandwidth_GBps": null,
+      "samples": null,
+      "source_kind": null,
+      "source_ref": null
+    },
+    "FPGA_to_GPU": {
+      "fixed_latency_us": null,
+      "effective_bandwidth_GBps": null,
+      "samples": null,
+      "source_kind": null,
+      "source_ref": null
+    },
+    "supports_bidirectional_overlap": null,
+    "supports_compute_transfer_overlap": null
+  }
+}

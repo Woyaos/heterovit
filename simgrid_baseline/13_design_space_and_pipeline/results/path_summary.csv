@@ -1,0 +1,4 @@
+path_kind,tested_conditions,eft_profitable_conditions,static_profitable_conditions,eft_max_speedup,eft_max_offloaded_linear_tasks,valid_for_target_prediction
+host_staged_two_copy,64,6,4,1.1046658232686648,36,False
+shared_mapped_one_copy,64,19,15,1.5406656891081614,48,False
+direct_dma_one_copy,64,19,15,1.5406656891081614,48,False

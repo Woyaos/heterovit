@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<!DOCTYPE platform SYSTEM "https://simgrid.org/simgrid.dtd">
+<platform version="4.1">
+  <zone id="single_device" routing="Full">
+    <!-- 1 Gf means one billion simulated operations per second. -->
+    <host id="GPU" speed="1Gf"/>
+  </zone>
+</platform>

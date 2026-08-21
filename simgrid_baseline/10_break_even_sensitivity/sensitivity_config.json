@@ -1,0 +1,18 @@
+{
+  "profile_kind": "sensitivity",
+  "fpga_speedups_over_gpu": [2, 4, 8],
+  "pcie_effective_bandwidth_GBps": [2, 4, 8, 16],
+  "one_way_fixed_latency_us": [10, 20, 50],
+  "activation_bytes_per_element": {
+    "FP32": 4,
+    "FP16": 2,
+    "INT8": 1
+  },
+  "assumptions": {
+    "weights_preloaded_on_fpga": true,
+    "input_and_output_both_cross_device_boundary": true,
+    "effective_bandwidth_is_end_to_end": true,
+    "no_compute_transfer_overlap": true,
+    "no_queueing_or_contention": true
+  }
+}

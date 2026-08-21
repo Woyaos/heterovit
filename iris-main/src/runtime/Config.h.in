@@ -1,0 +1,16 @@
+#ifndef IRIS_RT_SRC_CONFIG_H
+#define IRIS_RT_SRC_CONFIG_H
+
+#define IRIS_VERSION_MAJOR        @IRIS_VERSION_MAJOR@
+#define IRIS_VERSION_MINOR        @IRIS_VERSION_MINOR@
+#define IRIS_VERSION_PATCH        @IRIS_VERSION_PATCH@
+
+
+#cmakedefine01 USE_HUB
+#cmakedefine01 USE_SIGHANDLER
+
+#include <iris/iris.h>
+#include <stddef.h>
+
+#endif /* IRIS_RT_SRC_CONFIG_H */
+

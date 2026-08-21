@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "profile_kind": "sensitivity",
+  "profile_name": "host_staged_fp32_reference",
+  "valid_for_target_prediction": false,
+  "description": "Analytical reference values for scheduler validation; not Jetson or FPGA measurements.",
+  "activation": {
+    "precision": "FP32",
+    "bytes_per_element": 4
+  },
+  "gpu": {
+    "matmul_effective_tflops": 2.0,
+    "attention_effective_tflops": 1.0,
+    "memory_bandwidth_GBps": 50.0,
+    "launch_overhead_us": 5.0
+  },
+  "fpga": {
+    "linear_speedup_over_gpu": 4.0,
+    "dispatch_overhead_us": 8.0
+  },
+  "communication_path": {
+    "kind": "host_staged_two_copy",
+    "gpu_host": {
+      "effective_bandwidth_GBps": 20.0,
+      "fixed_latency_us": 5.0
+    },
+    "host_fpga_pcie": {
+      "effective_bandwidth_GBps": 4.0,
+      "fixed_latency_us": 20.0
+    },
+    "links_share_both_directions": true
+  }
+}

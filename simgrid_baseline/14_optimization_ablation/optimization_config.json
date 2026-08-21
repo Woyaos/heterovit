@@ -1,0 +1,95 @@
+{
+  "profile_kind": "sensitivity_optimization_ablation",
+  "valid_for_target_prediction": false,
+  "request_counts": [1, 8],
+  "policies": ["gpu_only", "static_all_fpga", "communication_eft"],
+  "fpga_elementwise_speedup_over_gpu": 1.0,
+  "cases": [
+    {
+      "name": "baseline_linear_only",
+      "fusion": false,
+      "path_kind": "host_staged_two_copy",
+      "compression": "none",
+      "fpga_input_buffers": 1
+    },
+    {
+      "name": "compression_2x",
+      "fusion": false,
+      "path_kind": "host_staged_two_copy",
+      "compression": "lightweight_2x",
+      "fpga_input_buffers": 1
+    },
+    {
+      "name": "compression_4x",
+      "fusion": false,
+      "path_kind": "host_staged_two_copy",
+      "compression": "lightweight_4x",
+      "fpga_input_buffers": 1
+    },
+    {
+      "name": "ffn_fusion_residency",
+      "fusion": true,
+      "path_kind": "host_staged_two_copy",
+      "compression": "none",
+      "fpga_input_buffers": 1
+    },
+    {
+      "name": "shared_mapped_one_copy",
+      "fusion": false,
+      "path_kind": "shared_mapped_one_copy",
+      "compression": "none",
+      "fpga_input_buffers": 1
+    },
+    {
+      "name": "fusion_plus_compression",
+      "fusion": true,
+      "path_kind": "host_staged_two_copy",
+      "compression": "lightweight_2x",
+      "fpga_input_buffers": 1
+    },
+    {
+      "name": "fusion_compression_one_copy_single_buffer",
+      "fusion": true,
+      "path_kind": "shared_mapped_one_copy",
+      "compression": "lightweight_2x",
+      "fpga_input_buffers": 1
+    },
+    {
+      "name": "fusion_compression_one_copy_double_buffer",
+      "fusion": true,
+      "path_kind": "shared_mapped_one_copy",
+      "compression": "lightweight_2x",
+      "fpga_input_buffers": 2
+    },
+    {
+      "name": "fusion_compression_direct_dma_double_buffer",
+      "fusion": true,
+      "path_kind": "direct_dma_one_copy",
+      "compression": "lightweight_2x",
+      "fpga_input_buffers": 2
+    }
+  ],
+  "compression_profiles": {
+    "none": {
+      "ratio": 1.0,
+      "encode_fixed_us": 0.0,
+      "decode_fixed_us": 0.0,
+      "encode_bandwidth_GBps": 0.0,
+      "decode_bandwidth_GBps": 0.0
+    },
+    "lightweight_2x": {
+      "ratio": 0.5,
+      "encode_fixed_us": 2.0,
+      "decode_fixed_us": 2.0,
+      "encode_bandwidth_GBps": 50.0,
+      "decode_bandwidth_GBps": 50.0
+    },
+    "lightweight_4x": {
+      "ratio": 0.25,
+      "encode_fixed_us": 2.0,
+      "decode_fixed_us": 2.0,
+      "encode_bandwidth_GBps": 50.0,
+      "decode_bandwidth_GBps": 50.0
+    }
+  }
+}

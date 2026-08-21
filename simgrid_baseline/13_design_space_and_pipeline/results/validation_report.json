@@ -1,0 +1,22 @@
+{
+  "valid": true,
+  "checks": {
+    "sweep_row_count": true,
+    "sweep_keys_unique": true,
+    "sweep_policies_complete": true,
+    "sweep_invalid_for_target_prediction": true,
+    "communication_eft_never_worse_analytically": true,
+    "matched_one_copy_abstractions_are_equal": true,
+    "replay_row_count": true,
+    "replay_keys_unique": true,
+    "replay_records_complete": true,
+    "replay_throughput_positive": true,
+    "replay_invalid_for_target_prediction": true,
+    "summary_counts_match": true
+  },
+  "counts": {
+    "hardware_conditions": 192,
+    "sweep_rows": 576,
+    "replay_rows": 48
+  }
+}

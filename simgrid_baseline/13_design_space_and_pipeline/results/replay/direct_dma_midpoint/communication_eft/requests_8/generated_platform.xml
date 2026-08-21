@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<!DOCTYPE platform SYSTEM "https://simgrid.org/simgrid.dtd">
+<platform version="4.1">
+  <zone id="jetson_host_fpga" routing="Full">
+    <host id="GPU" speed="1Gf"/>
+    <host id="HOST" speed="1Gf"/>
+    <host id="FPGA" speed="1Gf"/>
+
+    <link id="direct_gpu_fpga" bandwidth="8GBps" latency="10us" sharing_policy="SHARED"/>
+    <route src="GPU" dst="FPGA"><link_ctn id="direct_gpu_fpga"/></route>
+  </zone>
+</platform>

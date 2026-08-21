@@ -1,0 +1,6 @@
+policy,simgrid_makespan_us,speedup_vs_gpu_only,offloaded_linear_tasks,cross_device_edges,logical_cross_device_bytes,host_staged_link_bytes,valid_for_target_prediction
+gpu_only,22184.375871999982,1.0,0,0,0,0,False
+static_all_fpga,48870.45044799986,0.45394252904636223,49,97,116198400,232396800,False
+iris_profile_compute_only,48840.808767999864,0.45421802856252086,48,96,116195328,232390656,False
+iris_data_locality,22184.375871999982,1.0,0,0,0,0,False
+communication_eft,22184.375871999982,1.0,0,0,0,0,False

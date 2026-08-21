@@ -1,0 +1,86 @@
+PROGRAM SAXPY
+    USE IRIS
+    IMPLICIT NONE
+
+    INTEGER :: I, IERROR
+    INTEGER(8) :: SIZE
+
+    REAL(4),DIMENSION(:),ALLOCATABLE, target :: Z
+    REAL(4),DIMENSION(:),ALLOCATABLE, target :: X
+    REAL(4),DIMENSION(:),ALLOCATABLE, target :: Y
+    REAL(4), target :: A
+
+    TYPE(iris_mem), target :: MEM_Z
+    TYPE(iris_mem), target :: MEM_X
+    TYPE(iris_mem), target :: MEM_Y
+
+    INTEGER(8),DIMENSION(3) :: OFF
+    INTEGER(8),DIMENSION(3) :: GWS
+    INTEGER(8),DIMENSION(3) :: LWS
+    INTEGER :: NPARAMS
+    TYPE(C_PTR), DIMENSION(4) :: PARAMS
+    INTEGER,DIMENSION(4) :: PARAMS_INFO
+
+    TYPE(iris_task), target :: TASK
+
+    CALL IRIS_INIT(.TRUE., IERROR)
+    IF (IERROR /= IRIS_SUCCESS) THEN
+        PRINT*, 'FAILED AT INIT'
+    ENDIF
+
+    SIZE = 8
+
+    ALLOCATE(Z(SIZE))
+    ALLOCATE(X(SIZE))
+    ALLOCATE(Y(SIZE))
+
+    A = 10.0
+
+    DO I = 1, SIZE
+        X(I) = I
+        Y(I) = I
+    ENDDO
+
+    DO I = 1, SIZE
+        PRINT*, 'X[', I, '] ', X(I)
+    ENDDO
+
+    PRINT*, '==='
+
+    DO I = 1, SIZE
+        PRINT*, 'Y[', I, '] ', Y(I)
+    ENDDO
+
+    CALL IRIS_MEM_CREATE(4 * SIZE, C_LOC(MEM_X), IERROR)
+    CALL IRIS_MEM_CREATE(4 * SIZE, C_LOC(MEM_Y), IERROR)
+    CALL IRIS_MEM_CREATE(4 * SIZE, C_LOC(MEM_Z), IERROR)
+
+    CALL IRIS_TASK_CREATE(C_LOC(TASK), IERROR)
+
+    OFF(1) = 0
+    GWS(1) = SIZE
+    LWS(1) = SIZE
+    NPARAMS = 4
+    PARAMS = (/ C_LOC(MEM_Z), C_LOC(A), C_LOC(MEM_X), C_LOC(MEM_Y) /)
+    PARAMS_INFO = (/ IRIS_RW, 4, IRIS_R, IRIS_R /)
+
+    CALL IRIS_TASK_H2D_FULL(TASK, MEM_X, C_LOC(X), IERROR)
+    CALL IRIS_TASK_H2D_FULL(TASK, MEM_Y, C_LOC(Y), IERROR)
+    CALL IRIS_TASK_KERNEL(TASK, "saxpy", 1, OFF, GWS, LWS, &
+      NPARAMS, PARAMS, PARAMS_INFO, IERROR)
+    CALL IRIS_TASK_D2H_FULL(TASK, MEM_Z, C_LOC(Z), IERROR)
+    CALL IRIS_TASK_SUBMIT(TASK, IRIS_GPU, .TRUE., IERROR)
+
+    PRINT*, '=== OUTPUT ==='
+    DO I = 1, SIZE
+        PRINT*, 'Z[', I, '] ', Z(I)
+    ENDDO
+
+    DEALLOCATE(X)
+    DEALLOCATE(Y)
+    DEALLOCATE(Z)
+
+    CALL IRIS_FINALIZE(IERROR)
+
+END PROGRAM SAXPY
+

@@ -1,0 +1,21 @@
+{
+  "valid": true,
+  "checks_passed": 14,
+  "checks_total": 14,
+  "checks": {
+    "row_count_54": true,
+    "unique_case_policy_request": true,
+    "all_sensitivity_only": true,
+    "baseline_gpu_regression": true,
+    "baseline_static_regression": true,
+    "baseline_eft_regression": true,
+    "compression_monotonic_static_latency": true,
+    "fusion_selects_24_linear_equivalents": true,
+    "full_stack_single_request_profitable": true,
+    "buffer_count_does_not_change_single_request": true,
+    "double_buffer_improves_static_throughput": true,
+    "matched_shared_direct_equivalence": true,
+    "fused_dag_shape": true,
+    "task_and_transfer_records_complete": true
+  }
+}

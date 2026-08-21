@@ -1,0 +1,75 @@
+{
+  "profile_kind": "sensitivity_design_space",
+  "valid_for_target_prediction": false,
+  "hardware_conditions": 192,
+  "sweep_rows": 576,
+  "threshold_rows": 48,
+  "replay_rows": 48,
+  "path_summary": [
+    {
+      "path_kind": "host_staged_two_copy",
+      "tested_conditions": 64,
+      "eft_profitable_conditions": 6,
+      "static_profitable_conditions": 4,
+      "eft_max_speedup": 1.1046658232686648,
+      "eft_max_offloaded_linear_tasks": 36,
+      "valid_for_target_prediction": false
+    },
+    {
+      "path_kind": "shared_mapped_one_copy",
+      "tested_conditions": 64,
+      "eft_profitable_conditions": 19,
+      "static_profitable_conditions": 15,
+      "eft_max_speedup": 1.5406656891081614,
+      "eft_max_offloaded_linear_tasks": 48,
+      "valid_for_target_prediction": false
+    },
+    {
+      "path_kind": "direct_dma_one_copy",
+      "tested_conditions": 64,
+      "eft_profitable_conditions": 19,
+      "static_profitable_conditions": 15,
+      "eft_max_speedup": 1.5406656891081614,
+      "eft_max_offloaded_linear_tasks": 48,
+      "valid_for_target_prediction": false
+    }
+  ],
+  "best_analytical_eft_condition": {
+    "path_kind": "shared_mapped_one_copy",
+    "pcie_effective_bandwidth_GBps": 16,
+    "one_way_fixed_latency_us": 5,
+    "fpga_linear_speedup_over_gpu": 16,
+    "policy": "communication_eft",
+    "analytical_makespan_us": 14399.214592000028,
+    "speedup_vs_gpu_only": 1.5406656891081614,
+    "offloaded_linear_tasks": 48,
+    "cross_device_edges": 96,
+    "logical_cross_device_bytes": 116195328,
+    "physical_link_bytes": 116195328,
+    "valid_for_target_prediction": false
+  },
+  "best_pipeline_at_max_tested_requests": {
+    "scenario": "staged_favorable",
+    "path_kind": "host_staged_two_copy",
+    "policy": "communication_eft",
+    "request_count": 8,
+    "simgrid_makespan_us": 61577.37311899983,
+    "mean_completion_us": 60574.84263136722,
+    "throughput_requests_per_s": 129.91785122986326,
+    "offloaded_linear_tasks": 36,
+    "cross_device_edges_per_request": 72,
+    "total_physical_link_bytes": 1626734592,
+    "task_records": 1000,
+    "transfer_records": 1152,
+    "valid_for_target_prediction": false,
+    "throughput_speedup_vs_gpu_only": 2.8821464441658953
+  },
+  "artifacts": {
+    "design_space_sweep": "design_space_sweep.csv",
+    "bandwidth_thresholds": "bandwidth_thresholds.csv",
+    "path_summary": "path_summary.csv",
+    "pipeline_replay": "pipeline_replay.csv",
+    "profiles": "profiles/",
+    "replay": "replay/"
+  }
+}

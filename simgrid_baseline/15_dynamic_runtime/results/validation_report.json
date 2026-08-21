@@ -1,0 +1,7 @@
+{
+  "valid": true,
+  "scope": "sensitivity-only structural validation",
+  "load_cases": 24,
+  "threshold_cases": 12,
+  "failures": []
+}

@@ -1,0 +1,41 @@
+{
+  "profile_kind": "sensitivity",
+  "unique_linear_types": 5,
+  "linear_task_instances": 49,
+  "sweep_rows": 540,
+  "formula": "T_gpu_min = T_comm / (1 - 1 / speedup)",
+  "representative_condition": {
+    "activation_precision": "FP32",
+    "pcie_effective_bandwidth_GBps": 4,
+    "one_way_fixed_latency_us": 20,
+    "fpga_speedup_over_gpu": 4
+  },
+  "representative_thresholds": [
+    {
+      "task_type": "linear_classifier",
+      "communication_time_us": 41.768,
+      "minimum_gpu_latency_for_offload_us": 55.690667
+    },
+    {
+      "task_type": "linear_ffn1",
+      "communication_time_us": 796.48,
+      "minimum_gpu_latency_for_offload_us": 1061.973333
+    },
+    {
+      "task_type": "linear_ffn2",
+      "communication_time_us": 796.48,
+      "minimum_gpu_latency_for_offload_us": 1061.973333
+    },
+    {
+      "task_type": "linear_projection",
+      "communication_time_us": 342.592,
+      "minimum_gpu_latency_for_offload_us": 456.789333
+    },
+    {
+      "task_type": "linear_qkv",
+      "communication_time_us": 645.184,
+      "minimum_gpu_latency_for_offload_us": 860.245333
+    }
+  ],
+  "output": "D:\\VS_project\\heterogeneous\\simgrid_baseline\\10_break_even_sensitivity\\results\\break_even_sweep.csv"
+}

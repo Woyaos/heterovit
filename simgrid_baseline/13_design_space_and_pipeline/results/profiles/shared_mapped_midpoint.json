@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "profile_kind": "sensitivity",
+  "profile_name": "shared_mapped_midpoint",
+  "valid_for_target_prediction": false,
+  "description": "Analytical reference values for scheduler validation; not Jetson or FPGA measurements.",
+  "activation": {
+    "precision": "FP32",
+    "bytes_per_element": 4
+  },
+  "gpu": {
+    "matmul_effective_tflops": 2.0,
+    "attention_effective_tflops": 1.0,
+    "memory_bandwidth_GBps": 50.0,
+    "launch_overhead_us": 5.0
+  },
+  "fpga": {
+    "linear_speedup_over_gpu": 4,
+    "dispatch_overhead_us": 8.0
+  },
+  "communication_path": {
+    "kind": "shared_mapped_one_copy",
+    "host_fpga_pcie": {
+      "effective_bandwidth_GBps": 8,
+      "fixed_latency_us": 10
+    },
+    "links_share_both_directions": true
+  }
+}

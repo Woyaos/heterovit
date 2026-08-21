@@ -1,0 +1,40 @@
+{
+  "valid_for_target_prediction": false,
+  "selection_objective": "minimum SLO violation, then P95 latency, then maximum throughput",
+  "best_by_rate": {
+    "80": {
+      "offered_rate_requests_per_s": 80,
+      "backlog_threshold": 2,
+      "mean_latency_us": 23204.220743999576,
+      "p95_latency_us": 24329.85356799994,
+      "slo_violation_rate": 0.0,
+      "achieved_throughput_requests_per_s": 80.28764156201369,
+      "latency_mode_requests": 32,
+      "throughput_mode_requests": 0,
+      "valid_for_target_prediction": false
+    },
+    "100": {
+      "offered_rate_requests_per_s": 100,
+      "backlog_threshold": 4,
+      "mean_latency_us": 35113.424905996944,
+      "p95_latency_us": 38616.8758399887,
+      "slo_violation_rate": 0.78125,
+      "achieved_throughput_requests_per_s": 97.80250724115322,
+      "latency_mode_requests": 32,
+      "throughput_mode_requests": 0,
+      "valid_for_target_prediction": false
+    },
+    "120": {
+      "offered_rate_requests_per_s": 120,
+      "backlog_threshold": 4,
+      "mean_latency_us": 61873.06485233265,
+      "p95_latency_us": 83676.97253197312,
+      "slo_violation_rate": 0.9375,
+      "achieved_throughput_requests_per_s": 108.04423449735765,
+      "latency_mode_requests": 6,
+      "throughput_mode_requests": 26,
+      "valid_for_target_prediction": false
+    }
+  },
+  "rows": 12
+}
