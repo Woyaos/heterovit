@@ -3,8 +3,14 @@
 面向 Vision Transformer 推理的 GPU–FPGA 异构 AI Infra：覆盖画像、自动分块、
 通信感知调度、仿真回放、硬件标定与 IRIS 运行时部署桥接。
 
+[![CI](https://github.com/Woyaos/heterovit/actions/workflows/ci.yml/badge.svg)](https://github.com/Woyaos/heterovit/actions/workflows/ci.yml)
+[![Python](https://img.shields.io/badge/Python-3.10--3.12-3776AB.svg)](https://www.python.org/)
+[![License](https://img.shields.io/badge/License-Apache--2.0-D22128.svg)](LICENSE)
+[![AI Infra](https://img.shields.io/badge/AI%20Infra-GPU%20%2B%20FPGA-6C5CE7.svg)](docs/architecture.md)
+
 [English](README.md) · [架构](docs/architecture.md) ·
-[复现说明](docs/reproducibility.md) · [贡献指南](CONTRIBUTING.md)
+[复现说明](docs/reproducibility.md) · [贡献指南](CONTRIBUTING.md) ·
+[行为规范](CODE_OF_CONDUCT.md)
 
 > **当前状态：研究原型。** 仓库内 RF880 + Jetson AGX 数值默认是敏感性假设。
 > 只有明确标记 `valid_for_target_prediction=true` 的产物才能作为目标硬件预测，
