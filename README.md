@@ -3,8 +3,14 @@
 **Communication-aware GPU–FPGA infrastructure for profiling, partitioning,
 simulating, calibrating, and deploying Vision Transformer inference.**
 
+[![CI](https://github.com/Woyaos/heterovit/actions/workflows/ci.yml/badge.svg)](https://github.com/Woyaos/heterovit/actions/workflows/ci.yml)
+[![Python](https://img.shields.io/badge/Python-3.10--3.12-3776AB.svg)](https://www.python.org/)
+[![License](https://img.shields.io/badge/License-Apache--2.0-D22128.svg)](LICENSE)
+[![AI Infra](https://img.shields.io/badge/AI%20Infra-GPU%20%2B%20FPGA-6C5CE7.svg)](docs/architecture.md)
+
 [中文说明](README.zh-CN.md) · [Architecture](docs/architecture.md) ·
-[Reproducibility](docs/reproducibility.md) · [Contributing](CONTRIBUTING.md)
+[Reproducibility](docs/reproducibility.md) · [Contributing](CONTRIBUTING.md) ·
+[Code of Conduct](CODE_OF_CONDUCT.md)
 
 > **Project status:** research prototype. The checked-in RF880 + Jetson AGX
 > numbers are sensitivity assumptions unless an artifact explicitly says
