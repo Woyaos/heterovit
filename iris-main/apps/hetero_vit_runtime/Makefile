@@ -14,5 +14,8 @@ kernel.openmp.so: kernel.openmp.c
 vit_dag_skeleton: vit_dag_skeleton.c vit_task_manifest.h hetero_cost_model.h
 	$(CC) $(CFLAGS) -o $@ vit_dag_skeleton.c $(LDFLAGS)
 
+vit_dag_planned_skeleton: vit_dag_skeleton.c hetero_cost_model.h $(PLANNED_MANIFEST)
+	$(CC) $(CFLAGS) -DHETERO_MANIFEST_HEADER='"$(PLANNED_MANIFEST)"' -o $@ vit_dag_skeleton.c $(LDFLAGS)
+
 clean:
-	rm -f test_cost_model libPolicyHeteroEFT.so kernel.openmp.so vit_dag_skeleton
+	rm -f test_cost_model libPolicyHeteroEFT.so kernel.openmp.so vit_dag_skeleton vit_dag_planned_skeleton

@@ -5,7 +5,10 @@ import math
 from collections import defaultdict, deque
 from pathlib import Path
 
-from simgrid import Actor, Engine, Mailbox, Mutex, Semaphore, this_actor
+try:
+    from simgrid import Actor, Engine, Mailbox, Mutex, Semaphore, this_actor
+except ModuleNotFoundError:
+    Actor = Engine = Mailbox = Mutex = Semaphore = this_actor = None
 
 
 POLICIES = (
@@ -71,6 +74,7 @@ class SensitivityCostModel:
                 raise RuntimeError("Complete target profile has no measured task costs")
         else:
             raise RuntimeError(f"Unsupported profile_kind={profile_kind!r}")
+        self.profile_kind = profile_kind
         self.profile = profile
         self.bytes_per_element = profile["activation"]["bytes_per_element"]
         self.gpu = profile.get("gpu", {})
@@ -118,6 +122,8 @@ class SensitivityCostModel:
         measured = self.measured_latency_us(task, "GPU")
         if measured is not None:
             return measured
+        if self.profile_kind == "target_measurement":
+            raise RuntimeError(f"Missing measured GPU cost for task {task['id']}")
         task_type = task["task_type"]
         if not self.gpu:
             raise RuntimeError(f"Missing measured GPU cost for task {task['id']}")
@@ -158,6 +164,8 @@ class SensitivityCostModel:
         measured = self.measured_latency_us(task, device)
         if measured is not None:
             return measured
+        if self.profile_kind == "target_measurement":
+            raise RuntimeError(f"Missing measured {device} cost for task {task['id']}")
         gpu_latency = self.gpu_latency_us(task)
         if device == "GPU":
             return gpu_latency
@@ -461,6 +469,11 @@ def write_platform(profile, path):
 
 
 def run_simgrid(dag, cost_model, placements, platform_path, request_count=1):
+    if Engine is None:
+        raise RuntimeError(
+            "Python SimGrid bindings are not installed. Analytical scheduling APIs "
+            "can still be imported, but SimGrid replay requires installing simgrid."
+        )
     tasks, incoming, outgoing = graph_indexes(dag)
     engine = Engine(["run_policy.py"])
     Engine.set_config("network/model:CM02")

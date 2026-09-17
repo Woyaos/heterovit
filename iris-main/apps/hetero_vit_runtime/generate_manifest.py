@@ -22,6 +22,10 @@ def main():
     parser.add_argument("profile", type=Path)
     parser.add_argument("output_header", type=Path)
     parser.add_argument("--objective", choices=("latency", "throughput"), default="latency")
+    parser.add_argument("--placements", type=Path,
+                        help="Optional fixed DP task-device map; absent means policy chooses devices")
+    parser.add_argument("--output-json", type=Path,
+                        help="Optional machine-readable copy of the generated task and edge manifest")
     args = parser.parse_args()
 
     here = Path(__file__).resolve().parent
@@ -32,6 +36,14 @@ def main():
     cost_model = runtime.SensitivityCostModel(profile)
     order = runtime.topological_order(dag["tasks"], dag["edges"])
     task_by_id = {task["id"]: task for task in dag["tasks"]}
+    placements = (json.loads(args.placements.read_text(encoding="utf-8"))
+                  if args.placements is not None else None)
+    if placements is not None:
+        if set(placements) != set(task_by_id):
+            raise RuntimeError("Placement map must contain exactly one device per DAG task")
+        for task_id, device in placements.items():
+            if device not in task_by_id[task_id]["candidate_devices"]:
+                raise RuntimeError(f"Unsupported placement: {task_id} on {device}")
     index_by_id = {task_id: index for index, task_id in enumerate(order)}
     incoming_bytes = defaultdict(int)
     outgoing_bytes = defaultdict(int)
@@ -56,6 +68,7 @@ def main():
     for task_id in order:
         task = task_by_id[task_id]
         eligible = "FPGA" in task["candidate_devices"]
+        planned = 0 if placements is None else (1 if placements[task_id] == "GPU" else 2)
         gpu_us = int(round(cost_model.latency_us(task, "GPU")))
         fpga_us = int(round(cost_model.latency_us(task, "FPGA"))) if eligible else 0
         task_rows.append(
@@ -69,6 +82,7 @@ def main():
                 objective,
                 int(gpu_only_successor[task_id]),
                 cost_model.linear_equivalent_count(task),
+                planned,
             )
         )
 
@@ -79,7 +93,7 @@ def main():
         "",
         "typedef struct {",
         "  const char* name;",
-        "  int metadata[8];",
+        "  int metadata[9];",
         "} HeteroTaskRecord;",
         "",
         "typedef struct { int source; int target; } HeteroEdgeRecord;",
@@ -90,7 +104,7 @@ def main():
     ]
     for row in task_rows:
         lines.append(
-            "  {%s, {%d, %d, %d, %d, %d, %d, %d, %d}},"
+            "  {%s, {%d, %d, %d, %d, %d, %d, %d, %d, %d}},"
             % (c_string(row[0]), *row[1:])
         )
     lines.extend(["};", "", "static const HeteroEdgeRecord HETERO_EDGES[] = {"])
@@ -98,6 +112,20 @@ def main():
         lines.append(f"  {{{source}, {target}}},")
     lines.extend(["};", "", "#endif", ""])
     args.output_header.write_text("\n".join(lines), encoding="ascii")
+    if args.output_json is not None:
+        manifest = {
+            "status": "deployment_manifest_not_hardware_validation",
+            "dag_task_count": len(task_rows),
+            "dag_edge_count": len(edge_rows),
+            "tasks": [
+                {"id": row[0], "metadata": list(row[1:]),
+                 "planned_device": ("AUTO", "GPU", "FPGA")[row[9]]}
+                for row in task_rows
+            ],
+            "edges": [{"source_index": source, "target_index": target}
+                      for source, target in edge_rows],
+        }
+        args.output_json.write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8")
     print(
         json.dumps(
             {
@@ -106,6 +134,7 @@ def main():
                 "fpga_eligible_tasks": sum(row[5] for row in task_rows),
                 "linear_equivalents": sum(row[8] for row in task_rows),
                 "objective": args.objective,
+                "planned_fpga_tasks": sum(row[9] == 2 for row in task_rows),
                 "output": str(args.output_header.resolve()),
             },
             indent=2,

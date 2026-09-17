@@ -1,0 +1,47 @@
+{
+  "profile_kind": "rf880_agx_sensitivity_design_space",
+  "valid_for_target_prediction": false,
+  "pcie_effective_bandwidth_GBps": [2.5, 3.2, 6.4, 7.2],
+  "one_way_fixed_latency_us": [10, 25, 50, 100],
+  "fpga_linear_speedup_over_gpu": [2, 4, 8, 16],
+  "path_kinds": [
+    "host_staged_two_copy",
+    "shared_mapped_one_copy",
+    "direct_dma_one_copy"
+  ],
+  "staged_gpu_host": {
+    "effective_bandwidth_GBps": 12.0,
+    "fixed_latency_us": 8.0
+  },
+  "request_counts": [1, 2, 4, 8, 16],
+  "representative_scenarios": [
+    {
+      "name": "rf880_host_staged_gen3_x4",
+      "path_kind": "host_staged_two_copy",
+      "pcie_effective_bandwidth_GBps": 3.2,
+      "one_way_fixed_latency_us": 25,
+      "fpga_linear_speedup_over_gpu": 4
+    },
+    {
+      "name": "rf880_shared_mapped_gen3_x4",
+      "path_kind": "shared_mapped_one_copy",
+      "pcie_effective_bandwidth_GBps": 3.2,
+      "one_way_fixed_latency_us": 25,
+      "fpga_linear_speedup_over_gpu": 4
+    },
+    {
+      "name": "rf880_shared_mapped_gen4_x4",
+      "path_kind": "shared_mapped_one_copy",
+      "pcie_effective_bandwidth_GBps": 6.4,
+      "one_way_fixed_latency_us": 10,
+      "fpga_linear_speedup_over_gpu": 8
+    },
+    {
+      "name": "rf880_direct_dma_upper_bound",
+      "path_kind": "direct_dma_one_copy",
+      "pcie_effective_bandwidth_GBps": 6.4,
+      "one_way_fixed_latency_us": 10,
+      "fpga_linear_speedup_over_gpu": 8
+    }
+  ]
+}

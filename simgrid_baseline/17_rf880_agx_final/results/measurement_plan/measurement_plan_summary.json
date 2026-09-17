@@ -1,0 +1,12 @@
+{
+  "tasks": 101,
+  "edges": 124,
+  "task_measurement_rows": 138,
+  "gpu_rows": 101,
+  "fpga_rows": 37,
+  "transfer_payload_sizes": 10,
+  "transfer_measurement_rows": 60,
+  "transfer_directions": 6,
+  "largest_payload_bytes": 4194304,
+  "status": "waiting_for_target_hardware"
+}

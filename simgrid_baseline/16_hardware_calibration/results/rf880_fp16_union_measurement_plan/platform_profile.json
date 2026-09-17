@@ -1,0 +1,50 @@
+{
+  "schema_version": 2,
+  "profile_kind": "target_measurement_input",
+  "status": "incomplete",
+  "model": "ViT-Base/16-like",
+  "batch": 1,
+  "activation": {
+    "precision": null,
+    "bytes_per_element": null
+  },
+  "measurement_protocol": {
+    "warmup_iterations": null,
+    "measured_iterations": null,
+    "synchronization_method": null,
+    "background_load": "idle"
+  },
+  "devices": {
+    "GPU": {
+      "model": null,
+      "power_mode": null,
+      "clock_policy": null,
+      "software_stack": null
+    },
+    "FPGA": {
+      "model": null,
+      "pcie_interface": null,
+      "bitstream_or_design": null,
+      "clock_mhz": null
+    }
+  },
+  "communication": {
+    "path_kind": null,
+    "memory_mode": null,
+    "dma_engine": null,
+    "supports_bidirectional_overlap": null,
+    "supports_compute_transfer_overlap": null
+  },
+  "activation_compression": {
+    "enabled": null,
+    "ratio": null,
+    "encode_fixed_us": null,
+    "decode_fixed_us": null,
+    "encode_bandwidth_GBps": null,
+    "decode_bandwidth_GBps": null,
+    "source_ref": null
+  },
+  "pipeline": {
+    "fpga_input_buffers": null
+  }
+}

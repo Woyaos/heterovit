@@ -1,0 +1,44 @@
+{
+  "policy": "static_all_linear_fpga",
+  "buffers": 1,
+  "requests": 8,
+  "makespan_us": 183826.99584000022,
+  "request_completion_us": [
+    {
+      "request_id": 0,
+      "completion_us": 183492.95864000023
+    },
+    {
+      "request_id": 1,
+      "completion_us": 183541.0910400002
+    },
+    {
+      "request_id": 2,
+      "completion_us": 183588.71944000022
+    },
+    {
+      "request_id": 3,
+      "completion_us": 183636.48224000024
+    },
+    {
+      "request_id": 4,
+      "completion_us": 183684.11064000023
+    },
+    {
+      "request_id": 5,
+      "completion_us": 183731.73904000022
+    },
+    {
+      "request_id": 6,
+      "completion_us": 183779.36744000023
+    },
+    {
+      "request_id": 7,
+      "completion_us": 183826.99584000022
+    }
+  ],
+  "task_count": 1000,
+  "transfer_stage_count": 1552,
+  "execution_mode": "simgrid_event_replay_sensitivity_parameters",
+  "valid_for_target_prediction": false
+}

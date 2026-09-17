@@ -1,0 +1,44 @@
+{
+  "policy": "automatic_region_dp",
+  "buffers": 1,
+  "requests": 8,
+  "makespan_us": 83865.82367999984,
+  "request_completion_us": [
+    {
+      "request_id": 0,
+      "completion_us": 81517.40799999986
+    },
+    {
+      "request_id": 1,
+      "completion_us": 81769.38655999988
+    },
+    {
+      "request_id": 2,
+      "completion_us": 81831.9001599999
+    },
+    {
+      "request_id": 3,
+      "completion_us": 81861.98975999991
+    },
+    {
+      "request_id": 4,
+      "completion_us": 82261.66431999987
+    },
+    {
+      "request_id": 5,
+      "completion_us": 82817.98783999986
+    },
+    {
+      "request_id": 6,
+      "completion_us": 83374.31135999986
+    },
+    {
+      "request_id": 7,
+      "completion_us": 83865.82367999984
+    }
+  ],
+  "task_count": 808,
+  "transfer_stage_count": 384,
+  "execution_mode": "simgrid_event_replay_sensitivity_parameters",
+  "valid_for_target_prediction": false
+}

@@ -1,0 +1,13 @@
+status,policy,requests,buffers,batch_makespan_ms,batch_throughput_requests_per_s,batch_speedup_vs_gpu_only,batch_speedup_vs_one_buffer,task_events,transfer_stage_events
+simgrid_sensitivity_not_hardware_measurement,gpu_only,1,1,24.749013,40.405651,1.0,,125,0
+simgrid_sensitivity_not_hardware_measurement,static_all_linear_fpga,1,1,36.741154,27.217436,0.673605,,125,194
+simgrid_sensitivity_not_hardware_measurement,automatic_region_dp,1,1,17.993789,55.574732,1.37542,1.0,101,48
+simgrid_sensitivity_not_hardware_measurement,automatic_region_dp,1,2,17.993789,55.574732,1.37542,1.0,101,48
+simgrid_sensitivity_not_hardware_measurement,gpu_only,8,1,197.992108,40.405651,1.0,,1000,0
+simgrid_sensitivity_not_hardware_measurement,static_all_linear_fpga,8,1,183.826996,43.519179,1.077057,,1000,1552
+simgrid_sensitivity_not_hardware_measurement,automatic_region_dp,8,1,83.865824,95.390466,2.36082,1.0,808,384
+simgrid_sensitivity_not_hardware_measurement,automatic_region_dp,8,2,83.007684,96.37662,2.385226,1.010338,808,384
+simgrid_sensitivity_not_hardware_measurement,gpu_only,16,1,395.984215,40.405651,1.0,,2000,0
+simgrid_sensitivity_not_hardware_measurement,static_all_linear_fpga,16,1,364.345966,43.914305,1.086836,,2000,3104
+simgrid_sensitivity_not_hardware_measurement,automatic_region_dp,16,1,166.456555,96.121177,2.378904,1.0,1616,768
+simgrid_sensitivity_not_hardware_measurement,automatic_region_dp,16,2,165.26436,96.814583,2.396065,1.007214,1616,768

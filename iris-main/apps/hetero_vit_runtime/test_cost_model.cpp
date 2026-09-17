@@ -5,6 +5,8 @@
 #include "hetero_cost_model.h"
 
 int main() {
+  assert(HETERO_META_COUNT == 9);
+  assert(HETERO_PLACEMENT_GPU != HETERO_PLACEMENT_FPGA);
   HeteroPolicyConfig config = {4000.0, 20.0, 50000.0, 2.0, 0.5, 0.25, 1.0, 1};
   double gpu = hetero_gpu_finish_us(&config, 1041, 0);
   double fpga_latency = hetero_fpga_finish_us(

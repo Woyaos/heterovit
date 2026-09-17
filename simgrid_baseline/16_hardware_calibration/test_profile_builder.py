@@ -150,6 +150,18 @@ def main():
         assert abs(link["fixed_latency_us"] - 10.0) < 1e-9
         assert abs(link["effective_bandwidth_GBps"] - 4.0) < 1e-9
         assert profile["task_costs_us"]["linear"] == {"GPU": 10.0, "FPGA": 4.0}
+        task_rows[0]["precision"] = "WRONG_PRECISION"
+        write_csv(root / "tasks.csv", task_fields, task_rows)
+        rejected = subprocess.run(
+            [sys.executable, str(script), str(root / "dag.json"),
+             str(root / "tasks.csv"), str(root / "transfers.csv"),
+             str(root / "platform.json"), str(output)],
+            capture_output=True, text=True,
+        )
+        assert rejected.returncode == 2
+        report = json.loads(output.with_suffix(".validation.json").read_text(
+            encoding="utf-8"))
+        assert ["linear", "GPU"] in report["missing_task_device_rows"]
     print("calibrated-profile builder: PASS")
 
 

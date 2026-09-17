@@ -1,0 +1,10 @@
+status,policy,offered_rate_requests_per_s,requests,buffers,mean_latency_ms,p95_latency_ms,slo_violation_rate,achieved_throughput_requests_per_s,task_events,transfer_stage_events
+simgrid_online_sensitivity_not_hardware_measurement,gpu_only,40,64,1,24.749013,24.749013,0.0,40.0,6464,0
+simgrid_online_sensitivity_not_hardware_measurement,fixed_manifest,40,64,1,17.993789,17.993789,0.0,40.0,6464,3072
+simgrid_online_sensitivity_not_hardware_measurement,fixed_manifest,40,64,2,17.993789,17.993789,0.0,40.0,6464,3072
+simgrid_online_sensitivity_not_hardware_measurement,gpu_only,60,64,1,528.968305,750.520038,1.0,40.622736,6464,0
+simgrid_online_sensitivity_not_hardware_measurement,fixed_manifest,60,64,1,19.855244,19.891887,0.0,59.997027,6464,3072
+simgrid_online_sensitivity_not_hardware_measurement,fixed_manifest,60,64,2,19.769119,19.804946,0.0,59.996572,6464,3072
+simgrid_online_sensitivity_not_hardware_measurement,gpu_only,100,64,1,947.063691,1131.869365,1.0,41.314814,6464,0
+simgrid_online_sensitivity_not_hardware_measurement,fixed_manifest,100,64,1,44.679765,57.093902,0.9375,97.817221,6464,3072
+simgrid_online_sensitivity_not_hardware_measurement,fixed_manifest,100,64,2,45.327251,57.478398,0.96875,97.785998,6464,3072

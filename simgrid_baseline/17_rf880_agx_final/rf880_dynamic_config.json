@@ -1,0 +1,17 @@
+{
+  "profile_kind": "rf880_agx_sensitivity_dynamic_runtime",
+  "valid_for_target_prediction": false,
+  "request_count": 48,
+  "arrival_rates_requests_per_s": [20, 40, 60, 80, 100, 120, 140],
+  "slo_us": 30000,
+  "adaptive_backlog_threshold": 4,
+  "adaptive_threshold_candidates": [1, 2, 4, 8],
+  "threshold_tuning_rates_requests_per_s": [80, 100, 120],
+  "policies": [
+    "gpu_only",
+    "latency_eft",
+    "throughput_all",
+    "adaptive_dual_mode"
+  ],
+  "codec_resource_model": "device_compute"
+}

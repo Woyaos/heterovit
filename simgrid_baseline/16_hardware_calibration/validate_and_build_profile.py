@@ -5,6 +5,8 @@ import math
 from collections import defaultdict
 from pathlib import Path
 
+from generate_measurement_plan import collect_dags, measurement_devices
+
 
 ALLOWED_PATHS = {"host_staged_two_copy", "shared_mapped_one_copy", "direct_dma_one_copy"}
 REQUIRED_PLATFORM_PATHS = [
@@ -87,9 +89,13 @@ def main():
     parser.add_argument("transfer_measurements", type=Path)
     parser.add_argument("platform_profile", type=Path)
     parser.add_argument("output_profile", type=Path)
+    parser.add_argument("--additional-dag", type=Path, action="append", default=[])
+    parser.add_argument("--capability", type=Path)
     args = parser.parse_args()
 
-    dag = json.loads(args.dag.read_text(encoding="utf-8"))
+    _dags, tasks = collect_dags([args.dag, *args.additional_dag])
+    capability = (json.loads(args.capability.read_text(encoding="utf-8"))
+                  if args.capability else None)
     platform = json.loads(args.platform_profile.read_text(encoding="utf-8"))
     task_rows = list(csv.DictReader(args.task_measurements.open(encoding="utf-8")))
     transfer_rows = list(csv.DictReader(args.transfer_measurements.open(encoding="utf-8")))
@@ -97,15 +103,15 @@ def main():
 
     expected = {
         (task["id"], device)
-        for task in dag["tasks"]
-        for device in task["candidate_devices"]
+        for task in tasks
+        for device in measurement_devices(task, capability)
     }
     complete_task_rows = {}
     for row in task_rows:
         key = (row["task_id"], row["device"])
         valid = (
             key in expected
-            and row.get("precision")
+            and row.get("precision") == nested(platform, "activation.precision")
             and row.get("kernel_or_bitstream")
             and positive(row.get("latency_mean_us"))
             and positive(row.get("latency_p50_us"))
@@ -128,6 +134,11 @@ def main():
     path_kind = nested(platform, "communication.path_kind")
     if path_kind is not None and path_kind not in ALLOWED_PATHS:
         failures.append(f"unsupported communication.path_kind={path_kind!r}")
+    if capability is not None:
+        if capability["status"] != "verified_target_capability":
+            failures.append("FPGA capability has not been verified on the target")
+        if capability["activation_precision"] != nested(platform, "activation.precision"):
+            failures.append("FPGA capability precision differs from platform precision")
 
     all_directions = {
         "GPU_to_FPGA",
@@ -172,6 +183,8 @@ def main():
 
     report = {
         "valid": not failures,
+        "input_dags": [str(path.resolve()) for path in (args.dag, *args.additional_dag)],
+        "capability_status": None if capability is None else capability["status"],
         "expected_task_device_rows": len(expected),
         "complete_task_device_rows": len(complete_task_rows),
         "missing_task_device_rows": [list(item) for item in missing_tasks[:10]],
@@ -248,6 +261,8 @@ def main():
             "task_measurements": str(args.task_measurements.resolve()),
             "transfer_measurements": str(args.transfer_measurements.resolve()),
             "platform_profile": str(args.platform_profile.resolve()),
+            "input_dags": [str(path.resolve()) for path in (args.dag, *args.additional_dag)],
+            "capability": None if args.capability is None else str(args.capability.resolve()),
         },
     }
     args.output_profile.write_text(json.dumps(calibrated, indent=2), encoding="utf-8")

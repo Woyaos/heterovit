@@ -1,0 +1,65 @@
+{
+  "schema_version": 2,
+  "profile_kind": "sensitivity",
+  "profile_name": "rf880_fusion_compression_shared_single_buffer",
+  "valid_for_target_prediction": false,
+  "description": "Hardware-informed sensitivity profile for the RF880 + Jetson AGX board. It fixes the board topology to PCIe x4 but still uses assumed compute and transfer parameters until target measurements are available.",
+  "hardware": {
+    "jetson": {
+      "role": "PCIe root complex, CPU runtime host, GPU inference device",
+      "family": "Jetson AGX Orin series",
+      "sku": "to_be_confirmed_on_target"
+    },
+    "fpga": {
+      "role": "PCIe endpoint, RF880 FPGA accelerator",
+      "part": "Zynq UltraScale+ RFSoC XCZU47DR-2FFVE1156I",
+      "ddr": "manual_has_conflicting_capacity_descriptions; confirm with vendor BOM"
+    },
+    "interconnect": {
+      "kind": "board_level_pcie",
+      "width": "x4",
+      "generation": "to_be_measured_by_lspci_LnkSta",
+      "direct_gpu_fpga_dma": "unknown_until_driver_and_ip_validation"
+    }
+  },
+  "activation": {
+    "precision": "FP16",
+    "bytes_per_element": 2
+  },
+  "gpu": {
+    "matmul_effective_tflops": 1.6,
+    "attention_effective_tflops": 0.8,
+    "memory_bandwidth_GBps": 80.0,
+    "launch_overhead_us": 7.0
+  },
+  "fpga": {
+    "linear_speedup_over_gpu": 4.0,
+    "elementwise_speedup_over_gpu": 1.0,
+    "dispatch_overhead_us": 12.0
+  },
+  "communication_path": {
+    "kind": "shared_mapped_one_copy",
+    "host_fpga_pcie": {
+      "effective_bandwidth_GBps": 3.2,
+      "fixed_latency_us": 25.0
+    },
+    "links_share_both_directions": true
+  },
+  "activation_compression": {
+    "ratio": 0.5,
+    "encode_fixed_us": 2.0,
+    "decode_fixed_us": 2.0,
+    "encode_bandwidth_GBps": 40.0,
+    "decode_bandwidth_GBps": 40.0
+  },
+  "pipeline": {
+    "fpga_input_buffers": 1
+  },
+  "optimization_case": {
+    "name": "rf880_fusion_compression_shared_single_buffer",
+    "fusion": true,
+    "path_kind": "shared_mapped_one_copy",
+    "compression": "lightweight_2x",
+    "fpga_input_buffers": 1
+  }
+}

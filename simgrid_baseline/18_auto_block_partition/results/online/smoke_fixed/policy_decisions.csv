@@ -1,0 +1,17 @@
+request_id,arrival_us,backlog_at_arrival,selected_mode
+0,0.0,0,fixed_manifest
+1,16666.666666666668,1,fixed_manifest
+2,33333.333333333336,1,fixed_manifest
+3,50000.0,1,fixed_manifest
+4,66666.66666666667,1,fixed_manifest
+5,83333.33333333334,1,fixed_manifest
+6,100000.0,1,fixed_manifest
+7,116666.66666666667,1,fixed_manifest
+8,133333.33333333334,1,fixed_manifest
+9,150000.0,1,fixed_manifest
+10,166666.6666666667,1,fixed_manifest
+11,183333.33333333334,1,fixed_manifest
+12,200000.0,1,fixed_manifest
+13,216666.6666666667,1,fixed_manifest
+14,233333.33333333334,1,fixed_manifest
+15,250000.00000000003,1,fixed_manifest

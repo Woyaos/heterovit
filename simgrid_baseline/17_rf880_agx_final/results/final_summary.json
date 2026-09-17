@@ -1,0 +1,315 @@
+{
+  "valid_for_target_prediction": false,
+  "execution_mode": "analytical_fallback_no_simgrid",
+  "output_directory": "D:\\VS_project\\heterogeneous\\simgrid_baseline\\17_rf880_agx_final\\results",
+  "inputs": {
+    "dag": "D:\\VS_project\\heterogeneous\\simgrid_baseline\\08_coarse_vit_dag\\results\\vit_batch1_coarse_dag.json",
+    "profile": "D:\\VS_project\\heterogeneous\\simgrid_baseline\\17_rf880_agx_final\\rf880_agx_sensitivity_profile.json",
+    "optimization_config": "D:\\VS_project\\heterogeneous\\simgrid_baseline\\17_rf880_agx_final\\rf880_optimization_config.json",
+    "design_config": "D:\\VS_project\\heterogeneous\\simgrid_baseline\\17_rf880_agx_final\\rf880_design_space_config.json",
+    "dynamic_config": "D:\\VS_project\\heterogeneous\\simgrid_baseline\\17_rf880_agx_final\\rf880_dynamic_config.json"
+  },
+  "ablation": {
+    "rows": 63,
+    "single_request_rows": [
+      {
+        "case": "rf880_baseline_linear_host_staged",
+        "policy": "gpu_only",
+        "latency_ms": 24.74901344000001,
+        "latency_speedup_vs_gpu_only": 1.0,
+        "offloaded_linear_tasks": 0,
+        "cross_device_edges": 0
+      },
+      {
+        "case": "rf880_baseline_linear_host_staged",
+        "policy": "static_all_fpga",
+        "latency_ms": 35.59127416000007,
+        "latency_speedup_vs_gpu_only": 0.6953674467719579,
+        "offloaded_linear_tasks": 49,
+        "cross_device_edges": 97
+      },
+      {
+        "case": "rf880_baseline_linear_host_staged",
+        "policy": "communication_eft",
+        "latency_ms": 24.74901344000001,
+        "latency_speedup_vs_gpu_only": 1.0,
+        "offloaded_linear_tasks": 0,
+        "cross_device_edges": 0
+      },
+      {
+        "case": "rf880_activation_compression_2x",
+        "policy": "gpu_only",
+        "latency_ms": 24.74901344000001,
+        "latency_speedup_vs_gpu_only": 1.0,
+        "offloaded_linear_tasks": 0,
+        "cross_device_edges": 0
+      },
+      {
+        "case": "rf880_activation_compression_2x",
+        "policy": "static_all_fpga",
+        "latency_ms": 27.38543416000004,
+        "latency_speedup_vs_gpu_only": 0.9037290880766512,
+        "offloaded_linear_tasks": 49,
+        "cross_device_edges": 97
+      },
+      {
+        "case": "rf880_activation_compression_2x",
+        "policy": "communication_eft",
+        "latency_ms": 24.74901344000001,
+        "latency_speedup_vs_gpu_only": 1.0,
+        "offloaded_linear_tasks": 0,
+        "cross_device_edges": 0
+      },
+      {
+        "case": "rf880_ffn_fusion_residency",
+        "policy": "gpu_only",
+        "latency_ms": 24.749013439999988,
+        "latency_speedup_vs_gpu_only": 1.0,
+        "offloaded_linear_tasks": 0,
+        "cross_device_edges": 0
+      },
+      {
+        "case": "rf880_ffn_fusion_residency",
+        "policy": "static_all_fpga",
+        "latency_ms": 23.030778160000054,
+        "latency_speedup_vs_gpu_only": 1.0746060453564774,
+        "offloaded_linear_tasks": 49,
+        "cross_device_edges": 73
+      },
+      {
+        "case": "rf880_ffn_fusion_residency",
+        "policy": "communication_eft",
+        "latency_ms": 17.850057920000022,
+        "latency_speedup_vs_gpu_only": 1.3864948534575936,
+        "offloaded_linear_tasks": 24,
+        "cross_device_edges": 24
+      },
+      {
+        "case": "rf880_fusion_compression_host_staged",
+        "policy": "gpu_only",
+        "latency_ms": 24.749013439999988,
+        "latency_speedup_vs_gpu_only": 1.0,
+        "offloaded_linear_tasks": 0,
+        "cross_device_edges": 0
+      },
+      {
+        "case": "rf880_fusion_compression_host_staged",
+        "policy": "static_all_fpga",
+        "latency_ms": 19.025744560000053,
+        "latency_speedup_vs_gpu_only": 1.300817077720711,
+        "offloaded_linear_tasks": 49,
+        "cross_device_edges": 73
+      },
+      {
+        "case": "rf880_fusion_compression_host_staged",
+        "policy": "communication_eft",
+        "latency_ms": 16.871856320000035,
+        "latency_speedup_vs_gpu_only": 1.4668814723524113,
+        "offloaded_linear_tasks": 24,
+        "cross_device_edges": 24
+      },
+      {
+        "case": "rf880_fusion_compression_shared_single_buffer",
+        "policy": "gpu_only",
+        "latency_ms": 24.749013439999988,
+        "latency_speedup_vs_gpu_only": 1.0,
+        "offloaded_linear_tasks": 0,
+        "cross_device_edges": 0
+      },
+      {
+        "case": "rf880_fusion_compression_shared_single_buffer",
+        "policy": "static_all_fpga",
+        "latency_ms": 17.231312560000053,
+        "latency_speedup_vs_gpu_only": 1.4362813833144183,
+        "offloaded_linear_tasks": 49,
+        "cross_device_edges": 73
+      },
+      {
+        "case": "rf880_fusion_compression_shared_single_buffer",
+        "policy": "communication_eft",
+        "latency_ms": 16.228332800000036,
+        "latency_speedup_vs_gpu_only": 1.5250496612936069,
+        "offloaded_linear_tasks": 36,
+        "cross_device_edges": 48
+      },
+      {
+        "case": "rf880_fusion_compression_shared_double_buffer",
+        "policy": "gpu_only",
+        "latency_ms": 24.749013439999988,
+        "latency_speedup_vs_gpu_only": 1.0,
+        "offloaded_linear_tasks": 0,
+        "cross_device_edges": 0
+      },
+      {
+        "case": "rf880_fusion_compression_shared_double_buffer",
+        "policy": "static_all_fpga",
+        "latency_ms": 17.231312560000053,
+        "latency_speedup_vs_gpu_only": 1.4362813833144183,
+        "offloaded_linear_tasks": 49,
+        "cross_device_edges": 73
+      },
+      {
+        "case": "rf880_fusion_compression_shared_double_buffer",
+        "policy": "communication_eft",
+        "latency_ms": 16.228332800000036,
+        "latency_speedup_vs_gpu_only": 1.5250496612936069,
+        "offloaded_linear_tasks": 36,
+        "cross_device_edges": 48
+      },
+      {
+        "case": "rf880_direct_dma_upper_bound",
+        "policy": "gpu_only",
+        "latency_ms": 24.749013439999988,
+        "latency_speedup_vs_gpu_only": 1.0,
+        "offloaded_linear_tasks": 0,
+        "cross_device_edges": 0
+      },
+      {
+        "case": "rf880_direct_dma_upper_bound",
+        "policy": "static_all_fpga",
+        "latency_ms": 17.231312560000053,
+        "latency_speedup_vs_gpu_only": 1.4362813833144183,
+        "offloaded_linear_tasks": 49,
+        "cross_device_edges": 73
+      },
+      {
+        "case": "rf880_direct_dma_upper_bound",
+        "policy": "communication_eft",
+        "latency_ms": 16.228332800000036,
+        "latency_speedup_vs_gpu_only": 1.5250496612936069,
+        "offloaded_linear_tasks": 36,
+        "cross_device_edges": 48
+      }
+    ],
+    "best_single_request": {
+      "case": "rf880_fusion_compression_shared_single_buffer",
+      "latency_ms": 16.228332800000036,
+      "latency_speedup_vs_gpu_only": 1.5250496612936069,
+      "offloaded_linear_tasks": 36,
+      "cross_device_edges": 48
+    },
+    "best_multi_request": {
+      "case": "rf880_fusion_compression_shared_single_buffer",
+      "policy": "communication_eft",
+      "throughput_requests_per_s": 162.92308783892375,
+      "throughput_speedup_vs_gpu_only": 4.032185690611823,
+      "request_count": 16
+    }
+  },
+  "design_space": {
+    "hardware_conditions": 192,
+    "best_eft_condition": {
+      "path_kind": "shared_mapped_one_copy",
+      "pcie_effective_bandwidth_GBps": 7.2,
+      "one_way_fixed_latency_us": 10,
+      "fpga_linear_speedup_over_gpu": 16,
+      "policy": "communication_eft",
+      "analytical_makespan_us": 14431.171840000015,
+      "speedup_vs_gpu_only": 1.7149690762742649,
+      "offloaded_linear_tasks": 48,
+      "cross_device_edges": 96,
+      "logical_cross_device_bytes": 58097664,
+      "physical_link_bytes": 58097664,
+      "valid_for_target_prediction": false
+    },
+    "best_pipeline_at_max_tested_requests": {}
+  },
+  "dynamic": {
+    "rows": 28,
+    "selected_rows": [
+      {
+        "offered_rate_requests_per_s": 60,
+        "policy": "adaptive_dual_mode",
+        "p95_latency_ms": 20.22798380287952,
+        "slo_violation_rate": 0.0,
+        "achieved_throughput_requests_per_s": 60.0
+      },
+      {
+        "offered_rate_requests_per_s": 60,
+        "policy": "gpu_only",
+        "p95_latency_ms": 1843.8015012799972,
+        "slo_violation_rate": 1.0,
+        "achieved_throughput_requests_per_s": 40.40565101410363
+      },
+      {
+        "offered_rate_requests_per_s": 60,
+        "policy": "latency_eft",
+        "p95_latency_ms": 20.22798380287952,
+        "slo_violation_rate": 0.0,
+        "achieved_throughput_requests_per_s": 60.0
+      },
+      {
+        "offered_rate_requests_per_s": 100,
+        "policy": "adaptive_dual_mode",
+        "p95_latency_ms": 26.107879273677558,
+        "slo_violation_rate": 0.0,
+        "achieved_throughput_requests_per_s": 100.0
+      },
+      {
+        "offered_rate_requests_per_s": 100,
+        "policy": "gpu_only",
+        "p95_latency_ms": 1843.8015012799972,
+        "slo_violation_rate": 1.0,
+        "achieved_throughput_requests_per_s": 40.40565101410363
+      },
+      {
+        "offered_rate_requests_per_s": 100,
+        "policy": "latency_eft",
+        "p95_latency_ms": 26.107879273677558,
+        "slo_violation_rate": 0.0,
+        "achieved_throughput_requests_per_s": 100.0
+      },
+      {
+        "offered_rate_requests_per_s": 140,
+        "policy": "adaptive_dual_mode",
+        "p95_latency_ms": 42.93296893658034,
+        "slo_violation_rate": 1.0,
+        "achieved_throughput_requests_per_s": 140.0
+      },
+      {
+        "offered_rate_requests_per_s": 140,
+        "policy": "gpu_only",
+        "p95_latency_ms": 1843.8015012799972,
+        "slo_violation_rate": 1.0,
+        "achieved_throughput_requests_per_s": 40.40565101410363
+      },
+      {
+        "offered_rate_requests_per_s": 140,
+        "policy": "latency_eft",
+        "p95_latency_ms": 42.93296893658034,
+        "slo_violation_rate": 1.0,
+        "achieved_throughput_requests_per_s": 140.0
+      }
+    ],
+    "threshold_selection": {
+      "80": {
+        "backlog_threshold": 4
+      },
+      "100": {
+        "backlog_threshold": 4
+      },
+      "120": {
+        "backlog_threshold": 4
+      }
+    }
+  },
+  "measurement_plan": {
+    "tasks": 101,
+    "edges": 124,
+    "task_measurement_rows": 138,
+    "gpu_rows": 101,
+    "fpga_rows": 37,
+    "transfer_payload_sizes": 10,
+    "transfer_measurement_rows": 60,
+    "transfer_directions": 6,
+    "largest_payload_bytes": 4194304,
+    "status": "waiting_for_target_hardware"
+  },
+  "artifacts": {
+    "optimization_ablation": "D:\\VS_project\\heterogeneous\\simgrid_baseline\\17_rf880_agx_final\\results\\optimization_ablation",
+    "design_space": "D:\\VS_project\\heterogeneous\\simgrid_baseline\\17_rf880_agx_final\\results\\design_space",
+    "dynamic_load": "D:\\VS_project\\heterogeneous\\simgrid_baseline\\17_rf880_agx_final\\results\\dynamic_load",
+    "adaptive_threshold": "D:\\VS_project\\heterogeneous\\simgrid_baseline\\17_rf880_agx_final\\results\\adaptive_threshold",
+    "measurement_plan": "D:\\VS_project\\heterogeneous\\simgrid_baseline\\17_rf880_agx_final\\results\\measurement_plan"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "status": "unverified_linear_only_simulation_assumption",
+  "activation_precision": "FP16",
+  "supported_fpga_task_types": ["linear_ffn1", "linear_ffn2"],
+  "supported_fpga_blocks": [],
+  "max_workspace_bytes": 16777216,
+  "reserved_weight_bytes": 0,
+  "available_memory_bytes": 33554432,
+  "notes": "Counterfactual RF880 capability scenario: only singleton FFN Linear kernels, no FPGA GELU or complete FFN kernel."
+}

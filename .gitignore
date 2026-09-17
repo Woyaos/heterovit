@@ -21,6 +21,9 @@ Thumbs.db
 *.exe
 iris-main/build-cpu/
 iris-main/install-cpu/
+iris-main/apps/hetero_vit_runtime/test_cost_model
+iris-main/apps/hetero_vit_runtime/vit_dag_skeleton
+iris-main/apps/hetero_vit_runtime/vit_dag_planned_skeleton
 
 # Large model artifacts are tracked by checksum in the change report.
 *.onnx
@@ -35,3 +38,20 @@ simgrid_baseline/15_dynamic_runtime/results_thresholds/rate_*/
 *.tmp
 *.bak
 *~
+
+# Local research notes, source material, and extracted hardware manuals
+tmp/
+wenx/
+*_REPORT_*.md
+THEORY_*.md
+PAPER_NARRATIVE_*.md
+RF880_AGX_PAPER_*.md
+DETAILED_FLOW_*.md
+HETEROGENEOUS_SYSTEM_ARCHITECTURE_*.md
+ENGINEERING_THEORY_*.md
+INDUSTRIAL_ENGINEERING_REVIEW_*.md
+CHAPTER*_THEORETICAL_*.md
+
+# Local measurement inputs may contain machine-specific data. Curated example
+# profiles and committed result summaries remain versioned.
+simgrid_baseline/16_hardware_calibration/measurements/local/

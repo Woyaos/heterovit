@@ -3,7 +3,7 @@
 
 typedef struct {
   const char* name;
-  int metadata[8];
+  int metadata[9];
 } HeteroTaskRecord;
 
 typedef struct { int source; int target; } HeteroEdgeRecord;

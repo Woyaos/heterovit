@@ -1,0 +1,76 @@
+{
+  "policy": "gpu_only",
+  "buffers": 1,
+  "requests": 16,
+  "makespan_us": 395984.215039989,
+  "request_completion_us": [
+    {
+      "request_id": 0,
+      "completion_us": 395864.81503998936
+    },
+    {
+      "request_id": 1,
+      "completion_us": 395872.7750399893
+    },
+    {
+      "request_id": 2,
+      "completion_us": 395880.73503998935
+    },
+    {
+      "request_id": 3,
+      "completion_us": 395888.6950399893
+    },
+    {
+      "request_id": 4,
+      "completion_us": 395896.6550399893
+    },
+    {
+      "request_id": 5,
+      "completion_us": 395904.61503998924
+    },
+    {
+      "request_id": 6,
+      "completion_us": 395912.5750399892
+    },
+    {
+      "request_id": 7,
+      "completion_us": 395920.5350399892
+    },
+    {
+      "request_id": 8,
+      "completion_us": 395928.4950399892
+    },
+    {
+      "request_id": 9,
+      "completion_us": 395936.45503998915
+    },
+    {
+      "request_id": 10,
+      "completion_us": 395944.4150399891
+    },
+    {
+      "request_id": 11,
+      "completion_us": 395952.37503998907
+    },
+    {
+      "request_id": 12,
+      "completion_us": 395960.3350399891
+    },
+    {
+      "request_id": 13,
+      "completion_us": 395968.29503998905
+    },
+    {
+      "request_id": 14,
+      "completion_us": 395976.255039989
+    },
+    {
+      "request_id": 15,
+      "completion_us": 395984.215039989
+    }
+  ],
+  "task_count": 2000,
+  "transfer_stage_count": 0,
+  "execution_mode": "simgrid_event_replay_sensitivity_parameters",
+  "valid_for_target_prediction": false
+}

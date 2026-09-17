@@ -1,0 +1,13 @@
+category,measurement,reason,acceptance_condition
+correctness,C simulation versus untiled FFN,prove token tiling preserves outputs,all tested shapes within declared numeric tolerance
+correctness,C/RTL co-simulation with FIFO occupancy,detect stalls and deadlocks,all candidate tile sizes complete without deadlock
+synthesis,FC1/GELU/FC2 latency and initiation interval,replace assumed stage rates,reported values imported into the model
+synthesis,LUT/FF/BRAM/URAM/DSP utilization,verify independent engines and buffers fit,passes project-specific post-reservation budget
+synthesis,post-route clock and timing slack,avoid using HLS estimate as hardware timing,timing closes at the selected clock
+memory,resident weight placement and bandwidth,validate weight-residency assumption,no unmodeled weight transfer on the critical path
+dma,whole-tensor input/output latency,calibrate non-streaming baseline,mean and p95 measured for 302592-byte payload
+dma,streaming descriptor chunk availability,validate end-to-end tile stream,one setup exposes tile-level producer/consumer progress
+overlap,input DMA plus FPGA compute,validate input ping-pong behavior,timeline shows simultaneous activity without corruption
+overlap,FPGA compute plus output DMA,validate output ping-pong behavior,timeline shows simultaneous activity without corruption
+system,single-request end-to-end latency,validate paper claim,held-out measurements agree with calibrated model within declared error bound
+ablation,untiled versus internal stream versus end-to-end stream,separate sources of improvement,same model precision and clock conditions

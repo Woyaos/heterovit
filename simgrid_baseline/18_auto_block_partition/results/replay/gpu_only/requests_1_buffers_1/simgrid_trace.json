@@ -1,0 +1,1130 @@
+{
+  "tasks": [
+    {
+      "request_id": 0,
+      "task_id": "patch_embedding",
+      "task_type": "patch_embedding",
+      "device": "GPU",
+      "start_us": 0.0,
+      "finish_us": 151.50688000000002,
+      "duration_us": 151.50688000000002
+    },
+    {
+      "request_id": 0,
+      "task_id": "token_embedding",
+      "task_type": "token_and_position_embedding",
+      "device": "GPU",
+      "start_us": 151.50688000000002,
+      "finish_us": 169.85408,
+      "duration_us": 18.347200000000008
+    },
+    {
+      "request_id": 0,
+      "task_id": "block_00_norm1",
+      "task_type": "layer_norm",
+      "device": "GPU",
+      "start_us": 169.85408,
+      "finish_us": 191.98368000000002,
+      "duration_us": 22.129600000000007
+    },
+    {
+      "request_id": 0,
+      "task_id": "block_00_qkv",
+      "task_type": "linear_qkv",
+      "device": "GPU",
+      "start_us": 191.98368000000002,
+      "finish_us": 634.7161600000001,
+      "duration_us": 442.73247999999995
+    },
+    {
+      "request_id": 0,
+      "task_id": "block_00_attention",
+      "task_type": "self_attention",
+      "device": "GPU",
+      "start_us": 634.7161600000001,
+      "finish_us": 790.7427200000001,
+      "duration_us": 156.02656000000002
+    },
+    {
+      "request_id": 0,
+      "task_id": "block_00_proj",
+      "task_type": "linear_projection",
+      "device": "GPU",
+      "start_us": 790.7427200000001,
+      "finish_us": 942.98688,
+      "duration_us": 152.24415999999997
+    },
+    {
+      "request_id": 0,
+      "task_id": "block_00_residual1",
+      "task_type": "residual_add",
+      "device": "GPU",
+      "start_us": 942.98688,
+      "finish_us": 961.33408,
+      "duration_us": 18.347200000000008
+    },
+    {
+      "request_id": 0,
+      "task_id": "block_00_norm2",
+      "task_type": "layer_norm",
+      "device": "GPU",
+      "start_us": 961.33408,
+      "finish_us": 983.4636800000001,
+      "duration_us": 22.12960000000006
+    },
+    {
+      "request_id": 0,
+      "task_id": "block_00_fc1",
+      "task_type": "linear_ffn1",
+      "device": "GPU",
+      "start_us": 983.4636800000001,
+      "finish_us": 1571.44032,
+      "duration_us": 587.9766399999999
+    },
+    {
+      "request_id": 0,
+      "task_id": "block_00_gelu",
+      "task_type": "gelu",
+      "device": "GPU",
+      "start_us": 1571.44032,
+      "finish_us": 1608.69952,
+      "duration_us": 37.25920000000006
+    },
+    {
+      "request_id": 0,
+      "task_id": "block_00_fc2",
+      "task_type": "linear_ffn2",
+      "device": "GPU",
+      "start_us": 1608.69952,
+      "finish_us": 2196.67616,
+      "duration_us": 587.9766400000001
+    },
+    {
+      "request_id": 0,
+      "task_id": "block_00_residual2",
+      "task_type": "residual_add",
+      "device": "GPU",
+      "start_us": 2196.67616,
+      "finish_us": 2215.0233599999997,
+      "duration_us": 18.347199999999788
+    },
+    {
+      "request_id": 0,
+      "task_id": "block_01_norm1",
+      "task_type": "layer_norm",
+      "device": "GPU",
+      "start_us": 2215.0233599999997,
+      "finish_us": 2237.15296,
+      "duration_us": 22.129599999999844
+    },
+    {
+      "request_id": 0,
+      "task_id": "block_01_qkv",
+      "task_type": "linear_qkv",
+      "device": "GPU",
+      "start_us": 2237.15296,
+      "finish_us": 2679.88544,
+      "duration_us": 442.7324800000002
+    },
+    {
+      "request_id": 0,
+      "task_id": "block_01_attention",
+      "task_type": "self_attention",
+      "device": "GPU",
+      "start_us": 2679.88544,
+      "finish_us": 2835.912,
+      "duration_us": 156.02656000000002
+    },
+    {
+      "request_id": 0,
+      "task_id": "block_01_proj",
+      "task_type": "linear_projection",
+      "device": "GPU",
+      "start_us": 2835.912,
+      "finish_us": 2988.15616,
+      "duration_us": 152.24415999999997
+    },
+    {
+      "request_id": 0,
+      "task_id": "block_01_residual1",
+      "task_type": "residual_add",
+      "device": "GPU",
+      "start_us": 2988.15616,
+      "finish_us": 3006.5033599999997,
+      "duration_us": 18.347199999999788
+    },
+    {
+      "request_id": 0,
+      "task_id": "block_01_norm2",
+      "task_type": "layer_norm",
+      "device": "GPU",
+      "start_us": 3006.5033599999997,
+      "finish_us": 3028.6329599999995,
+      "duration_us": 22.129599999999844
+    },
+    {
+      "request_id": 0,
+      "task_id": "block_01_fc1",
+      "task_type": "linear_ffn1",
+      "device": "GPU",
+      "start_us": 3028.6329599999995,
+      "finish_us": 3616.6096,
+      "duration_us": 587.9766400000001
+    },
+    {
+      "request_id": 0,
+      "task_id": "block_01_gelu",
+      "task_type": "gelu",
+      "device": "GPU",
+      "start_us": 3616.6096,
+      "finish_us": 3653.8687999999997,
+      "duration_us": 37.25920000000006
+    },
+    {
+      "request_id": 0,
+      "task_id": "block_01_fc2",
+      "task_type": "linear_ffn2",
+      "device": "GPU",
+      "start_us": 3653.8687999999997,
+      "finish_us": 4241.845439999999,
+      "duration_us": 587.9766399999996
+    },
+    {
+      "request_id": 0,
+      "task_id": "block_01_residual2",
+      "task_type": "residual_add",
+      "device": "GPU",
+      "start_us": 4241.845439999999,
+      "finish_us": 4260.192639999999,
+      "duration_us": 18.347200000000225
+    },
+    {
+      "request_id": 0,
+      "task_id": "block_02_norm1",
+      "task_type": "layer_norm",
+      "device": "GPU",
+      "start_us": 4260.192639999999,
+      "finish_us": 4282.3222399999995,
+      "duration_us": 22.129600000000277
+    },
+    {
+      "request_id": 0,
+      "task_id": "block_02_qkv",
+      "task_type": "linear_qkv",
+      "device": "GPU",
+      "start_us": 4282.3222399999995,
+      "finish_us": 4725.05472,
+      "duration_us": 442.7324800000002
+    },
+    {
+      "request_id": 0,
+      "task_id": "block_02_attention",
+      "task_type": "self_attention",
+      "device": "GPU",
+      "start_us": 4725.05472,
+      "finish_us": 4881.081279999999,
+      "duration_us": 156.0265599999996
+    },
+    {
+      "request_id": 0,
+      "task_id": "block_02_proj",
+      "task_type": "linear_projection",
+      "device": "GPU",
+      "start_us": 4881.081279999999,
+      "finish_us": 5033.32544,
+      "duration_us": 152.2441600000004
+    },
+    {
+      "request_id": 0,
+      "task_id": "block_02_residual1",
+      "task_type": "residual_add",
+      "device": "GPU",
+      "start_us": 5033.32544,
+      "finish_us": 5051.67264,
+      "duration_us": 18.347200000000225
+    },
+    {
+      "request_id": 0,
+      "task_id": "block_02_norm2",
+      "task_type": "layer_norm",
+      "device": "GPU",
+      "start_us": 5051.67264,
+      "finish_us": 5073.80224,
+      "duration_us": 22.129600000000277
+    },
+    {
+      "request_id": 0,
+      "task_id": "block_02_fc1",
+      "task_type": "linear_ffn1",
+      "device": "GPU",
+      "start_us": 5073.80224,
+      "finish_us": 5661.77888,
+      "duration_us": 587.9766399999996
+    },
+    {
+      "request_id": 0,
+      "task_id": "block_02_gelu",
+      "task_type": "gelu",
+      "device": "GPU",
+      "start_us": 5661.77888,
+      "finish_us": 5699.038079999999,
+      "duration_us": 37.25919999999962
+    },
+    {
+      "request_id": 0,
+      "task_id": "block_02_fc2",
+      "task_type": "linear_ffn2",
+      "device": "GPU",
+      "start_us": 5699.038079999999,
+      "finish_us": 6287.014719999999,
+      "duration_us": 587.9766399999996
+    },
+    {
+      "request_id": 0,
+      "task_id": "block_02_residual2",
+      "task_type": "residual_add",
+      "device": "GPU",
+      "start_us": 6287.014719999999,
+      "finish_us": 6305.361919999999,
+      "duration_us": 18.347200000000225
+    },
+    {
+      "request_id": 0,
+      "task_id": "block_03_norm1",
+      "task_type": "layer_norm",
+      "device": "GPU",
+      "start_us": 6305.361919999999,
+      "finish_us": 6327.49152,
+      "duration_us": 22.129600000000277
+    },
+    {
+      "request_id": 0,
+      "task_id": "block_03_qkv",
+      "task_type": "linear_qkv",
+      "device": "GPU",
+      "start_us": 6327.49152,
+      "finish_us": 6770.224,
+      "duration_us": 442.7324800000002
+    },
+    {
+      "request_id": 0,
+      "task_id": "block_03_attention",
+      "task_type": "self_attention",
+      "device": "GPU",
+      "start_us": 6770.224,
+      "finish_us": 6926.2505599999995,
+      "duration_us": 156.0265599999996
+    },
+    {
+      "request_id": 0,
+      "task_id": "block_03_proj",
+      "task_type": "linear_projection",
+      "device": "GPU",
+      "start_us": 6926.2505599999995,
+      "finish_us": 7078.49472,
+      "duration_us": 152.2441600000004
+    },
+    {
+      "request_id": 0,
+      "task_id": "block_03_residual1",
+      "task_type": "residual_add",
+      "device": "GPU",
+      "start_us": 7078.49472,
+      "finish_us": 7096.84192,
+      "duration_us": 18.347200000000225
+    },
+    {
+      "request_id": 0,
+      "task_id": "block_03_norm2",
+      "task_type": "layer_norm",
+      "device": "GPU",
+      "start_us": 7096.84192,
+      "finish_us": 7118.97152,
+      "duration_us": 22.129600000000277
+    },
+    {
+      "request_id": 0,
+      "task_id": "block_03_fc1",
+      "task_type": "linear_ffn1",
+      "device": "GPU",
+      "start_us": 7118.97152,
+      "finish_us": 7706.94816,
+      "duration_us": 587.9766399999996
+    },
+    {
+      "request_id": 0,
+      "task_id": "block_03_gelu",
+      "task_type": "gelu",
+      "device": "GPU",
+      "start_us": 7706.94816,
+      "finish_us": 7744.207359999999,
+      "duration_us": 37.25919999999962
+    },
+    {
+      "request_id": 0,
+      "task_id": "block_03_fc2",
+      "task_type": "linear_ffn2",
+      "device": "GPU",
+      "start_us": 7744.207359999999,
+      "finish_us": 8332.184,
+      "duration_us": 587.9766399999996
+    },
+    {
+      "request_id": 0,
+      "task_id": "block_03_residual2",
+      "task_type": "residual_add",
+      "device": "GPU",
+      "start_us": 8332.184,
+      "finish_us": 8350.5312,
+      "duration_us": 18.347199999999354
+    },
+    {
+      "request_id": 0,
+      "task_id": "block_04_norm1",
+      "task_type": "layer_norm",
+      "device": "GPU",
+      "start_us": 8350.5312,
+      "finish_us": 8372.6608,
+      "duration_us": 22.129600000000277
+    },
+    {
+      "request_id": 0,
+      "task_id": "block_04_qkv",
+      "task_type": "linear_qkv",
+      "device": "GPU",
+      "start_us": 8372.6608,
+      "finish_us": 8815.393279999998,
+      "duration_us": 442.7324799999993
+    },
+    {
+      "request_id": 0,
+      "task_id": "block_04_attention",
+      "task_type": "self_attention",
+      "device": "GPU",
+      "start_us": 8815.393279999998,
+      "finish_us": 8971.419839999999,
+      "duration_us": 156.0265599999996
+    },
+    {
+      "request_id": 0,
+      "task_id": "block_04_proj",
+      "task_type": "linear_projection",
+      "device": "GPU",
+      "start_us": 8971.419839999999,
+      "finish_us": 9123.663999999999,
+      "duration_us": 152.2441600000004
+    },
+    {
+      "request_id": 0,
+      "task_id": "block_04_residual1",
+      "task_type": "residual_add",
+      "device": "GPU",
+      "start_us": 9123.663999999999,
+      "finish_us": 9142.011199999997,
+      "duration_us": 18.347199999999354
+    },
+    {
+      "request_id": 0,
+      "task_id": "block_04_norm2",
+      "task_type": "layer_norm",
+      "device": "GPU",
+      "start_us": 9142.011199999997,
+      "finish_us": 9164.140799999997,
+      "duration_us": 22.129600000000277
+    },
+    {
+      "request_id": 0,
+      "task_id": "block_04_fc1",
+      "task_type": "linear_ffn1",
+      "device": "GPU",
+      "start_us": 9164.140799999997,
+      "finish_us": 9752.117439999998,
+      "duration_us": 587.9766399999996
+    },
+    {
+      "request_id": 0,
+      "task_id": "block_04_gelu",
+      "task_type": "gelu",
+      "device": "GPU",
+      "start_us": 9752.117439999998,
+      "finish_us": 9789.376639999999,
+      "duration_us": 37.25920000000049
+    },
+    {
+      "request_id": 0,
+      "task_id": "block_04_fc2",
+      "task_type": "linear_ffn2",
+      "device": "GPU",
+      "start_us": 9789.376639999999,
+      "finish_us": 10377.353279999998,
+      "duration_us": 587.9766399999996
+    },
+    {
+      "request_id": 0,
+      "task_id": "block_04_residual2",
+      "task_type": "residual_add",
+      "device": "GPU",
+      "start_us": 10377.353279999998,
+      "finish_us": 10395.700479999998,
+      "duration_us": 18.347199999999354
+    },
+    {
+      "request_id": 0,
+      "task_id": "block_05_norm1",
+      "task_type": "layer_norm",
+      "device": "GPU",
+      "start_us": 10395.700479999998,
+      "finish_us": 10417.830079999998,
+      "duration_us": 22.129600000000277
+    },
+    {
+      "request_id": 0,
+      "task_id": "block_05_qkv",
+      "task_type": "linear_qkv",
+      "device": "GPU",
+      "start_us": 10417.830079999998,
+      "finish_us": 10860.562559999997,
+      "duration_us": 442.7324799999993
+    },
+    {
+      "request_id": 0,
+      "task_id": "block_05_attention",
+      "task_type": "self_attention",
+      "device": "GPU",
+      "start_us": 10860.562559999997,
+      "finish_us": 11016.589119999997,
+      "duration_us": 156.0265599999996
+    },
+    {
+      "request_id": 0,
+      "task_id": "block_05_proj",
+      "task_type": "linear_projection",
+      "device": "GPU",
+      "start_us": 11016.589119999997,
+      "finish_us": 11168.833279999997,
+      "duration_us": 152.2441600000004
+    },
+    {
+      "request_id": 0,
+      "task_id": "block_05_residual1",
+      "task_type": "residual_add",
+      "device": "GPU",
+      "start_us": 11168.833279999997,
+      "finish_us": 11187.180479999995,
+      "duration_us": 18.347199999999354
+    },
+    {
+      "request_id": 0,
+      "task_id": "block_05_norm2",
+      "task_type": "layer_norm",
+      "device": "GPU",
+      "start_us": 11187.180479999995,
+      "finish_us": 11209.310079999996,
+      "duration_us": 22.129600000000277
+    },
+    {
+      "request_id": 0,
+      "task_id": "block_05_fc1",
+      "task_type": "linear_ffn1",
+      "device": "GPU",
+      "start_us": 11209.310079999996,
+      "finish_us": 11797.286719999996,
+      "duration_us": 587.9766399999996
+    },
+    {
+      "request_id": 0,
+      "task_id": "block_05_gelu",
+      "task_type": "gelu",
+      "device": "GPU",
+      "start_us": 11797.286719999996,
+      "finish_us": 11834.545919999997,
+      "duration_us": 37.25920000000049
+    },
+    {
+      "request_id": 0,
+      "task_id": "block_05_fc2",
+      "task_type": "linear_ffn2",
+      "device": "GPU",
+      "start_us": 11834.545919999997,
+      "finish_us": 12422.522559999996,
+      "duration_us": 587.9766399999996
+    },
+    {
+      "request_id": 0,
+      "task_id": "block_05_residual2",
+      "task_type": "residual_add",
+      "device": "GPU",
+      "start_us": 12422.522559999996,
+      "finish_us": 12440.869759999996,
+      "duration_us": 18.347199999999354
+    },
+    {
+      "request_id": 0,
+      "task_id": "block_06_norm1",
+      "task_type": "layer_norm",
+      "device": "GPU",
+      "start_us": 12440.869759999996,
+      "finish_us": 12462.999359999996,
+      "duration_us": 22.129600000000277
+    },
+    {
+      "request_id": 0,
+      "task_id": "block_06_qkv",
+      "task_type": "linear_qkv",
+      "device": "GPU",
+      "start_us": 12462.999359999996,
+      "finish_us": 12905.731839999995,
+      "duration_us": 442.7324799999993
+    },
+    {
+      "request_id": 0,
+      "task_id": "block_06_attention",
+      "task_type": "self_attention",
+      "device": "GPU",
+      "start_us": 12905.731839999995,
+      "finish_us": 13061.758399999995,
+      "duration_us": 156.0265599999996
+    },
+    {
+      "request_id": 0,
+      "task_id": "block_06_proj",
+      "task_type": "linear_projection",
+      "device": "GPU",
+      "start_us": 13061.758399999995,
+      "finish_us": 13214.002559999995,
+      "duration_us": 152.2441600000004
+    },
+    {
+      "request_id": 0,
+      "task_id": "block_06_residual1",
+      "task_type": "residual_add",
+      "device": "GPU",
+      "start_us": 13214.002559999995,
+      "finish_us": 13232.349759999994,
+      "duration_us": 18.347199999999354
+    },
+    {
+      "request_id": 0,
+      "task_id": "block_06_norm2",
+      "task_type": "layer_norm",
+      "device": "GPU",
+      "start_us": 13232.349759999994,
+      "finish_us": 13254.479359999994,
+      "duration_us": 22.129600000000277
+    },
+    {
+      "request_id": 0,
+      "task_id": "block_06_fc1",
+      "task_type": "linear_ffn1",
+      "device": "GPU",
+      "start_us": 13254.479359999994,
+      "finish_us": 13842.455999999995,
+      "duration_us": 587.9766399999996
+    },
+    {
+      "request_id": 0,
+      "task_id": "block_06_gelu",
+      "task_type": "gelu",
+      "device": "GPU",
+      "start_us": 13842.455999999995,
+      "finish_us": 13879.715199999995,
+      "duration_us": 37.25920000000049
+    },
+    {
+      "request_id": 0,
+      "task_id": "block_06_fc2",
+      "task_type": "linear_ffn2",
+      "device": "GPU",
+      "start_us": 13879.715199999995,
+      "finish_us": 14467.691839999994,
+      "duration_us": 587.9766399999996
+    },
+    {
+      "request_id": 0,
+      "task_id": "block_06_residual2",
+      "task_type": "residual_add",
+      "device": "GPU",
+      "start_us": 14467.691839999994,
+      "finish_us": 14486.039039999994,
+      "duration_us": 18.347199999999354
+    },
+    {
+      "request_id": 0,
+      "task_id": "block_07_norm1",
+      "task_type": "layer_norm",
+      "device": "GPU",
+      "start_us": 14486.039039999994,
+      "finish_us": 14508.168639999994,
+      "duration_us": 22.129600000000277
+    },
+    {
+      "request_id": 0,
+      "task_id": "block_07_qkv",
+      "task_type": "linear_qkv",
+      "device": "GPU",
+      "start_us": 14508.168639999994,
+      "finish_us": 14950.901119999993,
+      "duration_us": 442.7324799999993
+    },
+    {
+      "request_id": 0,
+      "task_id": "block_07_attention",
+      "task_type": "self_attention",
+      "device": "GPU",
+      "start_us": 14950.901119999993,
+      "finish_us": 15106.927679999993,
+      "duration_us": 156.0265599999996
+    },
+    {
+      "request_id": 0,
+      "task_id": "block_07_proj",
+      "task_type": "linear_projection",
+      "device": "GPU",
+      "start_us": 15106.927679999993,
+      "finish_us": 15259.171839999994,
+      "duration_us": 152.2441600000004
+    },
+    {
+      "request_id": 0,
+      "task_id": "block_07_residual1",
+      "task_type": "residual_add",
+      "device": "GPU",
+      "start_us": 15259.171839999994,
+      "finish_us": 15277.519039999992,
+      "duration_us": 18.347199999999354
+    },
+    {
+      "request_id": 0,
+      "task_id": "block_07_norm2",
+      "task_type": "layer_norm",
+      "device": "GPU",
+      "start_us": 15277.519039999992,
+      "finish_us": 15299.648639999992,
+      "duration_us": 22.129600000000277
+    },
+    {
+      "request_id": 0,
+      "task_id": "block_07_fc1",
+      "task_type": "linear_ffn1",
+      "device": "GPU",
+      "start_us": 15299.648639999992,
+      "finish_us": 15887.625279999995,
+      "duration_us": 587.9766400000013
+    },
+    {
+      "request_id": 0,
+      "task_id": "block_07_gelu",
+      "task_type": "gelu",
+      "device": "GPU",
+      "start_us": 15887.625279999995,
+      "finish_us": 15924.884479999995,
+      "duration_us": 37.25920000000049
+    },
+    {
+      "request_id": 0,
+      "task_id": "block_07_fc2",
+      "task_type": "linear_ffn2",
+      "device": "GPU",
+      "start_us": 15924.884479999995,
+      "finish_us": 16512.861119999998,
+      "duration_us": 587.9766400000013
+    },
+    {
+      "request_id": 0,
+      "task_id": "block_07_residual2",
+      "task_type": "residual_add",
+      "device": "GPU",
+      "start_us": 16512.861119999998,
+      "finish_us": 16531.208319999998,
+      "duration_us": 18.34720000000109
+    },
+    {
+      "request_id": 0,
+      "task_id": "block_08_norm1",
+      "task_type": "layer_norm",
+      "device": "GPU",
+      "start_us": 16531.208319999998,
+      "finish_us": 16553.337919999998,
+      "duration_us": 22.129600000000277
+    },
+    {
+      "request_id": 0,
+      "task_id": "block_08_qkv",
+      "task_type": "linear_qkv",
+      "device": "GPU",
+      "start_us": 16553.337919999998,
+      "finish_us": 16996.070399999997,
+      "duration_us": 442.7324799999993
+    },
+    {
+      "request_id": 0,
+      "task_id": "block_08_attention",
+      "task_type": "self_attention",
+      "device": "GPU",
+      "start_us": 16996.070399999997,
+      "finish_us": 17152.09696,
+      "duration_us": 156.02656000000133
+    },
+    {
+      "request_id": 0,
+      "task_id": "block_08_proj",
+      "task_type": "linear_projection",
+      "device": "GPU",
+      "start_us": 17152.09696,
+      "finish_us": 17304.341119999997,
+      "duration_us": 152.24415999999866
+    },
+    {
+      "request_id": 0,
+      "task_id": "block_08_residual1",
+      "task_type": "residual_add",
+      "device": "GPU",
+      "start_us": 17304.341119999997,
+      "finish_us": 17322.688319999997,
+      "duration_us": 18.34720000000109
+    },
+    {
+      "request_id": 0,
+      "task_id": "block_08_norm2",
+      "task_type": "layer_norm",
+      "device": "GPU",
+      "start_us": 17322.688319999997,
+      "finish_us": 17344.817919999998,
+      "duration_us": 22.129600000000277
+    },
+    {
+      "request_id": 0,
+      "task_id": "block_08_fc1",
+      "task_type": "linear_ffn1",
+      "device": "GPU",
+      "start_us": 17344.817919999998,
+      "finish_us": 17932.79456,
+      "duration_us": 587.9766400000013
+    },
+    {
+      "request_id": 0,
+      "task_id": "block_08_gelu",
+      "task_type": "gelu",
+      "device": "GPU",
+      "start_us": 17932.79456,
+      "finish_us": 17970.05376,
+      "duration_us": 37.25920000000049
+    },
+    {
+      "request_id": 0,
+      "task_id": "block_08_fc2",
+      "task_type": "linear_ffn2",
+      "device": "GPU",
+      "start_us": 17970.05376,
+      "finish_us": 18558.030400000003,
+      "duration_us": 587.9766400000013
+    },
+    {
+      "request_id": 0,
+      "task_id": "block_08_residual2",
+      "task_type": "residual_add",
+      "device": "GPU",
+      "start_us": 18558.030400000003,
+      "finish_us": 18576.377600000003,
+      "duration_us": 18.34720000000109
+    },
+    {
+      "request_id": 0,
+      "task_id": "block_09_norm1",
+      "task_type": "layer_norm",
+      "device": "GPU",
+      "start_us": 18576.377600000003,
+      "finish_us": 18598.507200000004,
+      "duration_us": 22.129600000000277
+    },
+    {
+      "request_id": 0,
+      "task_id": "block_09_qkv",
+      "task_type": "linear_qkv",
+      "device": "GPU",
+      "start_us": 18598.507200000004,
+      "finish_us": 19041.239680000002,
+      "duration_us": 442.7324799999993
+    },
+    {
+      "request_id": 0,
+      "task_id": "block_09_attention",
+      "task_type": "self_attention",
+      "device": "GPU",
+      "start_us": 19041.239680000002,
+      "finish_us": 19197.266240000004,
+      "duration_us": 156.02656000000133
+    },
+    {
+      "request_id": 0,
+      "task_id": "block_09_proj",
+      "task_type": "linear_projection",
+      "device": "GPU",
+      "start_us": 19197.266240000004,
+      "finish_us": 19349.510400000003,
+      "duration_us": 152.24415999999866
+    },
+    {
+      "request_id": 0,
+      "task_id": "block_09_residual1",
+      "task_type": "residual_add",
+      "device": "GPU",
+      "start_us": 19349.510400000003,
+      "finish_us": 19367.857600000003,
+      "duration_us": 18.34720000000109
+    },
+    {
+      "request_id": 0,
+      "task_id": "block_09_norm2",
+      "task_type": "layer_norm",
+      "device": "GPU",
+      "start_us": 19367.857600000003,
+      "finish_us": 19389.987200000003,
+      "duration_us": 22.129600000000277
+    },
+    {
+      "request_id": 0,
+      "task_id": "block_09_fc1",
+      "task_type": "linear_ffn1",
+      "device": "GPU",
+      "start_us": 19389.987200000003,
+      "finish_us": 19977.963840000004,
+      "duration_us": 587.9766400000013
+    },
+    {
+      "request_id": 0,
+      "task_id": "block_09_gelu",
+      "task_type": "gelu",
+      "device": "GPU",
+      "start_us": 19977.963840000004,
+      "finish_us": 20015.223040000004,
+      "duration_us": 37.25920000000049
+    },
+    {
+      "request_id": 0,
+      "task_id": "block_09_fc2",
+      "task_type": "linear_ffn2",
+      "device": "GPU",
+      "start_us": 20015.223040000004,
+      "finish_us": 20603.199680000005,
+      "duration_us": 587.9766400000013
+    },
+    {
+      "request_id": 0,
+      "task_id": "block_09_residual2",
+      "task_type": "residual_add",
+      "device": "GPU",
+      "start_us": 20603.199680000005,
+      "finish_us": 20621.54688000001,
+      "duration_us": 18.34720000000109
+    },
+    {
+      "request_id": 0,
+      "task_id": "block_10_norm1",
+      "task_type": "layer_norm",
+      "device": "GPU",
+      "start_us": 20621.54688000001,
+      "finish_us": 20643.67648000001,
+      "duration_us": 22.129600000000277
+    },
+    {
+      "request_id": 0,
+      "task_id": "block_10_qkv",
+      "task_type": "linear_qkv",
+      "device": "GPU",
+      "start_us": 20643.67648000001,
+      "finish_us": 21086.408960000008,
+      "duration_us": 442.7324799999993
+    },
+    {
+      "request_id": 0,
+      "task_id": "block_10_attention",
+      "task_type": "self_attention",
+      "device": "GPU",
+      "start_us": 21086.408960000008,
+      "finish_us": 21242.43552000001,
+      "duration_us": 156.02656000000133
+    },
+    {
+      "request_id": 0,
+      "task_id": "block_10_proj",
+      "task_type": "linear_projection",
+      "device": "GPU",
+      "start_us": 21242.43552000001,
+      "finish_us": 21394.67968000001,
+      "duration_us": 152.24415999999866
+    },
+    {
+      "request_id": 0,
+      "task_id": "block_10_residual1",
+      "task_type": "residual_add",
+      "device": "GPU",
+      "start_us": 21394.67968000001,
+      "finish_us": 21413.02688000001,
+      "duration_us": 18.34720000000109
+    },
+    {
+      "request_id": 0,
+      "task_id": "block_10_norm2",
+      "task_type": "layer_norm",
+      "device": "GPU",
+      "start_us": 21413.02688000001,
+      "finish_us": 21435.15648000001,
+      "duration_us": 22.129600000000277
+    },
+    {
+      "request_id": 0,
+      "task_id": "block_10_fc1",
+      "task_type": "linear_ffn1",
+      "device": "GPU",
+      "start_us": 21435.15648000001,
+      "finish_us": 22023.13312000001,
+      "duration_us": 587.9766400000013
+    },
+    {
+      "request_id": 0,
+      "task_id": "block_10_gelu",
+      "task_type": "gelu",
+      "device": "GPU",
+      "start_us": 22023.13312000001,
+      "finish_us": 22060.39232000001,
+      "duration_us": 37.25920000000049
+    },
+    {
+      "request_id": 0,
+      "task_id": "block_10_fc2",
+      "task_type": "linear_ffn2",
+      "device": "GPU",
+      "start_us": 22060.39232000001,
+      "finish_us": 22648.36896000001,
+      "duration_us": 587.9766400000013
+    },
+    {
+      "request_id": 0,
+      "task_id": "block_10_residual2",
+      "task_type": "residual_add",
+      "device": "GPU",
+      "start_us": 22648.36896000001,
+      "finish_us": 22666.716160000014,
+      "duration_us": 18.34720000000109
+    },
+    {
+      "request_id": 0,
+      "task_id": "block_11_norm1",
+      "task_type": "layer_norm",
+      "device": "GPU",
+      "start_us": 22666.716160000014,
+      "finish_us": 22688.845760000015,
+      "duration_us": 22.129600000000277
+    },
+    {
+      "request_id": 0,
+      "task_id": "block_11_qkv",
+      "task_type": "linear_qkv",
+      "device": "GPU",
+      "start_us": 22688.845760000015,
+      "finish_us": 23131.578240000013,
+      "duration_us": 442.7324799999993
+    },
+    {
+      "request_id": 0,
+      "task_id": "block_11_attention",
+      "task_type": "self_attention",
+      "device": "GPU",
+      "start_us": 23131.578240000013,
+      "finish_us": 23287.604800000016,
+      "duration_us": 156.02656000000133
+    },
+    {
+      "request_id": 0,
+      "task_id": "block_11_proj",
+      "task_type": "linear_projection",
+      "device": "GPU",
+      "start_us": 23287.604800000016,
+      "finish_us": 23439.848960000014,
+      "duration_us": 152.24415999999866
+    },
+    {
+      "request_id": 0,
+      "task_id": "block_11_residual1",
+      "task_type": "residual_add",
+      "device": "GPU",
+      "start_us": 23439.848960000014,
+      "finish_us": 23458.196160000014,
+      "duration_us": 18.34720000000109
+    },
+    {
+      "request_id": 0,
+      "task_id": "block_11_norm2",
+      "task_type": "layer_norm",
+      "device": "GPU",
+      "start_us": 23458.196160000014,
+      "finish_us": 23480.325760000014,
+      "duration_us": 22.129600000000277
+    },
+    {
+      "request_id": 0,
+      "task_id": "block_11_fc1",
+      "task_type": "linear_ffn1",
+      "device": "GPU",
+      "start_us": 23480.325760000014,
+      "finish_us": 24068.302400000015,
+      "duration_us": 587.9766400000013
+    },
+    {
+      "request_id": 0,
+      "task_id": "block_11_gelu",
+      "task_type": "gelu",
+      "device": "GPU",
+      "start_us": 24068.302400000015,
+      "finish_us": 24105.561600000015,
+      "duration_us": 37.25920000000049
+    },
+    {
+      "request_id": 0,
+      "task_id": "block_11_fc2",
+      "task_type": "linear_ffn2",
+      "device": "GPU",
+      "start_us": 24105.561600000015,
+      "finish_us": 24693.538240000016,
+      "duration_us": 587.9766400000013
+    },
+    {
+      "request_id": 0,
+      "task_id": "block_11_residual2",
+      "task_type": "residual_add",
+      "device": "GPU",
+      "start_us": 24693.538240000016,
+      "finish_us": 24711.88544000002,
+      "duration_us": 18.34720000000109
+    },
+    {
+      "request_id": 0,
+      "task_id": "final_norm",
+      "task_type": "layer_norm",
+      "device": "GPU",
+      "start_us": 24711.88544000002,
+      "finish_us": 24734.01504000002,
+      "duration_us": 22.129600000000277
+    },
+    {
+      "request_id": 0,
+      "task_id": "class_token_select",
+      "task_type": "class_token_select",
+      "device": "GPU",
+      "start_us": 24734.01504000002,
+      "finish_us": 24741.053440000018,
+      "duration_us": 7.038399999999278
+    },
+    {
+      "request_id": 0,
+      "task_id": "classifier",
+      "task_type": "linear_classifier",
+      "device": "GPU",
+      "start_us": 24741.053440000018,
+      "finish_us": 24749.01344000002,
+      "duration_us": 7.960000000001299
+    }
+  ],
+  "transfers": []
+}

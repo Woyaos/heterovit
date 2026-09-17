@@ -1,0 +1,631 @@
+{
+  "valid_for_target_prediction": false,
+  "execution_mode": "analytical_fixed_placement_replay_no_simgrid",
+  "capability_status": "unverified_simulation_assumption",
+  "cost_accounting": "each task once; each device-crossing DAG edge once in full replay; DP charges only region boundary crossings",
+  "region_objective": "sum of serial interval costs, not full-DAG makespan",
+  "regions": [
+    {
+      "id": "block_00",
+      "task_ids": [
+        "block_00_fc1",
+        "block_00_gelu",
+        "block_00_fc2"
+      ],
+      "interval_cost_us": 638.29952,
+      "blocks": [
+        {
+          "task_ids": [
+            "block_00_fc1",
+            "block_00_gelu",
+            "block_00_fc2"
+          ],
+          "device": "FPGA",
+          "compute_us": 332.74752,
+          "input_transfer_us": 152.776
+        }
+      ],
+      "terminal_device": "FPGA",
+      "rejected_candidates": [
+        {
+          "start": 0,
+          "end": 2,
+          "device": "FPGA",
+          "reason": "no declared FPGA block implementation"
+        },
+        {
+          "start": 1,
+          "end": 2,
+          "device": "FPGA",
+          "reason": "no declared FPGA block implementation"
+        },
+        {
+          "start": 1,
+          "end": 3,
+          "device": "FPGA",
+          "reason": "no declared FPGA block implementation"
+        }
+      ],
+      "candidate_count": 9,
+      "gpu_interval_us": 1213.21248,
+      "full_fpga_compute_us": 332.74752,
+      "full_fpga_boundary_transfer_us": 305.552,
+      "full_fpga_interval_us": 638.29952,
+      "full_fpga_net_gain_us": 574.9129599999999,
+      "full_fpga_rejected_reason": null
+    },
+    {
+      "id": "block_01",
+      "task_ids": [
+        "block_01_fc1",
+        "block_01_gelu",
+        "block_01_fc2"
+      ],
+      "interval_cost_us": 638.29952,
+      "blocks": [
+        {
+          "task_ids": [
+            "block_01_fc1",
+            "block_01_gelu",
+            "block_01_fc2"
+          ],
+          "device": "FPGA",
+          "compute_us": 332.74752,
+          "input_transfer_us": 152.776
+        }
+      ],
+      "terminal_device": "FPGA",
+      "rejected_candidates": [
+        {
+          "start": 0,
+          "end": 2,
+          "device": "FPGA",
+          "reason": "no declared FPGA block implementation"
+        },
+        {
+          "start": 1,
+          "end": 2,
+          "device": "FPGA",
+          "reason": "no declared FPGA block implementation"
+        },
+        {
+          "start": 1,
+          "end": 3,
+          "device": "FPGA",
+          "reason": "no declared FPGA block implementation"
+        }
+      ],
+      "candidate_count": 9,
+      "gpu_interval_us": 1213.21248,
+      "full_fpga_compute_us": 332.74752,
+      "full_fpga_boundary_transfer_us": 305.552,
+      "full_fpga_interval_us": 638.29952,
+      "full_fpga_net_gain_us": 574.9129599999999,
+      "full_fpga_rejected_reason": null
+    },
+    {
+      "id": "block_02",
+      "task_ids": [
+        "block_02_fc1",
+        "block_02_gelu",
+        "block_02_fc2"
+      ],
+      "interval_cost_us": 638.29952,
+      "blocks": [
+        {
+          "task_ids": [
+            "block_02_fc1",
+            "block_02_gelu",
+            "block_02_fc2"
+          ],
+          "device": "FPGA",
+          "compute_us": 332.74752,
+          "input_transfer_us": 152.776
+        }
+      ],
+      "terminal_device": "FPGA",
+      "rejected_candidates": [
+        {
+          "start": 0,
+          "end": 2,
+          "device": "FPGA",
+          "reason": "no declared FPGA block implementation"
+        },
+        {
+          "start": 1,
+          "end": 2,
+          "device": "FPGA",
+          "reason": "no declared FPGA block implementation"
+        },
+        {
+          "start": 1,
+          "end": 3,
+          "device": "FPGA",
+          "reason": "no declared FPGA block implementation"
+        }
+      ],
+      "candidate_count": 9,
+      "gpu_interval_us": 1213.21248,
+      "full_fpga_compute_us": 332.74752,
+      "full_fpga_boundary_transfer_us": 305.552,
+      "full_fpga_interval_us": 638.29952,
+      "full_fpga_net_gain_us": 574.9129599999999,
+      "full_fpga_rejected_reason": null
+    },
+    {
+      "id": "block_03",
+      "task_ids": [
+        "block_03_fc1",
+        "block_03_gelu",
+        "block_03_fc2"
+      ],
+      "interval_cost_us": 638.29952,
+      "blocks": [
+        {
+          "task_ids": [
+            "block_03_fc1",
+            "block_03_gelu",
+            "block_03_fc2"
+          ],
+          "device": "FPGA",
+          "compute_us": 332.74752,
+          "input_transfer_us": 152.776
+        }
+      ],
+      "terminal_device": "FPGA",
+      "rejected_candidates": [
+        {
+          "start": 0,
+          "end": 2,
+          "device": "FPGA",
+          "reason": "no declared FPGA block implementation"
+        },
+        {
+          "start": 1,
+          "end": 2,
+          "device": "FPGA",
+          "reason": "no declared FPGA block implementation"
+        },
+        {
+          "start": 1,
+          "end": 3,
+          "device": "FPGA",
+          "reason": "no declared FPGA block implementation"
+        }
+      ],
+      "candidate_count": 9,
+      "gpu_interval_us": 1213.21248,
+      "full_fpga_compute_us": 332.74752,
+      "full_fpga_boundary_transfer_us": 305.552,
+      "full_fpga_interval_us": 638.29952,
+      "full_fpga_net_gain_us": 574.9129599999999,
+      "full_fpga_rejected_reason": null
+    },
+    {
+      "id": "block_04",
+      "task_ids": [
+        "block_04_fc1",
+        "block_04_gelu",
+        "block_04_fc2"
+      ],
+      "interval_cost_us": 638.29952,
+      "blocks": [
+        {
+          "task_ids": [
+            "block_04_fc1",
+            "block_04_gelu",
+            "block_04_fc2"
+          ],
+          "device": "FPGA",
+          "compute_us": 332.74752,
+          "input_transfer_us": 152.776
+        }
+      ],
+      "terminal_device": "FPGA",
+      "rejected_candidates": [
+        {
+          "start": 0,
+          "end": 2,
+          "device": "FPGA",
+          "reason": "no declared FPGA block implementation"
+        },
+        {
+          "start": 1,
+          "end": 2,
+          "device": "FPGA",
+          "reason": "no declared FPGA block implementation"
+        },
+        {
+          "start": 1,
+          "end": 3,
+          "device": "FPGA",
+          "reason": "no declared FPGA block implementation"
+        }
+      ],
+      "candidate_count": 9,
+      "gpu_interval_us": 1213.21248,
+      "full_fpga_compute_us": 332.74752,
+      "full_fpga_boundary_transfer_us": 305.552,
+      "full_fpga_interval_us": 638.29952,
+      "full_fpga_net_gain_us": 574.9129599999999,
+      "full_fpga_rejected_reason": null
+    },
+    {
+      "id": "block_05",
+      "task_ids": [
+        "block_05_fc1",
+        "block_05_gelu",
+        "block_05_fc2"
+      ],
+      "interval_cost_us": 638.29952,
+      "blocks": [
+        {
+          "task_ids": [
+            "block_05_fc1",
+            "block_05_gelu",
+            "block_05_fc2"
+          ],
+          "device": "FPGA",
+          "compute_us": 332.74752,
+          "input_transfer_us": 152.776
+        }
+      ],
+      "terminal_device": "FPGA",
+      "rejected_candidates": [
+        {
+          "start": 0,
+          "end": 2,
+          "device": "FPGA",
+          "reason": "no declared FPGA block implementation"
+        },
+        {
+          "start": 1,
+          "end": 2,
+          "device": "FPGA",
+          "reason": "no declared FPGA block implementation"
+        },
+        {
+          "start": 1,
+          "end": 3,
+          "device": "FPGA",
+          "reason": "no declared FPGA block implementation"
+        }
+      ],
+      "candidate_count": 9,
+      "gpu_interval_us": 1213.21248,
+      "full_fpga_compute_us": 332.74752,
+      "full_fpga_boundary_transfer_us": 305.552,
+      "full_fpga_interval_us": 638.29952,
+      "full_fpga_net_gain_us": 574.9129599999999,
+      "full_fpga_rejected_reason": null
+    },
+    {
+      "id": "block_06",
+      "task_ids": [
+        "block_06_fc1",
+        "block_06_gelu",
+        "block_06_fc2"
+      ],
+      "interval_cost_us": 638.29952,
+      "blocks": [
+        {
+          "task_ids": [
+            "block_06_fc1",
+            "block_06_gelu",
+            "block_06_fc2"
+          ],
+          "device": "FPGA",
+          "compute_us": 332.74752,
+          "input_transfer_us": 152.776
+        }
+      ],
+      "terminal_device": "FPGA",
+      "rejected_candidates": [
+        {
+          "start": 0,
+          "end": 2,
+          "device": "FPGA",
+          "reason": "no declared FPGA block implementation"
+        },
+        {
+          "start": 1,
+          "end": 2,
+          "device": "FPGA",
+          "reason": "no declared FPGA block implementation"
+        },
+        {
+          "start": 1,
+          "end": 3,
+          "device": "FPGA",
+          "reason": "no declared FPGA block implementation"
+        }
+      ],
+      "candidate_count": 9,
+      "gpu_interval_us": 1213.21248,
+      "full_fpga_compute_us": 332.74752,
+      "full_fpga_boundary_transfer_us": 305.552,
+      "full_fpga_interval_us": 638.29952,
+      "full_fpga_net_gain_us": 574.9129599999999,
+      "full_fpga_rejected_reason": null
+    },
+    {
+      "id": "block_07",
+      "task_ids": [
+        "block_07_fc1",
+        "block_07_gelu",
+        "block_07_fc2"
+      ],
+      "interval_cost_us": 638.29952,
+      "blocks": [
+        {
+          "task_ids": [
+            "block_07_fc1",
+            "block_07_gelu",
+            "block_07_fc2"
+          ],
+          "device": "FPGA",
+          "compute_us": 332.74752,
+          "input_transfer_us": 152.776
+        }
+      ],
+      "terminal_device": "FPGA",
+      "rejected_candidates": [
+        {
+          "start": 0,
+          "end": 2,
+          "device": "FPGA",
+          "reason": "no declared FPGA block implementation"
+        },
+        {
+          "start": 1,
+          "end": 2,
+          "device": "FPGA",
+          "reason": "no declared FPGA block implementation"
+        },
+        {
+          "start": 1,
+          "end": 3,
+          "device": "FPGA",
+          "reason": "no declared FPGA block implementation"
+        }
+      ],
+      "candidate_count": 9,
+      "gpu_interval_us": 1213.21248,
+      "full_fpga_compute_us": 332.74752,
+      "full_fpga_boundary_transfer_us": 305.552,
+      "full_fpga_interval_us": 638.29952,
+      "full_fpga_net_gain_us": 574.9129599999999,
+      "full_fpga_rejected_reason": null
+    },
+    {
+      "id": "block_08",
+      "task_ids": [
+        "block_08_fc1",
+        "block_08_gelu",
+        "block_08_fc2"
+      ],
+      "interval_cost_us": 638.29952,
+      "blocks": [
+        {
+          "task_ids": [
+            "block_08_fc1",
+            "block_08_gelu",
+            "block_08_fc2"
+          ],
+          "device": "FPGA",
+          "compute_us": 332.74752,
+          "input_transfer_us": 152.776
+        }
+      ],
+      "terminal_device": "FPGA",
+      "rejected_candidates": [
+        {
+          "start": 0,
+          "end": 2,
+          "device": "FPGA",
+          "reason": "no declared FPGA block implementation"
+        },
+        {
+          "start": 1,
+          "end": 2,
+          "device": "FPGA",
+          "reason": "no declared FPGA block implementation"
+        },
+        {
+          "start": 1,
+          "end": 3,
+          "device": "FPGA",
+          "reason": "no declared FPGA block implementation"
+        }
+      ],
+      "candidate_count": 9,
+      "gpu_interval_us": 1213.21248,
+      "full_fpga_compute_us": 332.74752,
+      "full_fpga_boundary_transfer_us": 305.552,
+      "full_fpga_interval_us": 638.29952,
+      "full_fpga_net_gain_us": 574.9129599999999,
+      "full_fpga_rejected_reason": null
+    },
+    {
+      "id": "block_09",
+      "task_ids": [
+        "block_09_fc1",
+        "block_09_gelu",
+        "block_09_fc2"
+      ],
+      "interval_cost_us": 638.29952,
+      "blocks": [
+        {
+          "task_ids": [
+            "block_09_fc1",
+            "block_09_gelu",
+            "block_09_fc2"
+          ],
+          "device": "FPGA",
+          "compute_us": 332.74752,
+          "input_transfer_us": 152.776
+        }
+      ],
+      "terminal_device": "FPGA",
+      "rejected_candidates": [
+        {
+          "start": 0,
+          "end": 2,
+          "device": "FPGA",
+          "reason": "no declared FPGA block implementation"
+        },
+        {
+          "start": 1,
+          "end": 2,
+          "device": "FPGA",
+          "reason": "no declared FPGA block implementation"
+        },
+        {
+          "start": 1,
+          "end": 3,
+          "device": "FPGA",
+          "reason": "no declared FPGA block implementation"
+        }
+      ],
+      "candidate_count": 9,
+      "gpu_interval_us": 1213.21248,
+      "full_fpga_compute_us": 332.74752,
+      "full_fpga_boundary_transfer_us": 305.552,
+      "full_fpga_interval_us": 638.29952,
+      "full_fpga_net_gain_us": 574.9129599999999,
+      "full_fpga_rejected_reason": null
+    },
+    {
+      "id": "block_10",
+      "task_ids": [
+        "block_10_fc1",
+        "block_10_gelu",
+        "block_10_fc2"
+      ],
+      "interval_cost_us": 638.29952,
+      "blocks": [
+        {
+          "task_ids": [
+            "block_10_fc1",
+            "block_10_gelu",
+            "block_10_fc2"
+          ],
+          "device": "FPGA",
+          "compute_us": 332.74752,
+          "input_transfer_us": 152.776
+        }
+      ],
+      "terminal_device": "FPGA",
+      "rejected_candidates": [
+        {
+          "start": 0,
+          "end": 2,
+          "device": "FPGA",
+          "reason": "no declared FPGA block implementation"
+        },
+        {
+          "start": 1,
+          "end": 2,
+          "device": "FPGA",
+          "reason": "no declared FPGA block implementation"
+        },
+        {
+          "start": 1,
+          "end": 3,
+          "device": "FPGA",
+          "reason": "no declared FPGA block implementation"
+        }
+      ],
+      "candidate_count": 9,
+      "gpu_interval_us": 1213.21248,
+      "full_fpga_compute_us": 332.74752,
+      "full_fpga_boundary_transfer_us": 305.552,
+      "full_fpga_interval_us": 638.29952,
+      "full_fpga_net_gain_us": 574.9129599999999,
+      "full_fpga_rejected_reason": null
+    },
+    {
+      "id": "block_11",
+      "task_ids": [
+        "block_11_fc1",
+        "block_11_gelu",
+        "block_11_fc2"
+      ],
+      "interval_cost_us": 638.29952,
+      "blocks": [
+        {
+          "task_ids": [
+            "block_11_fc1",
+            "block_11_gelu",
+            "block_11_fc2"
+          ],
+          "device": "FPGA",
+          "compute_us": 332.74752,
+          "input_transfer_us": 152.776
+        }
+      ],
+      "terminal_device": "FPGA",
+      "rejected_candidates": [
+        {
+          "start": 0,
+          "end": 2,
+          "device": "FPGA",
+          "reason": "no declared FPGA block implementation"
+        },
+        {
+          "start": 1,
+          "end": 2,
+          "device": "FPGA",
+          "reason": "no declared FPGA block implementation"
+        },
+        {
+          "start": 1,
+          "end": 3,
+          "device": "FPGA",
+          "reason": "no declared FPGA block implementation"
+        }
+      ],
+      "candidate_count": 9,
+      "gpu_interval_us": 1213.21248,
+      "full_fpga_compute_us": 332.74752,
+      "full_fpga_boundary_transfer_us": 305.552,
+      "full_fpga_interval_us": 638.29952,
+      "full_fpga_net_gain_us": 574.9129599999999,
+      "full_fpga_rejected_reason": null
+    }
+  ],
+  "rejected_regions": [],
+  "solver_time_ms": 1.1797039999983383,
+  "comparison": {
+    "gpu_only": {
+      "makespan_us": 24749.01344000001,
+      "cross_device_edges": 0,
+      "logical_cross_device_bytes": 0,
+      "physical_transfer_stages": 0
+    },
+    "static_all_linear_fpga": {
+      "makespan_us": 35591.274160000066,
+      "cross_device_edges": 97,
+      "logical_cross_device_bytes": 58099200,
+      "physical_transfer_stages": 194
+    },
+    "operator_eft": {
+      "makespan_us": 24749.01344000001,
+      "cross_device_edges": 0,
+      "logical_cross_device_bytes": 0,
+      "physical_transfer_stages": 0
+    },
+    "fixed_ffn": {
+      "makespan_us": 17850.05792000002,
+      "cross_device_edges": 24,
+      "logical_cross_device_bytes": 7262208,
+      "physical_transfer_stages": 48
+    },
+    "automatic_region_dp": {
+      "makespan_us": 17850.05792000002,
+      "cross_device_edges": 24,
+      "logical_cross_device_bytes": 7262208,
+      "physical_transfer_stages": 48
+    }
+  }
+}

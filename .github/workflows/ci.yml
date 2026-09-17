@@ -1,0 +1,29 @@
+name: core-validation
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.10", "3.11", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Automatic partition and evidence gates
+        run: python -m unittest discover -s simgrid_baseline/18_auto_block_partition -p "test*.py" -v
+      - name: Single-inference tile streaming
+        run: python -m unittest discover -s simgrid_baseline/19_single_inference_tile_streaming -p "test*.py" -v
+      - name: Strong GPU baseline gate
+        run: python -m unittest discover -s simgrid_baseline/20_strong_gpu_baseline -p "test*.py" -v
+      - name: Hardware calibration gates
+        run: python -m unittest discover -s simgrid_baseline/16_hardware_calibration -p "test*.py" -v

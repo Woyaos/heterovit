@@ -1,0 +1,482 @@
+[
+  {
+    "resource": "gpu_host",
+    "direction": "GPU_to_HOST",
+    "start_us": 983.4636800000001,
+    "finish_us": 1016.6796800000001,
+    "bytes": 302592,
+    "edge_index": 9,
+    "source": "block_00_norm2",
+    "target": "block_00_ffn_island"
+  },
+  {
+    "resource": "host_fpga_pcie",
+    "direction": "HOST_to_FPGA",
+    "start_us": 1016.6796800000001,
+    "finish_us": 1136.2396800000001,
+    "bytes": 302592,
+    "edge_index": 9,
+    "source": "block_00_norm2",
+    "target": "block_00_ffn_island"
+  },
+  {
+    "resource": "host_fpga_pcie",
+    "direction": "FPGA_to_HOST",
+    "start_us": 1468.9872,
+    "finish_us": 1588.5472,
+    "bytes": 302592,
+    "edge_index": 10,
+    "source": "block_00_ffn_island",
+    "target": "block_00_residual2"
+  },
+  {
+    "resource": "gpu_host",
+    "direction": "HOST_to_GPU",
+    "start_us": 1588.5472,
+    "finish_us": 1621.7631999999999,
+    "bytes": 302592,
+    "edge_index": 10,
+    "source": "block_00_ffn_island",
+    "target": "block_00_residual2"
+  },
+  {
+    "resource": "gpu_host",
+    "direction": "GPU_to_HOST",
+    "start_us": 2453.7200000000003,
+    "finish_us": 2486.936,
+    "bytes": 302592,
+    "edge_index": 19,
+    "source": "block_01_norm2",
+    "target": "block_01_ffn_island"
+  },
+  {
+    "resource": "host_fpga_pcie",
+    "direction": "HOST_to_FPGA",
+    "start_us": 2486.936,
+    "finish_us": 2606.496,
+    "bytes": 302592,
+    "edge_index": 19,
+    "source": "block_01_norm2",
+    "target": "block_01_ffn_island"
+  },
+  {
+    "resource": "host_fpga_pcie",
+    "direction": "FPGA_to_HOST",
+    "start_us": 2939.24352,
+    "finish_us": 3058.80352,
+    "bytes": 302592,
+    "edge_index": 20,
+    "source": "block_01_ffn_island",
+    "target": "block_01_residual2"
+  },
+  {
+    "resource": "gpu_host",
+    "direction": "HOST_to_GPU",
+    "start_us": 3058.80352,
+    "finish_us": 3092.01952,
+    "bytes": 302592,
+    "edge_index": 20,
+    "source": "block_01_ffn_island",
+    "target": "block_01_residual2"
+  },
+  {
+    "resource": "gpu_host",
+    "direction": "GPU_to_HOST",
+    "start_us": 3923.9763200000007,
+    "finish_us": 3957.1923200000006,
+    "bytes": 302592,
+    "edge_index": 29,
+    "source": "block_02_norm2",
+    "target": "block_02_ffn_island"
+  },
+  {
+    "resource": "host_fpga_pcie",
+    "direction": "HOST_to_FPGA",
+    "start_us": 3957.1923200000006,
+    "finish_us": 4076.7523200000005,
+    "bytes": 302592,
+    "edge_index": 29,
+    "source": "block_02_norm2",
+    "target": "block_02_ffn_island"
+  },
+  {
+    "resource": "host_fpga_pcie",
+    "direction": "FPGA_to_HOST",
+    "start_us": 4409.49984,
+    "finish_us": 4529.059840000001,
+    "bytes": 302592,
+    "edge_index": 30,
+    "source": "block_02_ffn_island",
+    "target": "block_02_residual2"
+  },
+  {
+    "resource": "gpu_host",
+    "direction": "HOST_to_GPU",
+    "start_us": 4529.059840000001,
+    "finish_us": 4562.275840000001,
+    "bytes": 302592,
+    "edge_index": 30,
+    "source": "block_02_ffn_island",
+    "target": "block_02_residual2"
+  },
+  {
+    "resource": "gpu_host",
+    "direction": "GPU_to_HOST",
+    "start_us": 5394.232640000002,
+    "finish_us": 5427.448640000002,
+    "bytes": 302592,
+    "edge_index": 39,
+    "source": "block_03_norm2",
+    "target": "block_03_ffn_island"
+  },
+  {
+    "resource": "host_fpga_pcie",
+    "direction": "HOST_to_FPGA",
+    "start_us": 5427.448640000002,
+    "finish_us": 5547.008640000003,
+    "bytes": 302592,
+    "edge_index": 39,
+    "source": "block_03_norm2",
+    "target": "block_03_ffn_island"
+  },
+  {
+    "resource": "host_fpga_pcie",
+    "direction": "FPGA_to_HOST",
+    "start_us": 5879.756160000003,
+    "finish_us": 5999.316160000003,
+    "bytes": 302592,
+    "edge_index": 40,
+    "source": "block_03_ffn_island",
+    "target": "block_03_residual2"
+  },
+  {
+    "resource": "gpu_host",
+    "direction": "HOST_to_GPU",
+    "start_us": 5999.316160000003,
+    "finish_us": 6032.532160000003,
+    "bytes": 302592,
+    "edge_index": 40,
+    "source": "block_03_ffn_island",
+    "target": "block_03_residual2"
+  },
+  {
+    "resource": "gpu_host",
+    "direction": "GPU_to_HOST",
+    "start_us": 6864.488960000004,
+    "finish_us": 6897.704960000005,
+    "bytes": 302592,
+    "edge_index": 49,
+    "source": "block_04_norm2",
+    "target": "block_04_ffn_island"
+  },
+  {
+    "resource": "host_fpga_pcie",
+    "direction": "HOST_to_FPGA",
+    "start_us": 6897.704960000005,
+    "finish_us": 7017.264960000005,
+    "bytes": 302592,
+    "edge_index": 49,
+    "source": "block_04_norm2",
+    "target": "block_04_ffn_island"
+  },
+  {
+    "resource": "host_fpga_pcie",
+    "direction": "FPGA_to_HOST",
+    "start_us": 7350.012480000005,
+    "finish_us": 7469.572480000005,
+    "bytes": 302592,
+    "edge_index": 50,
+    "source": "block_04_ffn_island",
+    "target": "block_04_residual2"
+  },
+  {
+    "resource": "gpu_host",
+    "direction": "HOST_to_GPU",
+    "start_us": 7469.572480000005,
+    "finish_us": 7502.788480000006,
+    "bytes": 302592,
+    "edge_index": 50,
+    "source": "block_04_ffn_island",
+    "target": "block_04_residual2"
+  },
+  {
+    "resource": "gpu_host",
+    "direction": "GPU_to_HOST",
+    "start_us": 8334.745280000006,
+    "finish_us": 8367.961280000007,
+    "bytes": 302592,
+    "edge_index": 59,
+    "source": "block_05_norm2",
+    "target": "block_05_ffn_island"
+  },
+  {
+    "resource": "host_fpga_pcie",
+    "direction": "HOST_to_FPGA",
+    "start_us": 8367.961280000007,
+    "finish_us": 8487.521280000006,
+    "bytes": 302592,
+    "edge_index": 59,
+    "source": "block_05_norm2",
+    "target": "block_05_ffn_island"
+  },
+  {
+    "resource": "host_fpga_pcie",
+    "direction": "FPGA_to_HOST",
+    "start_us": 8820.268800000007,
+    "finish_us": 8939.828800000007,
+    "bytes": 302592,
+    "edge_index": 60,
+    "source": "block_05_ffn_island",
+    "target": "block_05_residual2"
+  },
+  {
+    "resource": "gpu_host",
+    "direction": "HOST_to_GPU",
+    "start_us": 8939.828800000007,
+    "finish_us": 8973.044800000007,
+    "bytes": 302592,
+    "edge_index": 60,
+    "source": "block_05_ffn_island",
+    "target": "block_05_residual2"
+  },
+  {
+    "resource": "gpu_host",
+    "direction": "GPU_to_HOST",
+    "start_us": 9805.001600000009,
+    "finish_us": 9838.217600000009,
+    "bytes": 302592,
+    "edge_index": 69,
+    "source": "block_06_norm2",
+    "target": "block_06_ffn_island"
+  },
+  {
+    "resource": "host_fpga_pcie",
+    "direction": "HOST_to_FPGA",
+    "start_us": 9838.217600000009,
+    "finish_us": 9957.777600000009,
+    "bytes": 302592,
+    "edge_index": 69,
+    "source": "block_06_norm2",
+    "target": "block_06_ffn_island"
+  },
+  {
+    "resource": "host_fpga_pcie",
+    "direction": "FPGA_to_HOST",
+    "start_us": 10290.52512000001,
+    "finish_us": 10410.085120000009,
+    "bytes": 302592,
+    "edge_index": 70,
+    "source": "block_06_ffn_island",
+    "target": "block_06_residual2"
+  },
+  {
+    "resource": "gpu_host",
+    "direction": "HOST_to_GPU",
+    "start_us": 10410.085120000009,
+    "finish_us": 10443.30112000001,
+    "bytes": 302592,
+    "edge_index": 70,
+    "source": "block_06_ffn_island",
+    "target": "block_06_residual2"
+  },
+  {
+    "resource": "gpu_host",
+    "direction": "GPU_to_HOST",
+    "start_us": 11275.257920000011,
+    "finish_us": 11308.473920000011,
+    "bytes": 302592,
+    "edge_index": 79,
+    "source": "block_07_norm2",
+    "target": "block_07_ffn_island"
+  },
+  {
+    "resource": "host_fpga_pcie",
+    "direction": "HOST_to_FPGA",
+    "start_us": 11308.473920000011,
+    "finish_us": 11428.03392000001,
+    "bytes": 302592,
+    "edge_index": 79,
+    "source": "block_07_norm2",
+    "target": "block_07_ffn_island"
+  },
+  {
+    "resource": "host_fpga_pcie",
+    "direction": "FPGA_to_HOST",
+    "start_us": 11760.781440000012,
+    "finish_us": 11880.341440000011,
+    "bytes": 302592,
+    "edge_index": 80,
+    "source": "block_07_ffn_island",
+    "target": "block_07_residual2"
+  },
+  {
+    "resource": "gpu_host",
+    "direction": "HOST_to_GPU",
+    "start_us": 11880.341440000011,
+    "finish_us": 11913.557440000011,
+    "bytes": 302592,
+    "edge_index": 80,
+    "source": "block_07_ffn_island",
+    "target": "block_07_residual2"
+  },
+  {
+    "resource": "gpu_host",
+    "direction": "GPU_to_HOST",
+    "start_us": 12745.514240000013,
+    "finish_us": 12778.730240000014,
+    "bytes": 302592,
+    "edge_index": 89,
+    "source": "block_08_norm2",
+    "target": "block_08_ffn_island"
+  },
+  {
+    "resource": "host_fpga_pcie",
+    "direction": "HOST_to_FPGA",
+    "start_us": 12778.730240000014,
+    "finish_us": 12898.290240000013,
+    "bytes": 302592,
+    "edge_index": 89,
+    "source": "block_08_norm2",
+    "target": "block_08_ffn_island"
+  },
+  {
+    "resource": "host_fpga_pcie",
+    "direction": "FPGA_to_HOST",
+    "start_us": 13231.037760000014,
+    "finish_us": 13350.597760000013,
+    "bytes": 302592,
+    "edge_index": 90,
+    "source": "block_08_ffn_island",
+    "target": "block_08_residual2"
+  },
+  {
+    "resource": "gpu_host",
+    "direction": "HOST_to_GPU",
+    "start_us": 13350.597760000013,
+    "finish_us": 13383.813760000014,
+    "bytes": 302592,
+    "edge_index": 90,
+    "source": "block_08_ffn_island",
+    "target": "block_08_residual2"
+  },
+  {
+    "resource": "gpu_host",
+    "direction": "GPU_to_HOST",
+    "start_us": 14215.770560000015,
+    "finish_us": 14248.986560000016,
+    "bytes": 302592,
+    "edge_index": 99,
+    "source": "block_09_norm2",
+    "target": "block_09_ffn_island"
+  },
+  {
+    "resource": "host_fpga_pcie",
+    "direction": "HOST_to_FPGA",
+    "start_us": 14248.986560000016,
+    "finish_us": 14368.546560000015,
+    "bytes": 302592,
+    "edge_index": 99,
+    "source": "block_09_norm2",
+    "target": "block_09_ffn_island"
+  },
+  {
+    "resource": "host_fpga_pcie",
+    "direction": "FPGA_to_HOST",
+    "start_us": 14701.294080000016,
+    "finish_us": 14820.854080000016,
+    "bytes": 302592,
+    "edge_index": 100,
+    "source": "block_09_ffn_island",
+    "target": "block_09_residual2"
+  },
+  {
+    "resource": "gpu_host",
+    "direction": "HOST_to_GPU",
+    "start_us": 14820.854080000016,
+    "finish_us": 14854.070080000016,
+    "bytes": 302592,
+    "edge_index": 100,
+    "source": "block_09_ffn_island",
+    "target": "block_09_residual2"
+  },
+  {
+    "resource": "gpu_host",
+    "direction": "GPU_to_HOST",
+    "start_us": 15686.026880000018,
+    "finish_us": 15719.242880000018,
+    "bytes": 302592,
+    "edge_index": 109,
+    "source": "block_10_norm2",
+    "target": "block_10_ffn_island"
+  },
+  {
+    "resource": "host_fpga_pcie",
+    "direction": "HOST_to_FPGA",
+    "start_us": 15719.242880000018,
+    "finish_us": 15838.802880000017,
+    "bytes": 302592,
+    "edge_index": 109,
+    "source": "block_10_norm2",
+    "target": "block_10_ffn_island"
+  },
+  {
+    "resource": "host_fpga_pcie",
+    "direction": "FPGA_to_HOST",
+    "start_us": 16171.550400000018,
+    "finish_us": 16291.110400000018,
+    "bytes": 302592,
+    "edge_index": 110,
+    "source": "block_10_ffn_island",
+    "target": "block_10_residual2"
+  },
+  {
+    "resource": "gpu_host",
+    "direction": "HOST_to_GPU",
+    "start_us": 16291.110400000018,
+    "finish_us": 16324.326400000018,
+    "bytes": 302592,
+    "edge_index": 110,
+    "source": "block_10_ffn_island",
+    "target": "block_10_residual2"
+  },
+  {
+    "resource": "gpu_host",
+    "direction": "GPU_to_HOST",
+    "start_us": 17156.283200000016,
+    "finish_us": 17189.499200000017,
+    "bytes": 302592,
+    "edge_index": 119,
+    "source": "block_11_norm2",
+    "target": "block_11_ffn_island"
+  },
+  {
+    "resource": "host_fpga_pcie",
+    "direction": "HOST_to_FPGA",
+    "start_us": 17189.499200000017,
+    "finish_us": 17309.059200000018,
+    "bytes": 302592,
+    "edge_index": 119,
+    "source": "block_11_norm2",
+    "target": "block_11_ffn_island"
+  },
+  {
+    "resource": "host_fpga_pcie",
+    "direction": "FPGA_to_HOST",
+    "start_us": 17641.80672000002,
+    "finish_us": 17761.36672000002,
+    "bytes": 302592,
+    "edge_index": 120,
+    "source": "block_11_ffn_island",
+    "target": "block_11_residual2"
+  },
+  {
+    "resource": "gpu_host",
+    "direction": "HOST_to_GPU",
+    "start_us": 17761.36672000002,
+    "finish_us": 17794.58272000002,
+    "bytes": 302592,
+    "edge_index": 120,
+    "source": "block_11_ffn_island",
+    "target": "block_11_residual2"
+  }
+]

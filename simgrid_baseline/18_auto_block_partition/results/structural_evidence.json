@@ -1,0 +1,392 @@
+{
+  "status": "unmeasured_sensitivity_analysis",
+  "valid_for_target_prediction": false,
+  "source_model_variant": "ViT-Base/16-like",
+  "profile_name": "rf880_agx_orin_pcie_x4_hardware_informed_sensitivity",
+  "capability_status": "unverified_simulation_assumption",
+  "ffn_regions": 12,
+  "rejected_ffn_regions": [],
+  "selected_full_ffns": 12,
+  "boundary_by_ffn": [
+    {
+      "region_id": "block_00",
+      "edge_bytes_uncompressed": [
+        302592,
+        1210368,
+        1210368,
+        302592
+      ],
+      "split_logical_bytes": 3025920,
+      "fused_logical_bytes": 605184,
+      "logical_byte_reduction_ratio": 0.8,
+      "split_transfer_us": 1329.7600000000002,
+      "fused_transfer_us": 305.552,
+      "saved_internal_transfer_us": 1024.208
+    },
+    {
+      "region_id": "block_01",
+      "edge_bytes_uncompressed": [
+        302592,
+        1210368,
+        1210368,
+        302592
+      ],
+      "split_logical_bytes": 3025920,
+      "fused_logical_bytes": 605184,
+      "logical_byte_reduction_ratio": 0.8,
+      "split_transfer_us": 1329.7600000000002,
+      "fused_transfer_us": 305.552,
+      "saved_internal_transfer_us": 1024.208
+    },
+    {
+      "region_id": "block_02",
+      "edge_bytes_uncompressed": [
+        302592,
+        1210368,
+        1210368,
+        302592
+      ],
+      "split_logical_bytes": 3025920,
+      "fused_logical_bytes": 605184,
+      "logical_byte_reduction_ratio": 0.8,
+      "split_transfer_us": 1329.7600000000002,
+      "fused_transfer_us": 305.552,
+      "saved_internal_transfer_us": 1024.208
+    },
+    {
+      "region_id": "block_03",
+      "edge_bytes_uncompressed": [
+        302592,
+        1210368,
+        1210368,
+        302592
+      ],
+      "split_logical_bytes": 3025920,
+      "fused_logical_bytes": 605184,
+      "logical_byte_reduction_ratio": 0.8,
+      "split_transfer_us": 1329.7600000000002,
+      "fused_transfer_us": 305.552,
+      "saved_internal_transfer_us": 1024.208
+    },
+    {
+      "region_id": "block_04",
+      "edge_bytes_uncompressed": [
+        302592,
+        1210368,
+        1210368,
+        302592
+      ],
+      "split_logical_bytes": 3025920,
+      "fused_logical_bytes": 605184,
+      "logical_byte_reduction_ratio": 0.8,
+      "split_transfer_us": 1329.7600000000002,
+      "fused_transfer_us": 305.552,
+      "saved_internal_transfer_us": 1024.208
+    },
+    {
+      "region_id": "block_05",
+      "edge_bytes_uncompressed": [
+        302592,
+        1210368,
+        1210368,
+        302592
+      ],
+      "split_logical_bytes": 3025920,
+      "fused_logical_bytes": 605184,
+      "logical_byte_reduction_ratio": 0.8,
+      "split_transfer_us": 1329.7600000000002,
+      "fused_transfer_us": 305.552,
+      "saved_internal_transfer_us": 1024.208
+    },
+    {
+      "region_id": "block_06",
+      "edge_bytes_uncompressed": [
+        302592,
+        1210368,
+        1210368,
+        302592
+      ],
+      "split_logical_bytes": 3025920,
+      "fused_logical_bytes": 605184,
+      "logical_byte_reduction_ratio": 0.8,
+      "split_transfer_us": 1329.7600000000002,
+      "fused_transfer_us": 305.552,
+      "saved_internal_transfer_us": 1024.208
+    },
+    {
+      "region_id": "block_07",
+      "edge_bytes_uncompressed": [
+        302592,
+        1210368,
+        1210368,
+        302592
+      ],
+      "split_logical_bytes": 3025920,
+      "fused_logical_bytes": 605184,
+      "logical_byte_reduction_ratio": 0.8,
+      "split_transfer_us": 1329.7600000000002,
+      "fused_transfer_us": 305.552,
+      "saved_internal_transfer_us": 1024.208
+    },
+    {
+      "region_id": "block_08",
+      "edge_bytes_uncompressed": [
+        302592,
+        1210368,
+        1210368,
+        302592
+      ],
+      "split_logical_bytes": 3025920,
+      "fused_logical_bytes": 605184,
+      "logical_byte_reduction_ratio": 0.8,
+      "split_transfer_us": 1329.7600000000002,
+      "fused_transfer_us": 305.552,
+      "saved_internal_transfer_us": 1024.208
+    },
+    {
+      "region_id": "block_09",
+      "edge_bytes_uncompressed": [
+        302592,
+        1210368,
+        1210368,
+        302592
+      ],
+      "split_logical_bytes": 3025920,
+      "fused_logical_bytes": 605184,
+      "logical_byte_reduction_ratio": 0.8,
+      "split_transfer_us": 1329.7600000000002,
+      "fused_transfer_us": 305.552,
+      "saved_internal_transfer_us": 1024.208
+    },
+    {
+      "region_id": "block_10",
+      "edge_bytes_uncompressed": [
+        302592,
+        1210368,
+        1210368,
+        302592
+      ],
+      "split_logical_bytes": 3025920,
+      "fused_logical_bytes": 605184,
+      "logical_byte_reduction_ratio": 0.8,
+      "split_transfer_us": 1329.7600000000002,
+      "fused_transfer_us": 305.552,
+      "saved_internal_transfer_us": 1024.208
+    },
+    {
+      "region_id": "block_11",
+      "edge_bytes_uncompressed": [
+        302592,
+        1210368,
+        1210368,
+        302592
+      ],
+      "split_logical_bytes": 3025920,
+      "fused_logical_bytes": 605184,
+      "logical_byte_reduction_ratio": 0.8,
+      "split_transfer_us": 1329.7600000000002,
+      "fused_transfer_us": 305.552,
+      "saved_internal_transfer_us": 1024.208
+    }
+  ],
+  "fusion_condition_by_ffn": [
+    {
+      "region_id": "block_00",
+      "fused_kernel_supported_by_declared_capability": true,
+      "capability_rejection": null,
+      "fused_minus_split_compute_us": -22.5,
+      "saved_internal_transfer_us": 1024.208,
+      "fusion_wins_isolated_additive_cost": true,
+      "workspace_bytes_conservative": 3025920
+    },
+    {
+      "region_id": "block_01",
+      "fused_kernel_supported_by_declared_capability": true,
+      "capability_rejection": null,
+      "fused_minus_split_compute_us": -22.5,
+      "saved_internal_transfer_us": 1024.208,
+      "fusion_wins_isolated_additive_cost": true,
+      "workspace_bytes_conservative": 3025920
+    },
+    {
+      "region_id": "block_02",
+      "fused_kernel_supported_by_declared_capability": true,
+      "capability_rejection": null,
+      "fused_minus_split_compute_us": -22.5,
+      "saved_internal_transfer_us": 1024.208,
+      "fusion_wins_isolated_additive_cost": true,
+      "workspace_bytes_conservative": 3025920
+    },
+    {
+      "region_id": "block_03",
+      "fused_kernel_supported_by_declared_capability": true,
+      "capability_rejection": null,
+      "fused_minus_split_compute_us": -22.5,
+      "saved_internal_transfer_us": 1024.208,
+      "fusion_wins_isolated_additive_cost": true,
+      "workspace_bytes_conservative": 3025920
+    },
+    {
+      "region_id": "block_04",
+      "fused_kernel_supported_by_declared_capability": true,
+      "capability_rejection": null,
+      "fused_minus_split_compute_us": -22.5,
+      "saved_internal_transfer_us": 1024.208,
+      "fusion_wins_isolated_additive_cost": true,
+      "workspace_bytes_conservative": 3025920
+    },
+    {
+      "region_id": "block_05",
+      "fused_kernel_supported_by_declared_capability": true,
+      "capability_rejection": null,
+      "fused_minus_split_compute_us": -22.5,
+      "saved_internal_transfer_us": 1024.208,
+      "fusion_wins_isolated_additive_cost": true,
+      "workspace_bytes_conservative": 3025920
+    },
+    {
+      "region_id": "block_06",
+      "fused_kernel_supported_by_declared_capability": true,
+      "capability_rejection": null,
+      "fused_minus_split_compute_us": -22.5,
+      "saved_internal_transfer_us": 1024.208,
+      "fusion_wins_isolated_additive_cost": true,
+      "workspace_bytes_conservative": 3025920
+    },
+    {
+      "region_id": "block_07",
+      "fused_kernel_supported_by_declared_capability": true,
+      "capability_rejection": null,
+      "fused_minus_split_compute_us": -22.5,
+      "saved_internal_transfer_us": 1024.208,
+      "fusion_wins_isolated_additive_cost": true,
+      "workspace_bytes_conservative": 3025920
+    },
+    {
+      "region_id": "block_08",
+      "fused_kernel_supported_by_declared_capability": true,
+      "capability_rejection": null,
+      "fused_minus_split_compute_us": -22.5,
+      "saved_internal_transfer_us": 1024.208,
+      "fusion_wins_isolated_additive_cost": true,
+      "workspace_bytes_conservative": 3025920
+    },
+    {
+      "region_id": "block_09",
+      "fused_kernel_supported_by_declared_capability": true,
+      "capability_rejection": null,
+      "fused_minus_split_compute_us": -22.5,
+      "saved_internal_transfer_us": 1024.208,
+      "fusion_wins_isolated_additive_cost": true,
+      "workspace_bytes_conservative": 3025920
+    },
+    {
+      "region_id": "block_10",
+      "fused_kernel_supported_by_declared_capability": true,
+      "capability_rejection": null,
+      "fused_minus_split_compute_us": -22.5,
+      "saved_internal_transfer_us": 1024.208,
+      "fusion_wins_isolated_additive_cost": true,
+      "workspace_bytes_conservative": 3025920
+    },
+    {
+      "region_id": "block_11",
+      "fused_kernel_supported_by_declared_capability": true,
+      "capability_rejection": null,
+      "fused_minus_split_compute_us": -22.5,
+      "saved_internal_transfer_us": 1024.208,
+      "fusion_wins_isolated_additive_cost": true,
+      "workspace_bytes_conservative": 3025920
+    }
+  ],
+  "full_dag_comparison": {
+    "gpu_only": {
+      "makespan_us": 24749.01344000001,
+      "cross_device_edges": 0,
+      "logical_cross_device_bytes": 0,
+      "physical_transfer_stages": 0
+    },
+    "split_two_linears_fpga_gelu_gpu": {
+      "makespan_us": 30410.553920000028,
+      "cross_device_edges": 48,
+      "logical_cross_device_bytes": 36311040,
+      "physical_transfer_stages": 96
+    },
+    "declared_capability_auto": {
+      "makespan_us": 17850.05792000002,
+      "cross_device_edges": 24,
+      "logical_cross_device_bytes": 7262208,
+      "physical_transfer_stages": 48
+    },
+    "declared_capability_fixed_ffn": {
+      "makespan_us": 17850.05792000002,
+      "cross_device_edges": 24,
+      "logical_cross_device_bytes": 7262208,
+      "physical_transfer_stages": 48
+    },
+    "no_full_ffn_kernel_auto": {
+      "makespan_us": 24749.01344000001,
+      "cross_device_edges": 0,
+      "logical_cross_device_bytes": 0,
+      "physical_transfer_stages": 0
+    }
+  },
+  "alternative_singleton_linear_classes": {
+    "linear_qkv": {
+      "candidate_count": 12,
+      "scope": "counterfactual_singleton_kernel_support_not_rf880_capability",
+      "assumed_fpga_tasks": 12,
+      "makespan_us": 27449.669120000028,
+      "cross_device_edges": 24,
+      "logical_cross_device_bytes": 14524416,
+      "physical_transfer_stages": 48,
+      "speedup_vs_gpu_only": 0.9016142719901749
+    },
+    "linear_projection": {
+      "candidate_count": 12,
+      "scope": "counterfactual_singleton_kernel_support_not_rf880_capability",
+      "assumed_fpga_tasks": 12,
+      "makespan_us": 27189.44000000004,
+      "cross_device_edges": 24,
+      "logical_cross_device_bytes": 7262208,
+      "physical_transfer_stages": 48,
+      "speedup_vs_gpu_only": 0.9102435886873718
+    },
+    "linear_ffn1": {
+      "candidate_count": 12,
+      "scope": "counterfactual_singleton_kernel_support_not_rf880_capability",
+      "assumed_fpga_tasks": 12,
+      "makespan_us": 27579.783680000015,
+      "cross_device_edges": 24,
+      "logical_cross_device_bytes": 18155520,
+      "physical_transfer_stages": 48,
+      "speedup_vs_gpu_only": 0.8973606800965306
+    },
+    "linear_ffn2": {
+      "candidate_count": 12,
+      "scope": "counterfactual_singleton_kernel_support_not_rf880_capability",
+      "assumed_fpga_tasks": 12,
+      "makespan_us": 27579.783680000015,
+      "cross_device_edges": 24,
+      "logical_cross_device_bytes": 18155520,
+      "physical_transfer_stages": 48,
+      "speedup_vs_gpu_only": 0.8973606800965306
+    },
+    "linear_classifier": {
+      "candidate_count": 1,
+      "scope": "counterfactual_singleton_kernel_support_not_rf880_capability",
+      "assumed_fpga_tasks": 1,
+      "makespan_us": 24788.651440000012,
+      "cross_device_edges": 1,
+      "logical_cross_device_bytes": 1536,
+      "physical_transfer_stages": 2,
+      "speedup_vs_gpu_only": 0.9984009618233591
+    }
+  },
+  "limitations": [
+    "FPGA full-FFN/GELU and memory capacity are unverified capability assumptions.",
+    "Alternative Linear classes are counterfactual singleton placements, not RF880 kernels.",
+    "This does not search Attention or arbitrary branched subgraphs.",
+    "Analytical fixed-placement replay is not a board measurement or a global DAG optimum."
+  ]
+}

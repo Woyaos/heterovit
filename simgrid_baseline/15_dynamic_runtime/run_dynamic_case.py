@@ -9,7 +9,7 @@ from pathlib import Path
 from simgrid import Actor, Engine, Mailbox, Mutex, Semaphore, this_actor
 
 
-POLICIES = ("gpu_only", "latency_eft", "throughput_all", "adaptive_dual_mode")
+POLICIES = ("gpu_only", "latency_eft", "throughput_all", "adaptive_dual_mode", "fixed_manifest")
 
 
 def load_runtime(path):
@@ -48,7 +48,8 @@ def validate_buffer_inputs(placements, incoming):
             )
 
 
-def run_case(runtime, dag, profile, policy, request_count, arrival_rate, threshold, slo_us, output):
+def run_case(runtime, dag, profile, policy, request_count, arrival_rate, threshold, slo_us, output,
+             fixed_placements=None):
     cost_model = runtime.SensitivityCostModel(profile)
     tasks, incoming, outgoing = runtime.graph_indexes(dag)
     order = runtime.topological_order(dag["tasks"], dag["edges"])
@@ -64,6 +65,13 @@ def run_case(runtime, dag, profile, policy, request_count, arrival_rate, thresho
         ),
     }
     templates = {name: schedule["placements"] for name, schedule in schedules.items()}
+    if policy == "fixed_manifest":
+        if fixed_placements is None or set(fixed_placements) != set(tasks):
+            raise RuntimeError("fixed_manifest requires one placement for every DAG task")
+        for task_id, device in fixed_placements.items():
+            if device not in tasks[task_id]["candidate_devices"]:
+                raise RuntimeError(f"Unsupported fixed placement: {task_id} on {device}")
+        templates["fixed_manifest"] = fixed_placements
     for placements in templates.values():
         validate_buffer_inputs(placements, incoming)
 
@@ -339,6 +347,8 @@ def main():
     parser.add_argument("--arrival-rate", type=float, required=True)
     parser.add_argument("--adaptive-threshold", type=int, default=2)
     parser.add_argument("--slo-us", type=float, default=30000.0)
+    parser.add_argument("--placements", type=Path,
+                        help="JSON task-device map required by fixed_manifest policy")
     args = parser.parse_args()
     if args.requests < 1 or args.arrival_rate <= 0 or args.adaptive_threshold < 1:
         raise SystemExit("requests, arrival rate, and threshold must be positive")
@@ -348,6 +358,8 @@ def main():
     runtime = load_runtime(runtime_path)
     dag = json.loads(args.dag.read_text(encoding="utf-8"))
     profile = json.loads(args.profile.read_text(encoding="utf-8"))
+    fixed_placements = (json.loads(args.placements.read_text(encoding="utf-8"))
+                        if args.placements is not None else None)
     run_case(
         runtime,
         dag,
@@ -358,6 +370,7 @@ def main():
         args.adaptive_threshold,
         args.slo_us,
         args.output_directory.resolve(),
+        fixed_placements,
     )
 
 

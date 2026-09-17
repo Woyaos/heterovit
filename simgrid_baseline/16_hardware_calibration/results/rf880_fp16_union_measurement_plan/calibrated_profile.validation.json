@@ -1,0 +1,90 @@
+{
+  "valid": false,
+  "input_dags": [
+    "D:\\VS_project\\heterogeneous\\simgrid_baseline\\08_coarse_vit_dag\\results\\vit_batch1_coarse_dag.json",
+    "D:\\VS_project\\heterogeneous\\simgrid_baseline\\18_auto_block_partition\\results\\default\\mixed_dag.json"
+  ],
+  "capability_status": "unverified_simulation_assumption",
+  "expected_task_device_rows": 173,
+  "complete_task_device_rows": 0,
+  "missing_task_device_rows": [
+    [
+      "block_00_attention",
+      "GPU"
+    ],
+    [
+      "block_00_fc1",
+      "FPGA"
+    ],
+    [
+      "block_00_fc1",
+      "GPU"
+    ],
+    [
+      "block_00_fc2",
+      "FPGA"
+    ],
+    [
+      "block_00_fc2",
+      "GPU"
+    ],
+    [
+      "block_00_ffn_island",
+      "FPGA"
+    ],
+    [
+      "block_00_ffn_island",
+      "GPU"
+    ],
+    [
+      "block_00_gelu",
+      "GPU"
+    ],
+    [
+      "block_00_norm1",
+      "GPU"
+    ],
+    [
+      "block_00_norm2",
+      "GPU"
+    ]
+  ],
+  "complete_transfer_rows": 0,
+  "missing_platform_fields": [
+    "activation.precision",
+    "activation.bytes_per_element",
+    "measurement_protocol.warmup_iterations",
+    "measurement_protocol.measured_iterations",
+    "measurement_protocol.synchronization_method",
+    "devices.GPU.model",
+    "devices.GPU.power_mode",
+    "devices.GPU.clock_policy",
+    "devices.GPU.software_stack",
+    "devices.FPGA.model",
+    "devices.FPGA.pcie_interface",
+    "devices.FPGA.bitstream_or_design",
+    "devices.FPGA.clock_mhz",
+    "communication.path_kind",
+    "communication.memory_mode",
+    "communication.dma_engine",
+    "communication.supports_bidirectional_overlap",
+    "communication.supports_compute_transfer_overlap",
+    "activation_compression.enabled",
+    "activation_compression.ratio",
+    "activation_compression.encode_fixed_us",
+    "activation_compression.decode_fixed_us",
+    "activation_compression.encode_bandwidth_GBps",
+    "activation_compression.decode_bandwidth_GBps",
+    "activation_compression.source_ref",
+    "pipeline.fpga_input_buffers"
+  ],
+  "transfer_fits": {},
+  "failures": [
+    "173 task/device measurements are incomplete",
+    "26 platform fields are incomplete",
+    "FPGA capability has not been verified on the target",
+    "FPGA capability precision differs from platform precision",
+    "GPU_to_FPGA needs at least four measured payload sizes",
+    "FPGA_to_GPU needs at least four measured payload sizes"
+  ]
+}

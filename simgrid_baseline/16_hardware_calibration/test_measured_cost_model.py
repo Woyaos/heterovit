@@ -39,6 +39,22 @@ def main():
     assert model.latency_us(task, "GPU") == 10.0
     assert model.latency_us(task, "FPGA") == 4.0
     assert model.stage_latency_us("host_fpga_pcie", 1000) == 3.0
+    missing_fpga = dict(profile)
+    missing_fpga["task_costs_us"] = {"linear": {"GPU": 10.0}}
+    try:
+        runtime.SensitivityCostModel(missing_fpga).latency_us(task, "FPGA")
+    except RuntimeError as error:
+        assert "Missing measured FPGA cost" in str(error)
+    else:
+        raise AssertionError("Target FPGA cost silently fell back to an assumption")
+    missing_gpu = dict(profile)
+    missing_gpu["task_costs_us"] = {"linear": {"FPGA": 4.0}}
+    try:
+        runtime.SensitivityCostModel(missing_gpu).latency_us(task, "GPU")
+    except RuntimeError as error:
+        assert "Missing measured GPU cost" in str(error)
+    else:
+        raise AssertionError("Target GPU cost silently fell back to an assumption")
     print("measured-cost profile path: PASS")
 
 

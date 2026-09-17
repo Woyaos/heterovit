@@ -5,7 +5,10 @@
 #include <string.h>
 
 #include "hetero_cost_model.h"
-#include "vit_task_manifest.h"
+#ifndef HETERO_MANIFEST_HEADER
+#define HETERO_MANIFEST_HEADER "vit_task_manifest.h"
+#endif
+#include HETERO_MANIFEST_HEADER
 
 int main(int argc, char** argv) {
   int objective = HETERO_OBJECTIVE_LATENCY;

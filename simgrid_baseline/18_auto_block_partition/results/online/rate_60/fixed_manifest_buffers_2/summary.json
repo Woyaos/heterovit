@@ -1,0 +1,31 @@
+{
+  "profile_kind": "sensitivity_dynamic_runtime",
+  "valid_for_target_prediction": false,
+  "policy": "fixed_manifest",
+  "request_count": 64,
+  "offered_rate_requests_per_s": 60.0,
+  "arrival_interval_us": 16666.666666666668,
+  "adaptive_backlog_threshold": null,
+  "slo_us": 30000.0,
+  "mean_latency_us": 19769.11936333362,
+  "p50_latency_us": 19804.945706666724,
+  "p95_latency_us": 19804.945706667728,
+  "max_latency_us": 19804.945706667728,
+  "slo_violation_rate": 0.0,
+  "makespan_us": 1068688.500159995,
+  "achieved_throughput_requests_per_s": 59.99657191701688,
+  "finite_batch_throughput_requests_per_s": 59.886487026311656,
+  "mode_counts": {
+    "fixed_manifest": 64
+  },
+  "task_records": 6464,
+  "transfer_records": 3072,
+  "codec_resource_model": "device_compute",
+  "artifacts": {
+    "request_completion": "request_completion.csv",
+    "policy_decisions": "policy_decisions.csv",
+    "task_timeline": "task_timeline.csv",
+    "transfer_timeline": "transfer_timeline.csv",
+    "platform": "generated_platform.xml"
+  }
+}

@@ -1,0 +1,121 @@
+{
+  "status": "unmeasured_sensitivity_analysis",
+  "valid_for_target_prediction": false,
+  "profile_name": "rf880_agx_orin_pcie_x4_hardware_informed_sensitivity",
+  "model": {
+    "tokens": 197,
+    "hidden": 768,
+    "expanded": 3072,
+    "expansion": 4,
+    "bytes_per_element": 2,
+    "weight_bits": 2,
+    "input_bytes": 302592,
+    "expanded_bytes": 1210368,
+    "weight_bytes": 1179648,
+    "dispatch_us": 12.0,
+    "fc1_total_us": 145.24416,
+    "gelu_total_us": 30.2592,
+    "fc2_total_us": 145.24416
+  },
+  "whole_tensor_ffn_latency_us": 638.29952,
+  "optimistic_lower_bound_case": {
+    "mode": "end_to_end_tile_stream",
+    "dma_mode": "streaming_descriptor",
+    "architecture": "independent_fc_engines",
+    "tile_tokens": 1,
+    "buffers": 2,
+    "ffn_latency_us": 267.89695999999776,
+    "speedup_vs_monolithic": 2.3826306950254508,
+    "conservative_buffer_bytes": 30720,
+    "resident_weight_bytes": 1179648,
+    "total_local_bytes": 1210368
+  },
+  "best_pre_rtl_sweep_case": {
+    "mode": "end_to_end_tile_stream",
+    "dma_mode": "streaming_descriptor",
+    "architecture": "independent_fc_engines",
+    "tile_tokens": 8,
+    "buffers": 2,
+    "ffn_latency_us": 271.0649600000001,
+    "speedup_vs_monolithic": 2.3547843291881025,
+    "conservative_buffer_bytes": 245760,
+    "resident_weight_bytes": 1179648,
+    "total_local_bytes": 1425408
+  },
+  "recommended_initial_hls_candidate": {
+    "mode": "end_to_end_tile_stream",
+    "dma_mode": "streaming_descriptor",
+    "architecture": "independent_fc_engines",
+    "tile_tokens": 16,
+    "buffers": 2,
+    "ffn_latency_us": 282.3699200000001,
+    "speedup_vs_monolithic": 2.2605082014401527,
+    "conservative_buffer_bytes": 491520,
+    "resident_weight_bytes": 1179648,
+    "total_local_bytes": 1671168
+  },
+  "pre_rtl_candidates": [
+    {
+      "mode": "end_to_end_tile_stream",
+      "dma_mode": "streaming_descriptor",
+      "architecture": "independent_fc_engines",
+      "tile_tokens": 8,
+      "buffers": 2,
+      "ffn_latency_us": 271.0649600000001,
+      "speedup_vs_monolithic": 2.3547843291881025,
+      "conservative_buffer_bytes": 245760,
+      "resident_weight_bytes": 1179648,
+      "total_local_bytes": 1425408
+    },
+    {
+      "mode": "end_to_end_tile_stream",
+      "dma_mode": "streaming_descriptor",
+      "architecture": "independent_fc_engines",
+      "tile_tokens": 16,
+      "buffers": 2,
+      "ffn_latency_us": 282.3699200000001,
+      "speedup_vs_monolithic": 2.2605082014401527,
+      "conservative_buffer_bytes": 491520,
+      "resident_weight_bytes": 1179648,
+      "total_local_bytes": 1671168
+    },
+    {
+      "mode": "end_to_end_tile_stream",
+      "dma_mode": "streaming_descriptor",
+      "architecture": "independent_fc_engines",
+      "tile_tokens": 32,
+      "buffers": 2,
+      "ffn_latency_us": 304.2758400000001,
+      "speedup_vs_monolithic": 2.09776602703652,
+      "conservative_buffer_bytes": 983040,
+      "resident_weight_bytes": 1179648,
+      "total_local_bytes": 2162688
+    },
+    {
+      "mode": "end_to_end_tile_stream",
+      "dma_mode": "streaming_descriptor",
+      "architecture": "independent_fc_engines",
+      "tile_tokens": 64,
+      "buffers": 2,
+      "ffn_latency_us": 346.76415999999995,
+      "speedup_vs_monolithic": 1.840730945204949,
+      "conservative_buffer_bytes": 1966080,
+      "resident_weight_bytes": 1179648,
+      "total_local_bytes": 3145728
+    }
+  ],
+  "conditional_full_model_us": 13578.902720000022,
+  "hardware_requirements": [
+    "FC1, GELU, and FC2 must be concurrent FPGA processes for independent_fc_engines.",
+    "Weights must remain resident or their load cost must be added.",
+    "streaming_descriptor requires one transfer setup with chunk-level production/consumption.",
+    "DMA, FPGA compute, and reverse transfer must be able to overlap as modeled.",
+    "The conservative local-memory total must fit after routing and other RF880 logic reservations."
+  ],
+  "limitations": [
+    "All compute and communication rates are sensitivity assumptions, not board measurements.",
+    "The model optimizes one FFN inside one inference; attention remains a cross-layer barrier.",
+    "Tile-control and FIFO handshake overheads are zero until HLS reports are available.",
+    "It does not model RTL initiation intervals, timing closure, DDR arbitration, or numerical accuracy."
+  ]
+}

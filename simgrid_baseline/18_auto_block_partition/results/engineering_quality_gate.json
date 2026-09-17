@@ -1,0 +1,72 @@
+{
+  "status": "pass_with_hardware_warnings",
+  "software_ready_for_hardware_calibration": true,
+  "target_performance_claim_ready": false,
+  "why_target_claim_not_ready": [
+    "FPGA full-FFN/GELU kernel has not been measured on RF880.",
+    "Jetson GPU-only baseline has not been measured under the final runtime and precision.",
+    "PCIe/DMA path, fixed latency, bandwidth, and overlap have not been calibrated on the board.",
+    "Held-out end-to-end hardware validation has not been collected."
+  ],
+  "checks": [
+    {
+      "name": "evidence_is_not_labeled_as_hardware_prediction",
+      "status": "pass",
+      "evidence": "structural evidence valid_for_target_prediction=False",
+      "required_action": "Keep sensitivity and target-measured results in separate tables."
+    },
+    {
+      "name": "ffn_regions_are_dependency_certified",
+      "status": "pass",
+      "evidence": "found 12 FFN regions; rejected=0",
+      "required_action": "Fix DAG extraction before using FFN-level conclusions."
+    },
+    {
+      "name": "ffn_fusion_has_structural_transfer_reason",
+      "status": "pass",
+      "evidence": "all FFN regions reduce split FFN boundary bytes by 80%",
+      "required_action": "Recompute the derivation from actual edge sizes."
+    },
+    {
+      "name": "split_linear_offload_is_rejected_by_cost_model",
+      "status": "pass",
+      "evidence": "GPU-only 24.749 ms; split FFN linears 30.411 ms",
+      "required_action": "Do not offload singleton FFN Linears unless measured costs change."
+    },
+    {
+      "name": "full_ffn_is_beneficial_only_under_declared_assumption",
+      "status": "pass",
+      "evidence": "full FFN 17.850 ms; no full-FFN kernel 24.749 ms",
+      "required_action": "Verify the FPGA full-FFN/GELU kernel before claiming speedup."
+    },
+    {
+      "name": "simgrid_replay_matches_expected_task_and_transfer_counts",
+      "status": "pass",
+      "evidence": "split_ffn_linears: tasks=125, transfers=96; fixed_ffn: tasks=101, transfers=48; linear_only_auto: tasks=125, transfers=0",
+      "required_action": "Regenerate event replay before using timeline or latency numbers."
+    },
+    {
+      "name": "measurement_plan_covers_fused_and_original_dags",
+      "status": "pass",
+      "evidence": "tasks=137, fpga_rows=36, activation_bytes=2",
+      "required_action": "Regenerate the union measurement plan for the exact model precision."
+    },
+    {
+      "name": "measurement_plan_includes_key_ffn_payload_sizes",
+      "status": "pass",
+      "evidence": "302592 B boundary activations and 1210368 B expanded FFN activations are planned",
+      "required_action": "Add missing FFN payload sizes to transfer calibration."
+    },
+    {
+      "name": "heldout_end_to_end_validation_is_planned_but_not_completed",
+      "status": "warn",
+      "evidence": "measurement plan status=waiting_for_target_hardware; heldout rows=4",
+      "required_action": "Collect held-out board measurements before target-performance claims."
+    }
+  ],
+  "summary": {
+    "passes": 8,
+    "warnings": 1,
+    "blocks": 0
+  }
+}

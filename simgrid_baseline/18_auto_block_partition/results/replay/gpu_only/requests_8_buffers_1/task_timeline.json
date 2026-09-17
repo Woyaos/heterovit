@@ -1,0 +1,608 @@
+[
+  {
+    "task_id": "patch_embedding",
+    "device": "GPU",
+    "start_us": 0.0,
+    "finish_us": 151.50688
+  },
+  {
+    "task_id": "token_embedding",
+    "device": "GPU",
+    "start_us": 151.50688,
+    "finish_us": 169.85408
+  },
+  {
+    "task_id": "block_00_norm1",
+    "device": "GPU",
+    "start_us": 169.85408,
+    "finish_us": 191.98368000000002
+  },
+  {
+    "task_id": "block_00_qkv",
+    "device": "GPU",
+    "start_us": 191.98368000000002,
+    "finish_us": 634.7161600000001
+  },
+  {
+    "task_id": "block_00_attention",
+    "device": "GPU",
+    "start_us": 634.7161600000001,
+    "finish_us": 790.7427200000001
+  },
+  {
+    "task_id": "block_00_proj",
+    "device": "GPU",
+    "start_us": 790.7427200000001,
+    "finish_us": 942.98688
+  },
+  {
+    "task_id": "block_00_residual1",
+    "device": "GPU",
+    "start_us": 942.98688,
+    "finish_us": 961.3340800000001
+  },
+  {
+    "task_id": "block_00_norm2",
+    "device": "GPU",
+    "start_us": 961.3340800000001,
+    "finish_us": 983.4636800000001
+  },
+  {
+    "task_id": "block_00_ffn_island",
+    "device": "FPGA",
+    "start_us": 1136.2396800000001,
+    "finish_us": 1468.9872
+  },
+  {
+    "task_id": "block_00_residual2",
+    "device": "GPU",
+    "start_us": 1621.7631999999999,
+    "finish_us": 1640.1103999999998
+  },
+  {
+    "task_id": "block_01_norm1",
+    "device": "GPU",
+    "start_us": 1640.1103999999998,
+    "finish_us": 1662.2399999999998
+  },
+  {
+    "task_id": "block_01_qkv",
+    "device": "GPU",
+    "start_us": 1662.2399999999998,
+    "finish_us": 2104.97248
+  },
+  {
+    "task_id": "block_01_attention",
+    "device": "GPU",
+    "start_us": 2104.97248,
+    "finish_us": 2260.9990399999997
+  },
+  {
+    "task_id": "block_01_proj",
+    "device": "GPU",
+    "start_us": 2260.9990399999997,
+    "finish_us": 2413.2432
+  },
+  {
+    "task_id": "block_01_residual1",
+    "device": "GPU",
+    "start_us": 2413.2432,
+    "finish_us": 2431.5904
+  },
+  {
+    "task_id": "block_01_norm2",
+    "device": "GPU",
+    "start_us": 2431.5904,
+    "finish_us": 2453.7200000000003
+  },
+  {
+    "task_id": "block_01_ffn_island",
+    "device": "FPGA",
+    "start_us": 2606.496,
+    "finish_us": 2939.24352
+  },
+  {
+    "task_id": "block_01_residual2",
+    "device": "GPU",
+    "start_us": 3092.01952,
+    "finish_us": 3110.36672
+  },
+  {
+    "task_id": "block_02_norm1",
+    "device": "GPU",
+    "start_us": 3110.36672,
+    "finish_us": 3132.49632
+  },
+  {
+    "task_id": "block_02_qkv",
+    "device": "GPU",
+    "start_us": 3132.49632,
+    "finish_us": 3575.2288000000003
+  },
+  {
+    "task_id": "block_02_attention",
+    "device": "GPU",
+    "start_us": 3575.2288000000003,
+    "finish_us": 3731.25536
+  },
+  {
+    "task_id": "block_02_proj",
+    "device": "GPU",
+    "start_us": 3731.25536,
+    "finish_us": 3883.4995200000003
+  },
+  {
+    "task_id": "block_02_residual1",
+    "device": "GPU",
+    "start_us": 3883.4995200000003,
+    "finish_us": 3901.8467200000005
+  },
+  {
+    "task_id": "block_02_norm2",
+    "device": "GPU",
+    "start_us": 3901.8467200000005,
+    "finish_us": 3923.9763200000007
+  },
+  {
+    "task_id": "block_02_ffn_island",
+    "device": "FPGA",
+    "start_us": 4076.7523200000005,
+    "finish_us": 4409.49984
+  },
+  {
+    "task_id": "block_02_residual2",
+    "device": "GPU",
+    "start_us": 4562.275840000001,
+    "finish_us": 4580.623040000001
+  },
+  {
+    "task_id": "block_03_norm1",
+    "device": "GPU",
+    "start_us": 4580.623040000001,
+    "finish_us": 4602.7526400000015
+  },
+  {
+    "task_id": "block_03_qkv",
+    "device": "GPU",
+    "start_us": 4602.7526400000015,
+    "finish_us": 5045.485120000001
+  },
+  {
+    "task_id": "block_03_attention",
+    "device": "GPU",
+    "start_us": 5045.485120000001,
+    "finish_us": 5201.511680000001
+  },
+  {
+    "task_id": "block_03_proj",
+    "device": "GPU",
+    "start_us": 5201.511680000001,
+    "finish_us": 5353.755840000002
+  },
+  {
+    "task_id": "block_03_residual1",
+    "device": "GPU",
+    "start_us": 5353.755840000002,
+    "finish_us": 5372.103040000002
+  },
+  {
+    "task_id": "block_03_norm2",
+    "device": "GPU",
+    "start_us": 5372.103040000002,
+    "finish_us": 5394.232640000002
+  },
+  {
+    "task_id": "block_03_ffn_island",
+    "device": "FPGA",
+    "start_us": 5547.008640000003,
+    "finish_us": 5879.756160000003
+  },
+  {
+    "task_id": "block_03_residual2",
+    "device": "GPU",
+    "start_us": 6032.532160000003,
+    "finish_us": 6050.8793600000035
+  },
+  {
+    "task_id": "block_04_norm1",
+    "device": "GPU",
+    "start_us": 6050.8793600000035,
+    "finish_us": 6073.008960000004
+  },
+  {
+    "task_id": "block_04_qkv",
+    "device": "GPU",
+    "start_us": 6073.008960000004,
+    "finish_us": 6515.741440000003
+  },
+  {
+    "task_id": "block_04_attention",
+    "device": "GPU",
+    "start_us": 6515.741440000003,
+    "finish_us": 6671.768000000004
+  },
+  {
+    "task_id": "block_04_proj",
+    "device": "GPU",
+    "start_us": 6671.768000000004,
+    "finish_us": 6824.012160000004
+  },
+  {
+    "task_id": "block_04_residual1",
+    "device": "GPU",
+    "start_us": 6824.012160000004,
+    "finish_us": 6842.359360000004
+  },
+  {
+    "task_id": "block_04_norm2",
+    "device": "GPU",
+    "start_us": 6842.359360000004,
+    "finish_us": 6864.488960000004
+  },
+  {
+    "task_id": "block_04_ffn_island",
+    "device": "FPGA",
+    "start_us": 7017.264960000005,
+    "finish_us": 7350.012480000005
+  },
+  {
+    "task_id": "block_04_residual2",
+    "device": "GPU",
+    "start_us": 7502.788480000006,
+    "finish_us": 7521.135680000006
+  },
+  {
+    "task_id": "block_05_norm1",
+    "device": "GPU",
+    "start_us": 7521.135680000006,
+    "finish_us": 7543.265280000006
+  },
+  {
+    "task_id": "block_05_qkv",
+    "device": "GPU",
+    "start_us": 7543.265280000006,
+    "finish_us": 7985.997760000006
+  },
+  {
+    "task_id": "block_05_attention",
+    "device": "GPU",
+    "start_us": 7985.997760000006,
+    "finish_us": 8142.024320000006
+  },
+  {
+    "task_id": "block_05_proj",
+    "device": "GPU",
+    "start_us": 8142.024320000006,
+    "finish_us": 8294.268480000006
+  },
+  {
+    "task_id": "block_05_residual1",
+    "device": "GPU",
+    "start_us": 8294.268480000006,
+    "finish_us": 8312.615680000006
+  },
+  {
+    "task_id": "block_05_norm2",
+    "device": "GPU",
+    "start_us": 8312.615680000006,
+    "finish_us": 8334.745280000006
+  },
+  {
+    "task_id": "block_05_ffn_island",
+    "device": "FPGA",
+    "start_us": 8487.521280000006,
+    "finish_us": 8820.268800000007
+  },
+  {
+    "task_id": "block_05_residual2",
+    "device": "GPU",
+    "start_us": 8973.044800000007,
+    "finish_us": 8991.392000000007
+  },
+  {
+    "task_id": "block_06_norm1",
+    "device": "GPU",
+    "start_us": 8991.392000000007,
+    "finish_us": 9013.521600000007
+  },
+  {
+    "task_id": "block_06_qkv",
+    "device": "GPU",
+    "start_us": 9013.521600000007,
+    "finish_us": 9456.254080000008
+  },
+  {
+    "task_id": "block_06_attention",
+    "device": "GPU",
+    "start_us": 9456.254080000008,
+    "finish_us": 9612.280640000008
+  },
+  {
+    "task_id": "block_06_proj",
+    "device": "GPU",
+    "start_us": 9612.280640000008,
+    "finish_us": 9764.524800000008
+  },
+  {
+    "task_id": "block_06_residual1",
+    "device": "GPU",
+    "start_us": 9764.524800000008,
+    "finish_us": 9782.872000000008
+  },
+  {
+    "task_id": "block_06_norm2",
+    "device": "GPU",
+    "start_us": 9782.872000000008,
+    "finish_us": 9805.001600000009
+  },
+  {
+    "task_id": "block_06_ffn_island",
+    "device": "FPGA",
+    "start_us": 9957.777600000009,
+    "finish_us": 10290.52512000001
+  },
+  {
+    "task_id": "block_06_residual2",
+    "device": "GPU",
+    "start_us": 10443.30112000001,
+    "finish_us": 10461.64832000001
+  },
+  {
+    "task_id": "block_07_norm1",
+    "device": "GPU",
+    "start_us": 10461.64832000001,
+    "finish_us": 10483.77792000001
+  },
+  {
+    "task_id": "block_07_qkv",
+    "device": "GPU",
+    "start_us": 10483.77792000001,
+    "finish_us": 10926.51040000001
+  },
+  {
+    "task_id": "block_07_attention",
+    "device": "GPU",
+    "start_us": 10926.51040000001,
+    "finish_us": 11082.53696000001
+  },
+  {
+    "task_id": "block_07_proj",
+    "device": "GPU",
+    "start_us": 11082.53696000001,
+    "finish_us": 11234.78112000001
+  },
+  {
+    "task_id": "block_07_residual1",
+    "device": "GPU",
+    "start_us": 11234.78112000001,
+    "finish_us": 11253.12832000001
+  },
+  {
+    "task_id": "block_07_norm2",
+    "device": "GPU",
+    "start_us": 11253.12832000001,
+    "finish_us": 11275.257920000011
+  },
+  {
+    "task_id": "block_07_ffn_island",
+    "device": "FPGA",
+    "start_us": 11428.03392000001,
+    "finish_us": 11760.781440000012
+  },
+  {
+    "task_id": "block_07_residual2",
+    "device": "GPU",
+    "start_us": 11913.557440000011,
+    "finish_us": 11931.904640000012
+  },
+  {
+    "task_id": "block_08_norm1",
+    "device": "GPU",
+    "start_us": 11931.904640000012,
+    "finish_us": 11954.034240000012
+  },
+  {
+    "task_id": "block_08_qkv",
+    "device": "GPU",
+    "start_us": 11954.034240000012,
+    "finish_us": 12396.766720000012
+  },
+  {
+    "task_id": "block_08_attention",
+    "device": "GPU",
+    "start_us": 12396.766720000012,
+    "finish_us": 12552.793280000013
+  },
+  {
+    "task_id": "block_08_proj",
+    "device": "GPU",
+    "start_us": 12552.793280000013,
+    "finish_us": 12705.037440000013
+  },
+  {
+    "task_id": "block_08_residual1",
+    "device": "GPU",
+    "start_us": 12705.037440000013,
+    "finish_us": 12723.384640000013
+  },
+  {
+    "task_id": "block_08_norm2",
+    "device": "GPU",
+    "start_us": 12723.384640000013,
+    "finish_us": 12745.514240000013
+  },
+  {
+    "task_id": "block_08_ffn_island",
+    "device": "FPGA",
+    "start_us": 12898.290240000013,
+    "finish_us": 13231.037760000014
+  },
+  {
+    "task_id": "block_08_residual2",
+    "device": "GPU",
+    "start_us": 13383.813760000014,
+    "finish_us": 13402.160960000014
+  },
+  {
+    "task_id": "block_09_norm1",
+    "device": "GPU",
+    "start_us": 13402.160960000014,
+    "finish_us": 13424.290560000014
+  },
+  {
+    "task_id": "block_09_qkv",
+    "device": "GPU",
+    "start_us": 13424.290560000014,
+    "finish_us": 13867.023040000015
+  },
+  {
+    "task_id": "block_09_attention",
+    "device": "GPU",
+    "start_us": 13867.023040000015,
+    "finish_us": 14023.049600000015
+  },
+  {
+    "task_id": "block_09_proj",
+    "device": "GPU",
+    "start_us": 14023.049600000015,
+    "finish_us": 14175.293760000015
+  },
+  {
+    "task_id": "block_09_residual1",
+    "device": "GPU",
+    "start_us": 14175.293760000015,
+    "finish_us": 14193.640960000015
+  },
+  {
+    "task_id": "block_09_norm2",
+    "device": "GPU",
+    "start_us": 14193.640960000015,
+    "finish_us": 14215.770560000015
+  },
+  {
+    "task_id": "block_09_ffn_island",
+    "device": "FPGA",
+    "start_us": 14368.546560000015,
+    "finish_us": 14701.294080000016
+  },
+  {
+    "task_id": "block_09_residual2",
+    "device": "GPU",
+    "start_us": 14854.070080000016,
+    "finish_us": 14872.417280000016
+  },
+  {
+    "task_id": "block_10_norm1",
+    "device": "GPU",
+    "start_us": 14872.417280000016,
+    "finish_us": 14894.546880000016
+  },
+  {
+    "task_id": "block_10_qkv",
+    "device": "GPU",
+    "start_us": 14894.546880000016,
+    "finish_us": 15337.279360000017
+  },
+  {
+    "task_id": "block_10_attention",
+    "device": "GPU",
+    "start_us": 15337.279360000017,
+    "finish_us": 15493.305920000017
+  },
+  {
+    "task_id": "block_10_proj",
+    "device": "GPU",
+    "start_us": 15493.305920000017,
+    "finish_us": 15645.550080000017
+  },
+  {
+    "task_id": "block_10_residual1",
+    "device": "GPU",
+    "start_us": 15645.550080000017,
+    "finish_us": 15663.897280000017
+  },
+  {
+    "task_id": "block_10_norm2",
+    "device": "GPU",
+    "start_us": 15663.897280000017,
+    "finish_us": 15686.026880000018
+  },
+  {
+    "task_id": "block_10_ffn_island",
+    "device": "FPGA",
+    "start_us": 15838.802880000017,
+    "finish_us": 16171.550400000018
+  },
+  {
+    "task_id": "block_10_residual2",
+    "device": "GPU",
+    "start_us": 16324.326400000018,
+    "finish_us": 16342.673600000018
+  },
+  {
+    "task_id": "block_11_norm1",
+    "device": "GPU",
+    "start_us": 16342.673600000018,
+    "finish_us": 16364.803200000018
+  },
+  {
+    "task_id": "block_11_qkv",
+    "device": "GPU",
+    "start_us": 16364.803200000018,
+    "finish_us": 16807.53568000002
+  },
+  {
+    "task_id": "block_11_attention",
+    "device": "GPU",
+    "start_us": 16807.53568000002,
+    "finish_us": 16963.562240000017
+  },
+  {
+    "task_id": "block_11_proj",
+    "device": "GPU",
+    "start_us": 16963.562240000017,
+    "finish_us": 17115.806400000016
+  },
+  {
+    "task_id": "block_11_residual1",
+    "device": "GPU",
+    "start_us": 17115.806400000016,
+    "finish_us": 17134.153600000016
+  },
+  {
+    "task_id": "block_11_norm2",
+    "device": "GPU",
+    "start_us": 17134.153600000016,
+    "finish_us": 17156.283200000016
+  },
+  {
+    "task_id": "block_11_ffn_island",
+    "device": "FPGA",
+    "start_us": 17309.059200000018,
+    "finish_us": 17641.80672000002
+  },
+  {
+    "task_id": "block_11_residual2",
+    "device": "GPU",
+    "start_us": 17794.58272000002,
+    "finish_us": 17812.92992000002
+  },
+  {
+    "task_id": "final_norm",
+    "device": "GPU",
+    "start_us": 17812.92992000002,
+    "finish_us": 17835.05952000002
+  },
+  {
+    "task_id": "class_token_select",
+    "device": "GPU",
+    "start_us": 17835.05952000002,
+    "finish_us": 17842.097920000022
+  },
+  {
+    "task_id": "classifier",
+    "device": "GPU",
+    "start_us": 17842.097920000022,
+    "finish_us": 17850.05792000002
+  }
+]

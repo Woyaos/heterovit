@@ -1,0 +1,44 @@
+{
+  "policy": "gpu_only",
+  "buffers": 1,
+  "requests": 8,
+  "makespan_us": 197992.10751999938,
+  "request_completion_us": [
+    {
+      "request_id": 0,
+      "completion_us": 197936.38751999938
+    },
+    {
+      "request_id": 1,
+      "completion_us": 197944.34751999937
+    },
+    {
+      "request_id": 2,
+      "completion_us": 197952.30751999936
+    },
+    {
+      "request_id": 3,
+      "completion_us": 197960.26751999938
+    },
+    {
+      "request_id": 4,
+      "completion_us": 197968.22751999937
+    },
+    {
+      "request_id": 5,
+      "completion_us": 197976.18751999937
+    },
+    {
+      "request_id": 6,
+      "completion_us": 197984.1475199994
+    },
+    {
+      "request_id": 7,
+      "completion_us": 197992.10751999938
+    }
+  ],
+  "task_count": 1000,
+  "transfer_stage_count": 0,
+  "execution_mode": "simgrid_event_replay_sensitivity_parameters",
+  "valid_for_target_prediction": false
+}

@@ -1,0 +1,4198 @@
+{
+  "metadata": {
+    "source_raw_dag": "D:\\VS_project\\heterogeneous\\simgrid_baseline\\07_onnx_task_dag\\results\\vit_batch1_raw_dag.json",
+    "model_variant": "ViT-Base/16-like",
+    "batch": 1,
+    "activation_precision": "FP32",
+    "weights_assumed_preloaded": true,
+    "node_granularity": "coarse ViT scheduling tasks"
+  },
+  "tasks": [
+    {
+      "id": "patch_embedding",
+      "task_type": "patch_embedding",
+      "candidate_devices": [
+        "GPU"
+      ],
+      "input_shape_batch1": [
+        1,
+        3,
+        224,
+        224
+      ],
+      "output_shape_batch1": [
+        1,
+        196,
+        768
+      ],
+      "source_onnx_node_ids": [
+        "n0094",
+        "n0095",
+        "n0099",
+        "n0101",
+        "n0102",
+        "n0103"
+      ]
+    },
+    {
+      "id": "token_embedding",
+      "task_type": "token_and_position_embedding",
+      "candidate_devices": [
+        "GPU"
+      ],
+      "input_shape_batch1": [
+        1,
+        196,
+        768
+      ],
+      "output_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "source_onnx_node_ids": [
+        "n0105",
+        "n0107",
+        "n0109",
+        "n0112",
+        "n0114",
+        "n0115",
+        "n0116",
+        "n0118",
+        "n0119",
+        "n0120",
+        "n0121",
+        "n0122",
+        "n0123"
+      ]
+    },
+    {
+      "id": "block_00_norm1",
+      "task_type": "layer_norm",
+      "candidate_devices": [
+        "GPU"
+      ],
+      "input_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "output_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "source_onnx_node_ids": [
+        "n0124"
+      ]
+    },
+    {
+      "id": "block_00_qkv",
+      "task_type": "linear_qkv",
+      "candidate_devices": [
+        "GPU",
+        "FPGA"
+      ],
+      "input_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "output_shape_batch1": [
+        1,
+        197,
+        2304
+      ],
+      "source_onnx_node_ids": [
+        "n0134",
+        "n0135"
+      ]
+    },
+    {
+      "id": "block_00_attention",
+      "task_type": "self_attention",
+      "candidate_devices": [
+        "GPU"
+      ],
+      "input_shape_batch1": [
+        1,
+        197,
+        2304
+      ],
+      "output_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "source_onnx_node_ids": [
+        "n0125",
+        "n0127",
+        "n0128",
+        "n0130",
+        "n0131",
+        "n0133",
+        "n0137",
+        "n0139",
+        "n0143",
+        "n0144",
+        "n0145",
+        "n0147",
+        "n0149",
+        "n0151",
+        "n0153",
+        "n0154",
+        "n0157",
+        "n0158",
+        "n0159",
+        "n0161",
+        "n0162",
+        "n0163",
+        "n0164",
+        "n0165",
+        "n0166",
+        "n0167",
+        "n0168",
+        "n0169",
+        "n0170",
+        "n0171",
+        "n0173",
+        "n0175",
+        "n0177",
+        "n0178",
+        "n0179"
+      ]
+    },
+    {
+      "id": "block_00_proj",
+      "task_type": "linear_projection",
+      "candidate_devices": [
+        "GPU",
+        "FPGA"
+      ],
+      "input_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "output_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "source_onnx_node_ids": [
+        "n0180",
+        "n0181"
+      ]
+    },
+    {
+      "id": "block_00_residual1",
+      "task_type": "residual_add",
+      "candidate_devices": [
+        "GPU"
+      ],
+      "input_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "output_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "source_onnx_node_ids": [
+        "n0182"
+      ]
+    },
+    {
+      "id": "block_00_norm2",
+      "task_type": "layer_norm",
+      "candidate_devices": [
+        "GPU"
+      ],
+      "input_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "output_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "source_onnx_node_ids": [
+        "n0183"
+      ]
+    },
+    {
+      "id": "block_00_ffn_island",
+      "task_type": "fused_ffn_island",
+      "candidate_devices": [
+        "GPU",
+        "FPGA"
+      ],
+      "input_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "output_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "source_onnx_node_ids": [
+        "n0184",
+        "n0185",
+        "n0187",
+        "n0188",
+        "n0190",
+        "n0191",
+        "n0193",
+        "n0194",
+        "n0195"
+      ],
+      "fused_components": [
+        {
+          "id": "block_00_fc1",
+          "task_type": "linear_ffn1",
+          "candidate_devices": [
+            "GPU",
+            "FPGA"
+          ],
+          "input_shape_batch1": [
+            1,
+            197,
+            768
+          ],
+          "output_shape_batch1": [
+            1,
+            197,
+            3072
+          ],
+          "source_onnx_node_ids": [
+            "n0184",
+            "n0185"
+          ]
+        },
+        {
+          "id": "block_00_gelu",
+          "task_type": "gelu",
+          "candidate_devices": [
+            "GPU"
+          ],
+          "input_shape_batch1": [
+            1,
+            197,
+            3072
+          ],
+          "output_shape_batch1": [
+            1,
+            197,
+            3072
+          ],
+          "source_onnx_node_ids": [
+            "n0187",
+            "n0188",
+            "n0190",
+            "n0191",
+            "n0193"
+          ]
+        },
+        {
+          "id": "block_00_fc2",
+          "task_type": "linear_ffn2",
+          "candidate_devices": [
+            "GPU",
+            "FPGA"
+          ],
+          "input_shape_batch1": [
+            1,
+            197,
+            3072
+          ],
+          "output_shape_batch1": [
+            1,
+            197,
+            768
+          ],
+          "source_onnx_node_ids": [
+            "n0194",
+            "n0195"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "block_00_residual2",
+      "task_type": "residual_add",
+      "candidate_devices": [
+        "GPU"
+      ],
+      "input_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "output_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "source_onnx_node_ids": [
+        "n0196"
+      ]
+    },
+    {
+      "id": "block_01_norm1",
+      "task_type": "layer_norm",
+      "candidate_devices": [
+        "GPU"
+      ],
+      "input_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "output_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "source_onnx_node_ids": [
+        "n0197"
+      ]
+    },
+    {
+      "id": "block_01_qkv",
+      "task_type": "linear_qkv",
+      "candidate_devices": [
+        "GPU",
+        "FPGA"
+      ],
+      "input_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "output_shape_batch1": [
+        1,
+        197,
+        2304
+      ],
+      "source_onnx_node_ids": [
+        "n0207",
+        "n0208"
+      ]
+    },
+    {
+      "id": "block_01_attention",
+      "task_type": "self_attention",
+      "candidate_devices": [
+        "GPU"
+      ],
+      "input_shape_batch1": [
+        1,
+        197,
+        2304
+      ],
+      "output_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "source_onnx_node_ids": [
+        "n0198",
+        "n0200",
+        "n0201",
+        "n0203",
+        "n0204",
+        "n0206",
+        "n0210",
+        "n0212",
+        "n0216",
+        "n0217",
+        "n0218",
+        "n0220",
+        "n0222",
+        "n0224",
+        "n0226",
+        "n0227",
+        "n0230",
+        "n0231",
+        "n0232",
+        "n0234",
+        "n0235",
+        "n0236",
+        "n0237",
+        "n0238",
+        "n0239",
+        "n0240",
+        "n0241",
+        "n0242",
+        "n0243",
+        "n0244",
+        "n0246",
+        "n0248",
+        "n0250",
+        "n0251",
+        "n0252"
+      ]
+    },
+    {
+      "id": "block_01_proj",
+      "task_type": "linear_projection",
+      "candidate_devices": [
+        "GPU",
+        "FPGA"
+      ],
+      "input_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "output_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "source_onnx_node_ids": [
+        "n0253",
+        "n0254"
+      ]
+    },
+    {
+      "id": "block_01_residual1",
+      "task_type": "residual_add",
+      "candidate_devices": [
+        "GPU"
+      ],
+      "input_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "output_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "source_onnx_node_ids": [
+        "n0255"
+      ]
+    },
+    {
+      "id": "block_01_norm2",
+      "task_type": "layer_norm",
+      "candidate_devices": [
+        "GPU"
+      ],
+      "input_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "output_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "source_onnx_node_ids": [
+        "n0256"
+      ]
+    },
+    {
+      "id": "block_01_ffn_island",
+      "task_type": "fused_ffn_island",
+      "candidate_devices": [
+        "GPU",
+        "FPGA"
+      ],
+      "input_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "output_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "source_onnx_node_ids": [
+        "n0257",
+        "n0258",
+        "n0260",
+        "n0261",
+        "n0263",
+        "n0264",
+        "n0266",
+        "n0267",
+        "n0268"
+      ],
+      "fused_components": [
+        {
+          "id": "block_01_fc1",
+          "task_type": "linear_ffn1",
+          "candidate_devices": [
+            "GPU",
+            "FPGA"
+          ],
+          "input_shape_batch1": [
+            1,
+            197,
+            768
+          ],
+          "output_shape_batch1": [
+            1,
+            197,
+            3072
+          ],
+          "source_onnx_node_ids": [
+            "n0257",
+            "n0258"
+          ]
+        },
+        {
+          "id": "block_01_gelu",
+          "task_type": "gelu",
+          "candidate_devices": [
+            "GPU"
+          ],
+          "input_shape_batch1": [
+            1,
+            197,
+            3072
+          ],
+          "output_shape_batch1": [
+            1,
+            197,
+            3072
+          ],
+          "source_onnx_node_ids": [
+            "n0260",
+            "n0261",
+            "n0263",
+            "n0264",
+            "n0266"
+          ]
+        },
+        {
+          "id": "block_01_fc2",
+          "task_type": "linear_ffn2",
+          "candidate_devices": [
+            "GPU",
+            "FPGA"
+          ],
+          "input_shape_batch1": [
+            1,
+            197,
+            3072
+          ],
+          "output_shape_batch1": [
+            1,
+            197,
+            768
+          ],
+          "source_onnx_node_ids": [
+            "n0267",
+            "n0268"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "block_01_residual2",
+      "task_type": "residual_add",
+      "candidate_devices": [
+        "GPU"
+      ],
+      "input_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "output_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "source_onnx_node_ids": [
+        "n0269"
+      ]
+    },
+    {
+      "id": "block_02_norm1",
+      "task_type": "layer_norm",
+      "candidate_devices": [
+        "GPU"
+      ],
+      "input_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "output_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "source_onnx_node_ids": [
+        "n0270"
+      ]
+    },
+    {
+      "id": "block_02_qkv",
+      "task_type": "linear_qkv",
+      "candidate_devices": [
+        "GPU",
+        "FPGA"
+      ],
+      "input_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "output_shape_batch1": [
+        1,
+        197,
+        2304
+      ],
+      "source_onnx_node_ids": [
+        "n0280",
+        "n0281"
+      ]
+    },
+    {
+      "id": "block_02_attention",
+      "task_type": "self_attention",
+      "candidate_devices": [
+        "GPU"
+      ],
+      "input_shape_batch1": [
+        1,
+        197,
+        2304
+      ],
+      "output_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "source_onnx_node_ids": [
+        "n0271",
+        "n0273",
+        "n0274",
+        "n0276",
+        "n0277",
+        "n0279",
+        "n0283",
+        "n0285",
+        "n0289",
+        "n0290",
+        "n0291",
+        "n0293",
+        "n0295",
+        "n0297",
+        "n0299",
+        "n0300",
+        "n0303",
+        "n0304",
+        "n0305",
+        "n0307",
+        "n0308",
+        "n0309",
+        "n0310",
+        "n0311",
+        "n0312",
+        "n0313",
+        "n0314",
+        "n0315",
+        "n0316",
+        "n0317",
+        "n0319",
+        "n0321",
+        "n0323",
+        "n0324",
+        "n0325"
+      ]
+    },
+    {
+      "id": "block_02_proj",
+      "task_type": "linear_projection",
+      "candidate_devices": [
+        "GPU",
+        "FPGA"
+      ],
+      "input_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "output_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "source_onnx_node_ids": [
+        "n0326",
+        "n0327"
+      ]
+    },
+    {
+      "id": "block_02_residual1",
+      "task_type": "residual_add",
+      "candidate_devices": [
+        "GPU"
+      ],
+      "input_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "output_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "source_onnx_node_ids": [
+        "n0328"
+      ]
+    },
+    {
+      "id": "block_02_norm2",
+      "task_type": "layer_norm",
+      "candidate_devices": [
+        "GPU"
+      ],
+      "input_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "output_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "source_onnx_node_ids": [
+        "n0329"
+      ]
+    },
+    {
+      "id": "block_02_ffn_island",
+      "task_type": "fused_ffn_island",
+      "candidate_devices": [
+        "GPU",
+        "FPGA"
+      ],
+      "input_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "output_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "source_onnx_node_ids": [
+        "n0330",
+        "n0331",
+        "n0333",
+        "n0334",
+        "n0336",
+        "n0337",
+        "n0339",
+        "n0340",
+        "n0341"
+      ],
+      "fused_components": [
+        {
+          "id": "block_02_fc1",
+          "task_type": "linear_ffn1",
+          "candidate_devices": [
+            "GPU",
+            "FPGA"
+          ],
+          "input_shape_batch1": [
+            1,
+            197,
+            768
+          ],
+          "output_shape_batch1": [
+            1,
+            197,
+            3072
+          ],
+          "source_onnx_node_ids": [
+            "n0330",
+            "n0331"
+          ]
+        },
+        {
+          "id": "block_02_gelu",
+          "task_type": "gelu",
+          "candidate_devices": [
+            "GPU"
+          ],
+          "input_shape_batch1": [
+            1,
+            197,
+            3072
+          ],
+          "output_shape_batch1": [
+            1,
+            197,
+            3072
+          ],
+          "source_onnx_node_ids": [
+            "n0333",
+            "n0334",
+            "n0336",
+            "n0337",
+            "n0339"
+          ]
+        },
+        {
+          "id": "block_02_fc2",
+          "task_type": "linear_ffn2",
+          "candidate_devices": [
+            "GPU",
+            "FPGA"
+          ],
+          "input_shape_batch1": [
+            1,
+            197,
+            3072
+          ],
+          "output_shape_batch1": [
+            1,
+            197,
+            768
+          ],
+          "source_onnx_node_ids": [
+            "n0340",
+            "n0341"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "block_02_residual2",
+      "task_type": "residual_add",
+      "candidate_devices": [
+        "GPU"
+      ],
+      "input_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "output_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "source_onnx_node_ids": [
+        "n0342"
+      ]
+    },
+    {
+      "id": "block_03_norm1",
+      "task_type": "layer_norm",
+      "candidate_devices": [
+        "GPU"
+      ],
+      "input_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "output_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "source_onnx_node_ids": [
+        "n0343"
+      ]
+    },
+    {
+      "id": "block_03_qkv",
+      "task_type": "linear_qkv",
+      "candidate_devices": [
+        "GPU",
+        "FPGA"
+      ],
+      "input_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "output_shape_batch1": [
+        1,
+        197,
+        2304
+      ],
+      "source_onnx_node_ids": [
+        "n0353",
+        "n0354"
+      ]
+    },
+    {
+      "id": "block_03_attention",
+      "task_type": "self_attention",
+      "candidate_devices": [
+        "GPU"
+      ],
+      "input_shape_batch1": [
+        1,
+        197,
+        2304
+      ],
+      "output_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "source_onnx_node_ids": [
+        "n0344",
+        "n0346",
+        "n0347",
+        "n0349",
+        "n0350",
+        "n0352",
+        "n0356",
+        "n0358",
+        "n0362",
+        "n0363",
+        "n0364",
+        "n0366",
+        "n0368",
+        "n0370",
+        "n0372",
+        "n0373",
+        "n0376",
+        "n0377",
+        "n0378",
+        "n0380",
+        "n0381",
+        "n0382",
+        "n0383",
+        "n0384",
+        "n0385",
+        "n0386",
+        "n0387",
+        "n0388",
+        "n0389",
+        "n0390",
+        "n0392",
+        "n0394",
+        "n0396",
+        "n0397",
+        "n0398"
+      ]
+    },
+    {
+      "id": "block_03_proj",
+      "task_type": "linear_projection",
+      "candidate_devices": [
+        "GPU",
+        "FPGA"
+      ],
+      "input_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "output_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "source_onnx_node_ids": [
+        "n0399",
+        "n0400"
+      ]
+    },
+    {
+      "id": "block_03_residual1",
+      "task_type": "residual_add",
+      "candidate_devices": [
+        "GPU"
+      ],
+      "input_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "output_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "source_onnx_node_ids": [
+        "n0401"
+      ]
+    },
+    {
+      "id": "block_03_norm2",
+      "task_type": "layer_norm",
+      "candidate_devices": [
+        "GPU"
+      ],
+      "input_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "output_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "source_onnx_node_ids": [
+        "n0402"
+      ]
+    },
+    {
+      "id": "block_03_ffn_island",
+      "task_type": "fused_ffn_island",
+      "candidate_devices": [
+        "GPU",
+        "FPGA"
+      ],
+      "input_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "output_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "source_onnx_node_ids": [
+        "n0403",
+        "n0404",
+        "n0406",
+        "n0407",
+        "n0409",
+        "n0410",
+        "n0412",
+        "n0413",
+        "n0414"
+      ],
+      "fused_components": [
+        {
+          "id": "block_03_fc1",
+          "task_type": "linear_ffn1",
+          "candidate_devices": [
+            "GPU",
+            "FPGA"
+          ],
+          "input_shape_batch1": [
+            1,
+            197,
+            768
+          ],
+          "output_shape_batch1": [
+            1,
+            197,
+            3072
+          ],
+          "source_onnx_node_ids": [
+            "n0403",
+            "n0404"
+          ]
+        },
+        {
+          "id": "block_03_gelu",
+          "task_type": "gelu",
+          "candidate_devices": [
+            "GPU"
+          ],
+          "input_shape_batch1": [
+            1,
+            197,
+            3072
+          ],
+          "output_shape_batch1": [
+            1,
+            197,
+            3072
+          ],
+          "source_onnx_node_ids": [
+            "n0406",
+            "n0407",
+            "n0409",
+            "n0410",
+            "n0412"
+          ]
+        },
+        {
+          "id": "block_03_fc2",
+          "task_type": "linear_ffn2",
+          "candidate_devices": [
+            "GPU",
+            "FPGA"
+          ],
+          "input_shape_batch1": [
+            1,
+            197,
+            3072
+          ],
+          "output_shape_batch1": [
+            1,
+            197,
+            768
+          ],
+          "source_onnx_node_ids": [
+            "n0413",
+            "n0414"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "block_03_residual2",
+      "task_type": "residual_add",
+      "candidate_devices": [
+        "GPU"
+      ],
+      "input_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "output_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "source_onnx_node_ids": [
+        "n0415"
+      ]
+    },
+    {
+      "id": "block_04_norm1",
+      "task_type": "layer_norm",
+      "candidate_devices": [
+        "GPU"
+      ],
+      "input_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "output_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "source_onnx_node_ids": [
+        "n0416"
+      ]
+    },
+    {
+      "id": "block_04_qkv",
+      "task_type": "linear_qkv",
+      "candidate_devices": [
+        "GPU",
+        "FPGA"
+      ],
+      "input_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "output_shape_batch1": [
+        1,
+        197,
+        2304
+      ],
+      "source_onnx_node_ids": [
+        "n0426",
+        "n0427"
+      ]
+    },
+    {
+      "id": "block_04_attention",
+      "task_type": "self_attention",
+      "candidate_devices": [
+        "GPU"
+      ],
+      "input_shape_batch1": [
+        1,
+        197,
+        2304
+      ],
+      "output_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "source_onnx_node_ids": [
+        "n0417",
+        "n0419",
+        "n0420",
+        "n0422",
+        "n0423",
+        "n0425",
+        "n0429",
+        "n0431",
+        "n0435",
+        "n0436",
+        "n0437",
+        "n0439",
+        "n0441",
+        "n0443",
+        "n0445",
+        "n0446",
+        "n0449",
+        "n0450",
+        "n0451",
+        "n0453",
+        "n0454",
+        "n0455",
+        "n0456",
+        "n0457",
+        "n0458",
+        "n0459",
+        "n0460",
+        "n0461",
+        "n0462",
+        "n0463",
+        "n0465",
+        "n0467",
+        "n0469",
+        "n0470",
+        "n0471"
+      ]
+    },
+    {
+      "id": "block_04_proj",
+      "task_type": "linear_projection",
+      "candidate_devices": [
+        "GPU",
+        "FPGA"
+      ],
+      "input_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "output_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "source_onnx_node_ids": [
+        "n0472",
+        "n0473"
+      ]
+    },
+    {
+      "id": "block_04_residual1",
+      "task_type": "residual_add",
+      "candidate_devices": [
+        "GPU"
+      ],
+      "input_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "output_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "source_onnx_node_ids": [
+        "n0474"
+      ]
+    },
+    {
+      "id": "block_04_norm2",
+      "task_type": "layer_norm",
+      "candidate_devices": [
+        "GPU"
+      ],
+      "input_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "output_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "source_onnx_node_ids": [
+        "n0475"
+      ]
+    },
+    {
+      "id": "block_04_ffn_island",
+      "task_type": "fused_ffn_island",
+      "candidate_devices": [
+        "GPU",
+        "FPGA"
+      ],
+      "input_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "output_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "source_onnx_node_ids": [
+        "n0476",
+        "n0477",
+        "n0479",
+        "n0480",
+        "n0482",
+        "n0483",
+        "n0485",
+        "n0486",
+        "n0487"
+      ],
+      "fused_components": [
+        {
+          "id": "block_04_fc1",
+          "task_type": "linear_ffn1",
+          "candidate_devices": [
+            "GPU",
+            "FPGA"
+          ],
+          "input_shape_batch1": [
+            1,
+            197,
+            768
+          ],
+          "output_shape_batch1": [
+            1,
+            197,
+            3072
+          ],
+          "source_onnx_node_ids": [
+            "n0476",
+            "n0477"
+          ]
+        },
+        {
+          "id": "block_04_gelu",
+          "task_type": "gelu",
+          "candidate_devices": [
+            "GPU"
+          ],
+          "input_shape_batch1": [
+            1,
+            197,
+            3072
+          ],
+          "output_shape_batch1": [
+            1,
+            197,
+            3072
+          ],
+          "source_onnx_node_ids": [
+            "n0479",
+            "n0480",
+            "n0482",
+            "n0483",
+            "n0485"
+          ]
+        },
+        {
+          "id": "block_04_fc2",
+          "task_type": "linear_ffn2",
+          "candidate_devices": [
+            "GPU",
+            "FPGA"
+          ],
+          "input_shape_batch1": [
+            1,
+            197,
+            3072
+          ],
+          "output_shape_batch1": [
+            1,
+            197,
+            768
+          ],
+          "source_onnx_node_ids": [
+            "n0486",
+            "n0487"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "block_04_residual2",
+      "task_type": "residual_add",
+      "candidate_devices": [
+        "GPU"
+      ],
+      "input_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "output_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "source_onnx_node_ids": [
+        "n0488"
+      ]
+    },
+    {
+      "id": "block_05_norm1",
+      "task_type": "layer_norm",
+      "candidate_devices": [
+        "GPU"
+      ],
+      "input_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "output_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "source_onnx_node_ids": [
+        "n0489"
+      ]
+    },
+    {
+      "id": "block_05_qkv",
+      "task_type": "linear_qkv",
+      "candidate_devices": [
+        "GPU",
+        "FPGA"
+      ],
+      "input_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "output_shape_batch1": [
+        1,
+        197,
+        2304
+      ],
+      "source_onnx_node_ids": [
+        "n0499",
+        "n0500"
+      ]
+    },
+    {
+      "id": "block_05_attention",
+      "task_type": "self_attention",
+      "candidate_devices": [
+        "GPU"
+      ],
+      "input_shape_batch1": [
+        1,
+        197,
+        2304
+      ],
+      "output_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "source_onnx_node_ids": [
+        "n0490",
+        "n0492",
+        "n0493",
+        "n0495",
+        "n0496",
+        "n0498",
+        "n0502",
+        "n0504",
+        "n0508",
+        "n0509",
+        "n0510",
+        "n0512",
+        "n0514",
+        "n0516",
+        "n0518",
+        "n0519",
+        "n0522",
+        "n0523",
+        "n0524",
+        "n0526",
+        "n0527",
+        "n0528",
+        "n0529",
+        "n0530",
+        "n0531",
+        "n0532",
+        "n0533",
+        "n0534",
+        "n0535",
+        "n0536",
+        "n0538",
+        "n0540",
+        "n0542",
+        "n0543",
+        "n0544"
+      ]
+    },
+    {
+      "id": "block_05_proj",
+      "task_type": "linear_projection",
+      "candidate_devices": [
+        "GPU",
+        "FPGA"
+      ],
+      "input_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "output_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "source_onnx_node_ids": [
+        "n0545",
+        "n0546"
+      ]
+    },
+    {
+      "id": "block_05_residual1",
+      "task_type": "residual_add",
+      "candidate_devices": [
+        "GPU"
+      ],
+      "input_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "output_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "source_onnx_node_ids": [
+        "n0547"
+      ]
+    },
+    {
+      "id": "block_05_norm2",
+      "task_type": "layer_norm",
+      "candidate_devices": [
+        "GPU"
+      ],
+      "input_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "output_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "source_onnx_node_ids": [
+        "n0548"
+      ]
+    },
+    {
+      "id": "block_05_ffn_island",
+      "task_type": "fused_ffn_island",
+      "candidate_devices": [
+        "GPU",
+        "FPGA"
+      ],
+      "input_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "output_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "source_onnx_node_ids": [
+        "n0549",
+        "n0550",
+        "n0552",
+        "n0553",
+        "n0555",
+        "n0556",
+        "n0558",
+        "n0559",
+        "n0560"
+      ],
+      "fused_components": [
+        {
+          "id": "block_05_fc1",
+          "task_type": "linear_ffn1",
+          "candidate_devices": [
+            "GPU",
+            "FPGA"
+          ],
+          "input_shape_batch1": [
+            1,
+            197,
+            768
+          ],
+          "output_shape_batch1": [
+            1,
+            197,
+            3072
+          ],
+          "source_onnx_node_ids": [
+            "n0549",
+            "n0550"
+          ]
+        },
+        {
+          "id": "block_05_gelu",
+          "task_type": "gelu",
+          "candidate_devices": [
+            "GPU"
+          ],
+          "input_shape_batch1": [
+            1,
+            197,
+            3072
+          ],
+          "output_shape_batch1": [
+            1,
+            197,
+            3072
+          ],
+          "source_onnx_node_ids": [
+            "n0552",
+            "n0553",
+            "n0555",
+            "n0556",
+            "n0558"
+          ]
+        },
+        {
+          "id": "block_05_fc2",
+          "task_type": "linear_ffn2",
+          "candidate_devices": [
+            "GPU",
+            "FPGA"
+          ],
+          "input_shape_batch1": [
+            1,
+            197,
+            3072
+          ],
+          "output_shape_batch1": [
+            1,
+            197,
+            768
+          ],
+          "source_onnx_node_ids": [
+            "n0559",
+            "n0560"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "block_05_residual2",
+      "task_type": "residual_add",
+      "candidate_devices": [
+        "GPU"
+      ],
+      "input_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "output_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "source_onnx_node_ids": [
+        "n0561"
+      ]
+    },
+    {
+      "id": "block_06_norm1",
+      "task_type": "layer_norm",
+      "candidate_devices": [
+        "GPU"
+      ],
+      "input_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "output_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "source_onnx_node_ids": [
+        "n0562"
+      ]
+    },
+    {
+      "id": "block_06_qkv",
+      "task_type": "linear_qkv",
+      "candidate_devices": [
+        "GPU",
+        "FPGA"
+      ],
+      "input_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "output_shape_batch1": [
+        1,
+        197,
+        2304
+      ],
+      "source_onnx_node_ids": [
+        "n0572",
+        "n0573"
+      ]
+    },
+    {
+      "id": "block_06_attention",
+      "task_type": "self_attention",
+      "candidate_devices": [
+        "GPU"
+      ],
+      "input_shape_batch1": [
+        1,
+        197,
+        2304
+      ],
+      "output_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "source_onnx_node_ids": [
+        "n0563",
+        "n0565",
+        "n0566",
+        "n0568",
+        "n0569",
+        "n0571",
+        "n0575",
+        "n0577",
+        "n0581",
+        "n0582",
+        "n0583",
+        "n0585",
+        "n0587",
+        "n0589",
+        "n0591",
+        "n0592",
+        "n0595",
+        "n0596",
+        "n0597",
+        "n0599",
+        "n0600",
+        "n0601",
+        "n0602",
+        "n0603",
+        "n0604",
+        "n0605",
+        "n0606",
+        "n0607",
+        "n0608",
+        "n0609",
+        "n0611",
+        "n0613",
+        "n0615",
+        "n0616",
+        "n0617"
+      ]
+    },
+    {
+      "id": "block_06_proj",
+      "task_type": "linear_projection",
+      "candidate_devices": [
+        "GPU",
+        "FPGA"
+      ],
+      "input_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "output_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "source_onnx_node_ids": [
+        "n0618",
+        "n0619"
+      ]
+    },
+    {
+      "id": "block_06_residual1",
+      "task_type": "residual_add",
+      "candidate_devices": [
+        "GPU"
+      ],
+      "input_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "output_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "source_onnx_node_ids": [
+        "n0620"
+      ]
+    },
+    {
+      "id": "block_06_norm2",
+      "task_type": "layer_norm",
+      "candidate_devices": [
+        "GPU"
+      ],
+      "input_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "output_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "source_onnx_node_ids": [
+        "n0621"
+      ]
+    },
+    {
+      "id": "block_06_ffn_island",
+      "task_type": "fused_ffn_island",
+      "candidate_devices": [
+        "GPU",
+        "FPGA"
+      ],
+      "input_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "output_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "source_onnx_node_ids": [
+        "n0622",
+        "n0623",
+        "n0625",
+        "n0626",
+        "n0628",
+        "n0629",
+        "n0631",
+        "n0632",
+        "n0633"
+      ],
+      "fused_components": [
+        {
+          "id": "block_06_fc1",
+          "task_type": "linear_ffn1",
+          "candidate_devices": [
+            "GPU",
+            "FPGA"
+          ],
+          "input_shape_batch1": [
+            1,
+            197,
+            768
+          ],
+          "output_shape_batch1": [
+            1,
+            197,
+            3072
+          ],
+          "source_onnx_node_ids": [
+            "n0622",
+            "n0623"
+          ]
+        },
+        {
+          "id": "block_06_gelu",
+          "task_type": "gelu",
+          "candidate_devices": [
+            "GPU"
+          ],
+          "input_shape_batch1": [
+            1,
+            197,
+            3072
+          ],
+          "output_shape_batch1": [
+            1,
+            197,
+            3072
+          ],
+          "source_onnx_node_ids": [
+            "n0625",
+            "n0626",
+            "n0628",
+            "n0629",
+            "n0631"
+          ]
+        },
+        {
+          "id": "block_06_fc2",
+          "task_type": "linear_ffn2",
+          "candidate_devices": [
+            "GPU",
+            "FPGA"
+          ],
+          "input_shape_batch1": [
+            1,
+            197,
+            3072
+          ],
+          "output_shape_batch1": [
+            1,
+            197,
+            768
+          ],
+          "source_onnx_node_ids": [
+            "n0632",
+            "n0633"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "block_06_residual2",
+      "task_type": "residual_add",
+      "candidate_devices": [
+        "GPU"
+      ],
+      "input_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "output_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "source_onnx_node_ids": [
+        "n0634"
+      ]
+    },
+    {
+      "id": "block_07_norm1",
+      "task_type": "layer_norm",
+      "candidate_devices": [
+        "GPU"
+      ],
+      "input_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "output_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "source_onnx_node_ids": [
+        "n0635"
+      ]
+    },
+    {
+      "id": "block_07_qkv",
+      "task_type": "linear_qkv",
+      "candidate_devices": [
+        "GPU",
+        "FPGA"
+      ],
+      "input_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "output_shape_batch1": [
+        1,
+        197,
+        2304
+      ],
+      "source_onnx_node_ids": [
+        "n0645",
+        "n0646"
+      ]
+    },
+    {
+      "id": "block_07_attention",
+      "task_type": "self_attention",
+      "candidate_devices": [
+        "GPU"
+      ],
+      "input_shape_batch1": [
+        1,
+        197,
+        2304
+      ],
+      "output_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "source_onnx_node_ids": [
+        "n0636",
+        "n0638",
+        "n0639",
+        "n0641",
+        "n0642",
+        "n0644",
+        "n0648",
+        "n0650",
+        "n0654",
+        "n0655",
+        "n0656",
+        "n0658",
+        "n0660",
+        "n0662",
+        "n0664",
+        "n0665",
+        "n0668",
+        "n0669",
+        "n0670",
+        "n0672",
+        "n0673",
+        "n0674",
+        "n0675",
+        "n0676",
+        "n0677",
+        "n0678",
+        "n0679",
+        "n0680",
+        "n0681",
+        "n0682",
+        "n0684",
+        "n0686",
+        "n0688",
+        "n0689",
+        "n0690"
+      ]
+    },
+    {
+      "id": "block_07_proj",
+      "task_type": "linear_projection",
+      "candidate_devices": [
+        "GPU",
+        "FPGA"
+      ],
+      "input_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "output_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "source_onnx_node_ids": [
+        "n0691",
+        "n0692"
+      ]
+    },
+    {
+      "id": "block_07_residual1",
+      "task_type": "residual_add",
+      "candidate_devices": [
+        "GPU"
+      ],
+      "input_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "output_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "source_onnx_node_ids": [
+        "n0693"
+      ]
+    },
+    {
+      "id": "block_07_norm2",
+      "task_type": "layer_norm",
+      "candidate_devices": [
+        "GPU"
+      ],
+      "input_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "output_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "source_onnx_node_ids": [
+        "n0694"
+      ]
+    },
+    {
+      "id": "block_07_ffn_island",
+      "task_type": "fused_ffn_island",
+      "candidate_devices": [
+        "GPU",
+        "FPGA"
+      ],
+      "input_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "output_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "source_onnx_node_ids": [
+        "n0695",
+        "n0696",
+        "n0698",
+        "n0699",
+        "n0701",
+        "n0702",
+        "n0704",
+        "n0705",
+        "n0706"
+      ],
+      "fused_components": [
+        {
+          "id": "block_07_fc1",
+          "task_type": "linear_ffn1",
+          "candidate_devices": [
+            "GPU",
+            "FPGA"
+          ],
+          "input_shape_batch1": [
+            1,
+            197,
+            768
+          ],
+          "output_shape_batch1": [
+            1,
+            197,
+            3072
+          ],
+          "source_onnx_node_ids": [
+            "n0695",
+            "n0696"
+          ]
+        },
+        {
+          "id": "block_07_gelu",
+          "task_type": "gelu",
+          "candidate_devices": [
+            "GPU"
+          ],
+          "input_shape_batch1": [
+            1,
+            197,
+            3072
+          ],
+          "output_shape_batch1": [
+            1,
+            197,
+            3072
+          ],
+          "source_onnx_node_ids": [
+            "n0698",
+            "n0699",
+            "n0701",
+            "n0702",
+            "n0704"
+          ]
+        },
+        {
+          "id": "block_07_fc2",
+          "task_type": "linear_ffn2",
+          "candidate_devices": [
+            "GPU",
+            "FPGA"
+          ],
+          "input_shape_batch1": [
+            1,
+            197,
+            3072
+          ],
+          "output_shape_batch1": [
+            1,
+            197,
+            768
+          ],
+          "source_onnx_node_ids": [
+            "n0705",
+            "n0706"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "block_07_residual2",
+      "task_type": "residual_add",
+      "candidate_devices": [
+        "GPU"
+      ],
+      "input_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "output_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "source_onnx_node_ids": [
+        "n0707"
+      ]
+    },
+    {
+      "id": "block_08_norm1",
+      "task_type": "layer_norm",
+      "candidate_devices": [
+        "GPU"
+      ],
+      "input_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "output_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "source_onnx_node_ids": [
+        "n0708"
+      ]
+    },
+    {
+      "id": "block_08_qkv",
+      "task_type": "linear_qkv",
+      "candidate_devices": [
+        "GPU",
+        "FPGA"
+      ],
+      "input_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "output_shape_batch1": [
+        1,
+        197,
+        2304
+      ],
+      "source_onnx_node_ids": [
+        "n0718",
+        "n0719"
+      ]
+    },
+    {
+      "id": "block_08_attention",
+      "task_type": "self_attention",
+      "candidate_devices": [
+        "GPU"
+      ],
+      "input_shape_batch1": [
+        1,
+        197,
+        2304
+      ],
+      "output_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "source_onnx_node_ids": [
+        "n0709",
+        "n0711",
+        "n0712",
+        "n0714",
+        "n0715",
+        "n0717",
+        "n0721",
+        "n0723",
+        "n0727",
+        "n0728",
+        "n0729",
+        "n0731",
+        "n0733",
+        "n0735",
+        "n0737",
+        "n0738",
+        "n0741",
+        "n0742",
+        "n0743",
+        "n0745",
+        "n0746",
+        "n0747",
+        "n0748",
+        "n0749",
+        "n0750",
+        "n0751",
+        "n0752",
+        "n0753",
+        "n0754",
+        "n0755",
+        "n0757",
+        "n0759",
+        "n0761",
+        "n0762",
+        "n0763"
+      ]
+    },
+    {
+      "id": "block_08_proj",
+      "task_type": "linear_projection",
+      "candidate_devices": [
+        "GPU",
+        "FPGA"
+      ],
+      "input_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "output_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "source_onnx_node_ids": [
+        "n0764",
+        "n0765"
+      ]
+    },
+    {
+      "id": "block_08_residual1",
+      "task_type": "residual_add",
+      "candidate_devices": [
+        "GPU"
+      ],
+      "input_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "output_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "source_onnx_node_ids": [
+        "n0766"
+      ]
+    },
+    {
+      "id": "block_08_norm2",
+      "task_type": "layer_norm",
+      "candidate_devices": [
+        "GPU"
+      ],
+      "input_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "output_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "source_onnx_node_ids": [
+        "n0767"
+      ]
+    },
+    {
+      "id": "block_08_ffn_island",
+      "task_type": "fused_ffn_island",
+      "candidate_devices": [
+        "GPU",
+        "FPGA"
+      ],
+      "input_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "output_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "source_onnx_node_ids": [
+        "n0768",
+        "n0769",
+        "n0771",
+        "n0772",
+        "n0774",
+        "n0775",
+        "n0777",
+        "n0778",
+        "n0779"
+      ],
+      "fused_components": [
+        {
+          "id": "block_08_fc1",
+          "task_type": "linear_ffn1",
+          "candidate_devices": [
+            "GPU",
+            "FPGA"
+          ],
+          "input_shape_batch1": [
+            1,
+            197,
+            768
+          ],
+          "output_shape_batch1": [
+            1,
+            197,
+            3072
+          ],
+          "source_onnx_node_ids": [
+            "n0768",
+            "n0769"
+          ]
+        },
+        {
+          "id": "block_08_gelu",
+          "task_type": "gelu",
+          "candidate_devices": [
+            "GPU"
+          ],
+          "input_shape_batch1": [
+            1,
+            197,
+            3072
+          ],
+          "output_shape_batch1": [
+            1,
+            197,
+            3072
+          ],
+          "source_onnx_node_ids": [
+            "n0771",
+            "n0772",
+            "n0774",
+            "n0775",
+            "n0777"
+          ]
+        },
+        {
+          "id": "block_08_fc2",
+          "task_type": "linear_ffn2",
+          "candidate_devices": [
+            "GPU",
+            "FPGA"
+          ],
+          "input_shape_batch1": [
+            1,
+            197,
+            3072
+          ],
+          "output_shape_batch1": [
+            1,
+            197,
+            768
+          ],
+          "source_onnx_node_ids": [
+            "n0778",
+            "n0779"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "block_08_residual2",
+      "task_type": "residual_add",
+      "candidate_devices": [
+        "GPU"
+      ],
+      "input_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "output_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "source_onnx_node_ids": [
+        "n0780"
+      ]
+    },
+    {
+      "id": "block_09_norm1",
+      "task_type": "layer_norm",
+      "candidate_devices": [
+        "GPU"
+      ],
+      "input_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "output_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "source_onnx_node_ids": [
+        "n0781"
+      ]
+    },
+    {
+      "id": "block_09_qkv",
+      "task_type": "linear_qkv",
+      "candidate_devices": [
+        "GPU",
+        "FPGA"
+      ],
+      "input_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "output_shape_batch1": [
+        1,
+        197,
+        2304
+      ],
+      "source_onnx_node_ids": [
+        "n0791",
+        "n0792"
+      ]
+    },
+    {
+      "id": "block_09_attention",
+      "task_type": "self_attention",
+      "candidate_devices": [
+        "GPU"
+      ],
+      "input_shape_batch1": [
+        1,
+        197,
+        2304
+      ],
+      "output_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "source_onnx_node_ids": [
+        "n0782",
+        "n0784",
+        "n0785",
+        "n0787",
+        "n0788",
+        "n0790",
+        "n0794",
+        "n0796",
+        "n0800",
+        "n0801",
+        "n0802",
+        "n0804",
+        "n0806",
+        "n0808",
+        "n0810",
+        "n0811",
+        "n0814",
+        "n0815",
+        "n0816",
+        "n0818",
+        "n0819",
+        "n0820",
+        "n0821",
+        "n0822",
+        "n0823",
+        "n0824",
+        "n0825",
+        "n0826",
+        "n0827",
+        "n0828",
+        "n0830",
+        "n0832",
+        "n0834",
+        "n0835",
+        "n0836"
+      ]
+    },
+    {
+      "id": "block_09_proj",
+      "task_type": "linear_projection",
+      "candidate_devices": [
+        "GPU",
+        "FPGA"
+      ],
+      "input_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "output_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "source_onnx_node_ids": [
+        "n0837",
+        "n0838"
+      ]
+    },
+    {
+      "id": "block_09_residual1",
+      "task_type": "residual_add",
+      "candidate_devices": [
+        "GPU"
+      ],
+      "input_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "output_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "source_onnx_node_ids": [
+        "n0839"
+      ]
+    },
+    {
+      "id": "block_09_norm2",
+      "task_type": "layer_norm",
+      "candidate_devices": [
+        "GPU"
+      ],
+      "input_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "output_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "source_onnx_node_ids": [
+        "n0840"
+      ]
+    },
+    {
+      "id": "block_09_ffn_island",
+      "task_type": "fused_ffn_island",
+      "candidate_devices": [
+        "GPU",
+        "FPGA"
+      ],
+      "input_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "output_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "source_onnx_node_ids": [
+        "n0841",
+        "n0842",
+        "n0844",
+        "n0845",
+        "n0847",
+        "n0848",
+        "n0850",
+        "n0851",
+        "n0852"
+      ],
+      "fused_components": [
+        {
+          "id": "block_09_fc1",
+          "task_type": "linear_ffn1",
+          "candidate_devices": [
+            "GPU",
+            "FPGA"
+          ],
+          "input_shape_batch1": [
+            1,
+            197,
+            768
+          ],
+          "output_shape_batch1": [
+            1,
+            197,
+            3072
+          ],
+          "source_onnx_node_ids": [
+            "n0841",
+            "n0842"
+          ]
+        },
+        {
+          "id": "block_09_gelu",
+          "task_type": "gelu",
+          "candidate_devices": [
+            "GPU"
+          ],
+          "input_shape_batch1": [
+            1,
+            197,
+            3072
+          ],
+          "output_shape_batch1": [
+            1,
+            197,
+            3072
+          ],
+          "source_onnx_node_ids": [
+            "n0844",
+            "n0845",
+            "n0847",
+            "n0848",
+            "n0850"
+          ]
+        },
+        {
+          "id": "block_09_fc2",
+          "task_type": "linear_ffn2",
+          "candidate_devices": [
+            "GPU",
+            "FPGA"
+          ],
+          "input_shape_batch1": [
+            1,
+            197,
+            3072
+          ],
+          "output_shape_batch1": [
+            1,
+            197,
+            768
+          ],
+          "source_onnx_node_ids": [
+            "n0851",
+            "n0852"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "block_09_residual2",
+      "task_type": "residual_add",
+      "candidate_devices": [
+        "GPU"
+      ],
+      "input_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "output_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "source_onnx_node_ids": [
+        "n0853"
+      ]
+    },
+    {
+      "id": "block_10_norm1",
+      "task_type": "layer_norm",
+      "candidate_devices": [
+        "GPU"
+      ],
+      "input_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "output_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "source_onnx_node_ids": [
+        "n0854"
+      ]
+    },
+    {
+      "id": "block_10_qkv",
+      "task_type": "linear_qkv",
+      "candidate_devices": [
+        "GPU",
+        "FPGA"
+      ],
+      "input_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "output_shape_batch1": [
+        1,
+        197,
+        2304
+      ],
+      "source_onnx_node_ids": [
+        "n0864",
+        "n0865"
+      ]
+    },
+    {
+      "id": "block_10_attention",
+      "task_type": "self_attention",
+      "candidate_devices": [
+        "GPU"
+      ],
+      "input_shape_batch1": [
+        1,
+        197,
+        2304
+      ],
+      "output_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "source_onnx_node_ids": [
+        "n0855",
+        "n0857",
+        "n0858",
+        "n0860",
+        "n0861",
+        "n0863",
+        "n0867",
+        "n0869",
+        "n0873",
+        "n0874",
+        "n0875",
+        "n0877",
+        "n0879",
+        "n0881",
+        "n0883",
+        "n0884",
+        "n0887",
+        "n0888",
+        "n0889",
+        "n0891",
+        "n0892",
+        "n0893",
+        "n0894",
+        "n0895",
+        "n0896",
+        "n0897",
+        "n0898",
+        "n0899",
+        "n0900",
+        "n0901",
+        "n0903",
+        "n0905",
+        "n0907",
+        "n0908",
+        "n0909"
+      ]
+    },
+    {
+      "id": "block_10_proj",
+      "task_type": "linear_projection",
+      "candidate_devices": [
+        "GPU",
+        "FPGA"
+      ],
+      "input_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "output_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "source_onnx_node_ids": [
+        "n0910",
+        "n0911"
+      ]
+    },
+    {
+      "id": "block_10_residual1",
+      "task_type": "residual_add",
+      "candidate_devices": [
+        "GPU"
+      ],
+      "input_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "output_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "source_onnx_node_ids": [
+        "n0912"
+      ]
+    },
+    {
+      "id": "block_10_norm2",
+      "task_type": "layer_norm",
+      "candidate_devices": [
+        "GPU"
+      ],
+      "input_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "output_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "source_onnx_node_ids": [
+        "n0913"
+      ]
+    },
+    {
+      "id": "block_10_ffn_island",
+      "task_type": "fused_ffn_island",
+      "candidate_devices": [
+        "GPU",
+        "FPGA"
+      ],
+      "input_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "output_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "source_onnx_node_ids": [
+        "n0914",
+        "n0915",
+        "n0917",
+        "n0918",
+        "n0920",
+        "n0921",
+        "n0923",
+        "n0924",
+        "n0925"
+      ],
+      "fused_components": [
+        {
+          "id": "block_10_fc1",
+          "task_type": "linear_ffn1",
+          "candidate_devices": [
+            "GPU",
+            "FPGA"
+          ],
+          "input_shape_batch1": [
+            1,
+            197,
+            768
+          ],
+          "output_shape_batch1": [
+            1,
+            197,
+            3072
+          ],
+          "source_onnx_node_ids": [
+            "n0914",
+            "n0915"
+          ]
+        },
+        {
+          "id": "block_10_gelu",
+          "task_type": "gelu",
+          "candidate_devices": [
+            "GPU"
+          ],
+          "input_shape_batch1": [
+            1,
+            197,
+            3072
+          ],
+          "output_shape_batch1": [
+            1,
+            197,
+            3072
+          ],
+          "source_onnx_node_ids": [
+            "n0917",
+            "n0918",
+            "n0920",
+            "n0921",
+            "n0923"
+          ]
+        },
+        {
+          "id": "block_10_fc2",
+          "task_type": "linear_ffn2",
+          "candidate_devices": [
+            "GPU",
+            "FPGA"
+          ],
+          "input_shape_batch1": [
+            1,
+            197,
+            3072
+          ],
+          "output_shape_batch1": [
+            1,
+            197,
+            768
+          ],
+          "source_onnx_node_ids": [
+            "n0924",
+            "n0925"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "block_10_residual2",
+      "task_type": "residual_add",
+      "candidate_devices": [
+        "GPU"
+      ],
+      "input_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "output_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "source_onnx_node_ids": [
+        "n0926"
+      ]
+    },
+    {
+      "id": "block_11_norm1",
+      "task_type": "layer_norm",
+      "candidate_devices": [
+        "GPU"
+      ],
+      "input_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "output_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "source_onnx_node_ids": [
+        "n0927"
+      ]
+    },
+    {
+      "id": "block_11_qkv",
+      "task_type": "linear_qkv",
+      "candidate_devices": [
+        "GPU",
+        "FPGA"
+      ],
+      "input_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "output_shape_batch1": [
+        1,
+        197,
+        2304
+      ],
+      "source_onnx_node_ids": [
+        "n0937",
+        "n0938"
+      ]
+    },
+    {
+      "id": "block_11_attention",
+      "task_type": "self_attention",
+      "candidate_devices": [
+        "GPU"
+      ],
+      "input_shape_batch1": [
+        1,
+        197,
+        2304
+      ],
+      "output_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "source_onnx_node_ids": [
+        "n0928",
+        "n0930",
+        "n0931",
+        "n0933",
+        "n0934",
+        "n0936",
+        "n0940",
+        "n0942",
+        "n0946",
+        "n0947",
+        "n0948",
+        "n0950",
+        "n0952",
+        "n0954",
+        "n0956",
+        "n0957",
+        "n0960",
+        "n0961",
+        "n0962",
+        "n0964",
+        "n0965",
+        "n0966",
+        "n0967",
+        "n0968",
+        "n0969",
+        "n0970",
+        "n0971",
+        "n0972",
+        "n0973",
+        "n0974",
+        "n0976",
+        "n0978",
+        "n0980",
+        "n0981",
+        "n0982"
+      ]
+    },
+    {
+      "id": "block_11_proj",
+      "task_type": "linear_projection",
+      "candidate_devices": [
+        "GPU",
+        "FPGA"
+      ],
+      "input_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "output_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "source_onnx_node_ids": [
+        "n0983",
+        "n0984"
+      ]
+    },
+    {
+      "id": "block_11_residual1",
+      "task_type": "residual_add",
+      "candidate_devices": [
+        "GPU"
+      ],
+      "input_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "output_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "source_onnx_node_ids": [
+        "n0985"
+      ]
+    },
+    {
+      "id": "block_11_norm2",
+      "task_type": "layer_norm",
+      "candidate_devices": [
+        "GPU"
+      ],
+      "input_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "output_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "source_onnx_node_ids": [
+        "n0986"
+      ]
+    },
+    {
+      "id": "block_11_ffn_island",
+      "task_type": "fused_ffn_island",
+      "candidate_devices": [
+        "GPU",
+        "FPGA"
+      ],
+      "input_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "output_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "source_onnx_node_ids": [
+        "n0987",
+        "n0988",
+        "n0990",
+        "n0991",
+        "n0993",
+        "n0994",
+        "n0996",
+        "n0997",
+        "n0998"
+      ],
+      "fused_components": [
+        {
+          "id": "block_11_fc1",
+          "task_type": "linear_ffn1",
+          "candidate_devices": [
+            "GPU",
+            "FPGA"
+          ],
+          "input_shape_batch1": [
+            1,
+            197,
+            768
+          ],
+          "output_shape_batch1": [
+            1,
+            197,
+            3072
+          ],
+          "source_onnx_node_ids": [
+            "n0987",
+            "n0988"
+          ]
+        },
+        {
+          "id": "block_11_gelu",
+          "task_type": "gelu",
+          "candidate_devices": [
+            "GPU"
+          ],
+          "input_shape_batch1": [
+            1,
+            197,
+            3072
+          ],
+          "output_shape_batch1": [
+            1,
+            197,
+            3072
+          ],
+          "source_onnx_node_ids": [
+            "n0990",
+            "n0991",
+            "n0993",
+            "n0994",
+            "n0996"
+          ]
+        },
+        {
+          "id": "block_11_fc2",
+          "task_type": "linear_ffn2",
+          "candidate_devices": [
+            "GPU",
+            "FPGA"
+          ],
+          "input_shape_batch1": [
+            1,
+            197,
+            3072
+          ],
+          "output_shape_batch1": [
+            1,
+            197,
+            768
+          ],
+          "source_onnx_node_ids": [
+            "n0997",
+            "n0998"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "block_11_residual2",
+      "task_type": "residual_add",
+      "candidate_devices": [
+        "GPU"
+      ],
+      "input_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "output_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "source_onnx_node_ids": [
+        "n0999"
+      ]
+    },
+    {
+      "id": "final_norm",
+      "task_type": "layer_norm",
+      "candidate_devices": [
+        "GPU"
+      ],
+      "input_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "output_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "source_onnx_node_ids": [
+        "n1000"
+      ]
+    },
+    {
+      "id": "class_token_select",
+      "task_type": "class_token_select",
+      "candidate_devices": [
+        "GPU"
+      ],
+      "input_shape_batch1": [
+        1,
+        197,
+        768
+      ],
+      "output_shape_batch1": [
+        1,
+        768
+      ],
+      "source_onnx_node_ids": [
+        "n1001"
+      ]
+    },
+    {
+      "id": "classifier",
+      "task_type": "linear_classifier",
+      "candidate_devices": [
+        "GPU",
+        "FPGA"
+      ],
+      "input_shape_batch1": [
+        1,
+        768
+      ],
+      "output_shape_batch1": [
+        1,
+        1000
+      ],
+      "source_onnx_node_ids": [
+        "n1002"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "patch_embedding",
+      "target": "token_embedding",
+      "tensor_role": "patch_tokens",
+      "bytes_batch1_fp32": 602112
+    },
+    {
+      "source": "token_embedding",
+      "target": "block_00_norm1",
+      "tensor_role": "block_input",
+      "bytes_batch1_fp32": 605184
+    },
+    {
+      "source": "token_embedding",
+      "target": "block_00_residual1",
+      "tensor_role": "residual_skip_1",
+      "bytes_batch1_fp32": 605184
+    },
+    {
+      "source": "block_00_norm1",
+      "target": "block_00_qkv",
+      "tensor_role": "normalized_tokens",
+      "bytes_batch1_fp32": 605184
+    },
+    {
+      "source": "block_00_qkv",
+      "target": "block_00_attention",
+      "tensor_role": "qkv",
+      "bytes_batch1_fp32": 1815552
+    },
+    {
+      "source": "block_00_attention",
+      "target": "block_00_proj",
+      "tensor_role": "attention_output",
+      "bytes_batch1_fp32": 605184
+    },
+    {
+      "source": "block_00_proj",
+      "target": "block_00_residual1",
+      "tensor_role": "projected_attention",
+      "bytes_batch1_fp32": 605184
+    },
+    {
+      "source": "block_00_residual1",
+      "target": "block_00_norm2",
+      "tensor_role": "attention_residual",
+      "bytes_batch1_fp32": 605184
+    },
+    {
+      "source": "block_00_residual1",
+      "target": "block_00_residual2",
+      "tensor_role": "residual_skip_2",
+      "bytes_batch1_fp32": 605184
+    },
+    {
+      "source": "block_00_norm2",
+      "target": "block_00_ffn_island",
+      "tensor_role": "normalized_tokens",
+      "bytes_batch1_fp32": 605184
+    },
+    {
+      "source": "block_00_ffn_island",
+      "target": "block_00_residual2",
+      "tensor_role": "ffn_output",
+      "bytes_batch1_fp32": 605184
+    },
+    {
+      "source": "block_00_residual2",
+      "target": "block_01_norm1",
+      "tensor_role": "block_input",
+      "bytes_batch1_fp32": 605184
+    },
+    {
+      "source": "block_00_residual2",
+      "target": "block_01_residual1",
+      "tensor_role": "residual_skip_1",
+      "bytes_batch1_fp32": 605184
+    },
+    {
+      "source": "block_01_norm1",
+      "target": "block_01_qkv",
+      "tensor_role": "normalized_tokens",
+      "bytes_batch1_fp32": 605184
+    },
+    {
+      "source": "block_01_qkv",
+      "target": "block_01_attention",
+      "tensor_role": "qkv",
+      "bytes_batch1_fp32": 1815552
+    },
+    {
+      "source": "block_01_attention",
+      "target": "block_01_proj",
+      "tensor_role": "attention_output",
+      "bytes_batch1_fp32": 605184
+    },
+    {
+      "source": "block_01_proj",
+      "target": "block_01_residual1",
+      "tensor_role": "projected_attention",
+      "bytes_batch1_fp32": 605184
+    },
+    {
+      "source": "block_01_residual1",
+      "target": "block_01_norm2",
+      "tensor_role": "attention_residual",
+      "bytes_batch1_fp32": 605184
+    },
+    {
+      "source": "block_01_residual1",
+      "target": "block_01_residual2",
+      "tensor_role": "residual_skip_2",
+      "bytes_batch1_fp32": 605184
+    },
+    {
+      "source": "block_01_norm2",
+      "target": "block_01_ffn_island",
+      "tensor_role": "normalized_tokens",
+      "bytes_batch1_fp32": 605184
+    },
+    {
+      "source": "block_01_ffn_island",
+      "target": "block_01_residual2",
+      "tensor_role": "ffn_output",
+      "bytes_batch1_fp32": 605184
+    },
+    {
+      "source": "block_01_residual2",
+      "target": "block_02_norm1",
+      "tensor_role": "block_input",
+      "bytes_batch1_fp32": 605184
+    },
+    {
+      "source": "block_01_residual2",
+      "target": "block_02_residual1",
+      "tensor_role": "residual_skip_1",
+      "bytes_batch1_fp32": 605184
+    },
+    {
+      "source": "block_02_norm1",
+      "target": "block_02_qkv",
+      "tensor_role": "normalized_tokens",
+      "bytes_batch1_fp32": 605184
+    },
+    {
+      "source": "block_02_qkv",
+      "target": "block_02_attention",
+      "tensor_role": "qkv",
+      "bytes_batch1_fp32": 1815552
+    },
+    {
+      "source": "block_02_attention",
+      "target": "block_02_proj",
+      "tensor_role": "attention_output",
+      "bytes_batch1_fp32": 605184
+    },
+    {
+      "source": "block_02_proj",
+      "target": "block_02_residual1",
+      "tensor_role": "projected_attention",
+      "bytes_batch1_fp32": 605184
+    },
+    {
+      "source": "block_02_residual1",
+      "target": "block_02_norm2",
+      "tensor_role": "attention_residual",
+      "bytes_batch1_fp32": 605184
+    },
+    {
+      "source": "block_02_residual1",
+      "target": "block_02_residual2",
+      "tensor_role": "residual_skip_2",
+      "bytes_batch1_fp32": 605184
+    },
+    {
+      "source": "block_02_norm2",
+      "target": "block_02_ffn_island",
+      "tensor_role": "normalized_tokens",
+      "bytes_batch1_fp32": 605184
+    },
+    {
+      "source": "block_02_ffn_island",
+      "target": "block_02_residual2",
+      "tensor_role": "ffn_output",
+      "bytes_batch1_fp32": 605184
+    },
+    {
+      "source": "block_02_residual2",
+      "target": "block_03_norm1",
+      "tensor_role": "block_input",
+      "bytes_batch1_fp32": 605184
+    },
+    {
+      "source": "block_02_residual2",
+      "target": "block_03_residual1",
+      "tensor_role": "residual_skip_1",
+      "bytes_batch1_fp32": 605184
+    },
+    {
+      "source": "block_03_norm1",
+      "target": "block_03_qkv",
+      "tensor_role": "normalized_tokens",
+      "bytes_batch1_fp32": 605184
+    },
+    {
+      "source": "block_03_qkv",
+      "target": "block_03_attention",
+      "tensor_role": "qkv",
+      "bytes_batch1_fp32": 1815552
+    },
+    {
+      "source": "block_03_attention",
+      "target": "block_03_proj",
+      "tensor_role": "attention_output",
+      "bytes_batch1_fp32": 605184
+    },
+    {
+      "source": "block_03_proj",
+      "target": "block_03_residual1",
+      "tensor_role": "projected_attention",
+      "bytes_batch1_fp32": 605184
+    },
+    {
+      "source": "block_03_residual1",
+      "target": "block_03_norm2",
+      "tensor_role": "attention_residual",
+      "bytes_batch1_fp32": 605184
+    },
+    {
+      "source": "block_03_residual1",
+      "target": "block_03_residual2",
+      "tensor_role": "residual_skip_2",
+      "bytes_batch1_fp32": 605184
+    },
+    {
+      "source": "block_03_norm2",
+      "target": "block_03_ffn_island",
+      "tensor_role": "normalized_tokens",
+      "bytes_batch1_fp32": 605184
+    },
+    {
+      "source": "block_03_ffn_island",
+      "target": "block_03_residual2",
+      "tensor_role": "ffn_output",
+      "bytes_batch1_fp32": 605184
+    },
+    {
+      "source": "block_03_residual2",
+      "target": "block_04_norm1",
+      "tensor_role": "block_input",
+      "bytes_batch1_fp32": 605184
+    },
+    {
+      "source": "block_03_residual2",
+      "target": "block_04_residual1",
+      "tensor_role": "residual_skip_1",
+      "bytes_batch1_fp32": 605184
+    },
+    {
+      "source": "block_04_norm1",
+      "target": "block_04_qkv",
+      "tensor_role": "normalized_tokens",
+      "bytes_batch1_fp32": 605184
+    },
+    {
+      "source": "block_04_qkv",
+      "target": "block_04_attention",
+      "tensor_role": "qkv",
+      "bytes_batch1_fp32": 1815552
+    },
+    {
+      "source": "block_04_attention",
+      "target": "block_04_proj",
+      "tensor_role": "attention_output",
+      "bytes_batch1_fp32": 605184
+    },
+    {
+      "source": "block_04_proj",
+      "target": "block_04_residual1",
+      "tensor_role": "projected_attention",
+      "bytes_batch1_fp32": 605184
+    },
+    {
+      "source": "block_04_residual1",
+      "target": "block_04_norm2",
+      "tensor_role": "attention_residual",
+      "bytes_batch1_fp32": 605184
+    },
+    {
+      "source": "block_04_residual1",
+      "target": "block_04_residual2",
+      "tensor_role": "residual_skip_2",
+      "bytes_batch1_fp32": 605184
+    },
+    {
+      "source": "block_04_norm2",
+      "target": "block_04_ffn_island",
+      "tensor_role": "normalized_tokens",
+      "bytes_batch1_fp32": 605184
+    },
+    {
+      "source": "block_04_ffn_island",
+      "target": "block_04_residual2",
+      "tensor_role": "ffn_output",
+      "bytes_batch1_fp32": 605184
+    },
+    {
+      "source": "block_04_residual2",
+      "target": "block_05_norm1",
+      "tensor_role": "block_input",
+      "bytes_batch1_fp32": 605184
+    },
+    {
+      "source": "block_04_residual2",
+      "target": "block_05_residual1",
+      "tensor_role": "residual_skip_1",
+      "bytes_batch1_fp32": 605184
+    },
+    {
+      "source": "block_05_norm1",
+      "target": "block_05_qkv",
+      "tensor_role": "normalized_tokens",
+      "bytes_batch1_fp32": 605184
+    },
+    {
+      "source": "block_05_qkv",
+      "target": "block_05_attention",
+      "tensor_role": "qkv",
+      "bytes_batch1_fp32": 1815552
+    },
+    {
+      "source": "block_05_attention",
+      "target": "block_05_proj",
+      "tensor_role": "attention_output",
+      "bytes_batch1_fp32": 605184
+    },
+    {
+      "source": "block_05_proj",
+      "target": "block_05_residual1",
+      "tensor_role": "projected_attention",
+      "bytes_batch1_fp32": 605184
+    },
+    {
+      "source": "block_05_residual1",
+      "target": "block_05_norm2",
+      "tensor_role": "attention_residual",
+      "bytes_batch1_fp32": 605184
+    },
+    {
+      "source": "block_05_residual1",
+      "target": "block_05_residual2",
+      "tensor_role": "residual_skip_2",
+      "bytes_batch1_fp32": 605184
+    },
+    {
+      "source": "block_05_norm2",
+      "target": "block_05_ffn_island",
+      "tensor_role": "normalized_tokens",
+      "bytes_batch1_fp32": 605184
+    },
+    {
+      "source": "block_05_ffn_island",
+      "target": "block_05_residual2",
+      "tensor_role": "ffn_output",
+      "bytes_batch1_fp32": 605184
+    },
+    {
+      "source": "block_05_residual2",
+      "target": "block_06_norm1",
+      "tensor_role": "block_input",
+      "bytes_batch1_fp32": 605184
+    },
+    {
+      "source": "block_05_residual2",
+      "target": "block_06_residual1",
+      "tensor_role": "residual_skip_1",
+      "bytes_batch1_fp32": 605184
+    },
+    {
+      "source": "block_06_norm1",
+      "target": "block_06_qkv",
+      "tensor_role": "normalized_tokens",
+      "bytes_batch1_fp32": 605184
+    },
+    {
+      "source": "block_06_qkv",
+      "target": "block_06_attention",
+      "tensor_role": "qkv",
+      "bytes_batch1_fp32": 1815552
+    },
+    {
+      "source": "block_06_attention",
+      "target": "block_06_proj",
+      "tensor_role": "attention_output",
+      "bytes_batch1_fp32": 605184
+    },
+    {
+      "source": "block_06_proj",
+      "target": "block_06_residual1",
+      "tensor_role": "projected_attention",
+      "bytes_batch1_fp32": 605184
+    },
+    {
+      "source": "block_06_residual1",
+      "target": "block_06_norm2",
+      "tensor_role": "attention_residual",
+      "bytes_batch1_fp32": 605184
+    },
+    {
+      "source": "block_06_residual1",
+      "target": "block_06_residual2",
+      "tensor_role": "residual_skip_2",
+      "bytes_batch1_fp32": 605184
+    },
+    {
+      "source": "block_06_norm2",
+      "target": "block_06_ffn_island",
+      "tensor_role": "normalized_tokens",
+      "bytes_batch1_fp32": 605184
+    },
+    {
+      "source": "block_06_ffn_island",
+      "target": "block_06_residual2",
+      "tensor_role": "ffn_output",
+      "bytes_batch1_fp32": 605184
+    },
+    {
+      "source": "block_06_residual2",
+      "target": "block_07_norm1",
+      "tensor_role": "block_input",
+      "bytes_batch1_fp32": 605184
+    },
+    {
+      "source": "block_06_residual2",
+      "target": "block_07_residual1",
+      "tensor_role": "residual_skip_1",
+      "bytes_batch1_fp32": 605184
+    },
+    {
+      "source": "block_07_norm1",
+      "target": "block_07_qkv",
+      "tensor_role": "normalized_tokens",
+      "bytes_batch1_fp32": 605184
+    },
+    {
+      "source": "block_07_qkv",
+      "target": "block_07_attention",
+      "tensor_role": "qkv",
+      "bytes_batch1_fp32": 1815552
+    },
+    {
+      "source": "block_07_attention",
+      "target": "block_07_proj",
+      "tensor_role": "attention_output",
+      "bytes_batch1_fp32": 605184
+    },
+    {
+      "source": "block_07_proj",
+      "target": "block_07_residual1",
+      "tensor_role": "projected_attention",
+      "bytes_batch1_fp32": 605184
+    },
+    {
+      "source": "block_07_residual1",
+      "target": "block_07_norm2",
+      "tensor_role": "attention_residual",
+      "bytes_batch1_fp32": 605184
+    },
+    {
+      "source": "block_07_residual1",
+      "target": "block_07_residual2",
+      "tensor_role": "residual_skip_2",
+      "bytes_batch1_fp32": 605184
+    },
+    {
+      "source": "block_07_norm2",
+      "target": "block_07_ffn_island",
+      "tensor_role": "normalized_tokens",
+      "bytes_batch1_fp32": 605184
+    },
+    {
+      "source": "block_07_ffn_island",
+      "target": "block_07_residual2",
+      "tensor_role": "ffn_output",
+      "bytes_batch1_fp32": 605184
+    },
+    {
+      "source": "block_07_residual2",
+      "target": "block_08_norm1",
+      "tensor_role": "block_input",
+      "bytes_batch1_fp32": 605184
+    },
+    {
+      "source": "block_07_residual2",
+      "target": "block_08_residual1",
+      "tensor_role": "residual_skip_1",
+      "bytes_batch1_fp32": 605184
+    },
+    {
+      "source": "block_08_norm1",
+      "target": "block_08_qkv",
+      "tensor_role": "normalized_tokens",
+      "bytes_batch1_fp32": 605184
+    },
+    {
+      "source": "block_08_qkv",
+      "target": "block_08_attention",
+      "tensor_role": "qkv",
+      "bytes_batch1_fp32": 1815552
+    },
+    {
+      "source": "block_08_attention",
+      "target": "block_08_proj",
+      "tensor_role": "attention_output",
+      "bytes_batch1_fp32": 605184
+    },
+    {
+      "source": "block_08_proj",
+      "target": "block_08_residual1",
+      "tensor_role": "projected_attention",
+      "bytes_batch1_fp32": 605184
+    },
+    {
+      "source": "block_08_residual1",
+      "target": "block_08_norm2",
+      "tensor_role": "attention_residual",
+      "bytes_batch1_fp32": 605184
+    },
+    {
+      "source": "block_08_residual1",
+      "target": "block_08_residual2",
+      "tensor_role": "residual_skip_2",
+      "bytes_batch1_fp32": 605184
+    },
+    {
+      "source": "block_08_norm2",
+      "target": "block_08_ffn_island",
+      "tensor_role": "normalized_tokens",
+      "bytes_batch1_fp32": 605184
+    },
+    {
+      "source": "block_08_ffn_island",
+      "target": "block_08_residual2",
+      "tensor_role": "ffn_output",
+      "bytes_batch1_fp32": 605184
+    },
+    {
+      "source": "block_08_residual2",
+      "target": "block_09_norm1",
+      "tensor_role": "block_input",
+      "bytes_batch1_fp32": 605184
+    },
+    {
+      "source": "block_08_residual2",
+      "target": "block_09_residual1",
+      "tensor_role": "residual_skip_1",
+      "bytes_batch1_fp32": 605184
+    },
+    {
+      "source": "block_09_norm1",
+      "target": "block_09_qkv",
+      "tensor_role": "normalized_tokens",
+      "bytes_batch1_fp32": 605184
+    },
+    {
+      "source": "block_09_qkv",
+      "target": "block_09_attention",
+      "tensor_role": "qkv",
+      "bytes_batch1_fp32": 1815552
+    },
+    {
+      "source": "block_09_attention",
+      "target": "block_09_proj",
+      "tensor_role": "attention_output",
+      "bytes_batch1_fp32": 605184
+    },
+    {
+      "source": "block_09_proj",
+      "target": "block_09_residual1",
+      "tensor_role": "projected_attention",
+      "bytes_batch1_fp32": 605184
+    },
+    {
+      "source": "block_09_residual1",
+      "target": "block_09_norm2",
+      "tensor_role": "attention_residual",
+      "bytes_batch1_fp32": 605184
+    },
+    {
+      "source": "block_09_residual1",
+      "target": "block_09_residual2",
+      "tensor_role": "residual_skip_2",
+      "bytes_batch1_fp32": 605184
+    },
+    {
+      "source": "block_09_norm2",
+      "target": "block_09_ffn_island",
+      "tensor_role": "normalized_tokens",
+      "bytes_batch1_fp32": 605184
+    },
+    {
+      "source": "block_09_ffn_island",
+      "target": "block_09_residual2",
+      "tensor_role": "ffn_output",
+      "bytes_batch1_fp32": 605184
+    },
+    {
+      "source": "block_09_residual2",
+      "target": "block_10_norm1",
+      "tensor_role": "block_input",
+      "bytes_batch1_fp32": 605184
+    },
+    {
+      "source": "block_09_residual2",
+      "target": "block_10_residual1",
+      "tensor_role": "residual_skip_1",
+      "bytes_batch1_fp32": 605184
+    },
+    {
+      "source": "block_10_norm1",
+      "target": "block_10_qkv",
+      "tensor_role": "normalized_tokens",
+      "bytes_batch1_fp32": 605184
+    },
+    {
+      "source": "block_10_qkv",
+      "target": "block_10_attention",
+      "tensor_role": "qkv",
+      "bytes_batch1_fp32": 1815552
+    },
+    {
+      "source": "block_10_attention",
+      "target": "block_10_proj",
+      "tensor_role": "attention_output",
+      "bytes_batch1_fp32": 605184
+    },
+    {
+      "source": "block_10_proj",
+      "target": "block_10_residual1",
+      "tensor_role": "projected_attention",
+      "bytes_batch1_fp32": 605184
+    },
+    {
+      "source": "block_10_residual1",
+      "target": "block_10_norm2",
+      "tensor_role": "attention_residual",
+      "bytes_batch1_fp32": 605184
+    },
+    {
+      "source": "block_10_residual1",
+      "target": "block_10_residual2",
+      "tensor_role": "residual_skip_2",
+      "bytes_batch1_fp32": 605184
+    },
+    {
+      "source": "block_10_norm2",
+      "target": "block_10_ffn_island",
+      "tensor_role": "normalized_tokens",
+      "bytes_batch1_fp32": 605184
+    },
+    {
+      "source": "block_10_ffn_island",
+      "target": "block_10_residual2",
+      "tensor_role": "ffn_output",
+      "bytes_batch1_fp32": 605184
+    },
+    {
+      "source": "block_10_residual2",
+      "target": "block_11_norm1",
+      "tensor_role": "block_input",
+      "bytes_batch1_fp32": 605184
+    },
+    {
+      "source": "block_10_residual2",
+      "target": "block_11_residual1",
+      "tensor_role": "residual_skip_1",
+      "bytes_batch1_fp32": 605184
+    },
+    {
+      "source": "block_11_norm1",
+      "target": "block_11_qkv",
+      "tensor_role": "normalized_tokens",
+      "bytes_batch1_fp32": 605184
+    },
+    {
+      "source": "block_11_qkv",
+      "target": "block_11_attention",
+      "tensor_role": "qkv",
+      "bytes_batch1_fp32": 1815552
+    },
+    {
+      "source": "block_11_attention",
+      "target": "block_11_proj",
+      "tensor_role": "attention_output",
+      "bytes_batch1_fp32": 605184
+    },
+    {
+      "source": "block_11_proj",
+      "target": "block_11_residual1",
+      "tensor_role": "projected_attention",
+      "bytes_batch1_fp32": 605184
+    },
+    {
+      "source": "block_11_residual1",
+      "target": "block_11_norm2",
+      "tensor_role": "attention_residual",
+      "bytes_batch1_fp32": 605184
+    },
+    {
+      "source": "block_11_residual1",
+      "target": "block_11_residual2",
+      "tensor_role": "residual_skip_2",
+      "bytes_batch1_fp32": 605184
+    },
+    {
+      "source": "block_11_norm2",
+      "target": "block_11_ffn_island",
+      "tensor_role": "normalized_tokens",
+      "bytes_batch1_fp32": 605184
+    },
+    {
+      "source": "block_11_ffn_island",
+      "target": "block_11_residual2",
+      "tensor_role": "ffn_output",
+      "bytes_batch1_fp32": 605184
+    },
+    {
+      "source": "block_11_residual2",
+      "target": "final_norm",
+      "tensor_role": "encoder_output",
+      "bytes_batch1_fp32": 605184
+    },
+    {
+      "source": "final_norm",
+      "target": "class_token_select",
+      "tensor_role": "normalized_tokens",
+      "bytes_batch1_fp32": 605184
+    },
+    {
+      "source": "class_token_select",
+      "target": "classifier",
+      "tensor_role": "class_token",
+      "bytes_batch1_fp32": 3072
+    }
+  ]
+}

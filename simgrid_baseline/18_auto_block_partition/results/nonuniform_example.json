@@ -1,0 +1,54 @@
+{
+  "status": "synthetic_not_hardware_measurement",
+  "first_ffn_gpu_task_cost_us_assumed": 100.0,
+  "first_ffn_task_ids": [
+    "block_00_fc1",
+    "block_00_gelu",
+    "block_00_fc2"
+  ],
+  "selected_fpga_ffn_ids": [
+    "block_01",
+    "block_02",
+    "block_03",
+    "block_04",
+    "block_05",
+    "block_06",
+    "block_07",
+    "block_08",
+    "block_09",
+    "block_10",
+    "block_11"
+  ],
+  "comparison": {
+    "gpu_only": {
+      "makespan_us": 23835.800960000015,
+      "cross_device_edges": 0,
+      "logical_cross_device_bytes": 0,
+      "physical_transfer_stages": 0
+    },
+    "static_all_linear_fpga": {
+      "makespan_us": 35410.02664000007,
+      "cross_device_edges": 97,
+      "logical_cross_device_bytes": 58099200,
+      "physical_transfer_stages": 194
+    },
+    "operator_eft": {
+      "makespan_us": 23835.800960000015,
+      "cross_device_edges": 0,
+      "logical_cross_device_bytes": 0,
+      "physical_transfer_stages": 0
+    },
+    "fixed_ffn": {
+      "makespan_us": 17668.81040000002,
+      "cross_device_edges": 24,
+      "logical_cross_device_bytes": 7262208,
+      "physical_transfer_stages": 48
+    },
+    "automatic_region_dp": {
+      "makespan_us": 17511.75840000002,
+      "cross_device_edges": 22,
+      "logical_cross_device_bytes": 6657024,
+      "physical_transfer_stages": 44
+    }
+  }
+}

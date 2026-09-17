@@ -1,0 +1,7 @@
+{
+  "valid_for_target_prediction": false,
+  "execution_mode": "analytical_fallback_no_simgrid",
+  "rows": 63,
+  "fused_dag_tasks": 101,
+  "fused_dag_edges": 124
+}

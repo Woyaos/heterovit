@@ -52,6 +52,20 @@ class PolicyHeteroEFT : public Policy {
 
     int* metadata = task->metadata();
     bool fpga_eligible = metadata[HETERO_META_FPGA_ELIGIBLE] != 0;
+    int planned_device = metadata[HETERO_META_PLANNED_DEVICE];
+    if (planned_device == HETERO_PLACEMENT_GPU) {
+      if (gpu == NULL) { *ndevs = 0; return; }
+      devs[0] = gpu;
+      *ndevs = 1;
+      return;
+    }
+    if (planned_device == HETERO_PLACEMENT_FPGA) {
+      if (fpga == NULL || !fpga_eligible) { *ndevs = 0; return; }
+      devs[0] = fpga;
+      *ndevs = 1;
+      return;
+    }
+    if (planned_device != HETERO_PLACEMENT_AUTO) { *ndevs = 0; return; }
     if (gpu == NULL || fpga == NULL || !fpga_eligible) {
       devs[0] = gpu != NULL ? gpu : fallback;
       *ndevs = 1;

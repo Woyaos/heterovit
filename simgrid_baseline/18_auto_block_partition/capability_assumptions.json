@@ -1,0 +1,10 @@
+{
+  "status": "unverified_simulation_assumption",
+  "activation_precision": "FP16",
+  "supported_fpga_task_types": ["linear_ffn1", "linear_ffn2"],
+  "supported_fpga_blocks": [["linear_ffn1", "gelu", "linear_ffn2"]],
+  "max_workspace_bytes": 16777216,
+  "reserved_weight_bytes": 0,
+  "available_memory_bytes": 33554432,
+  "notes": "FPGA GELU/FFN support and memory capacity are design assumptions, not RF880 hardware validation."
+}

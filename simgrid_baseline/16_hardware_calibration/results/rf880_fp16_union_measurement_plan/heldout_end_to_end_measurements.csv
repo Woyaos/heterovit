@@ -1,0 +1,5 @@
+policy,sample_id,latency_us,source_kind,source_ref,dataset_role,model_variant,activation_precision
+gpu_only,,,,,,ViT-Base/16-like,
+split_ffn_linears,,,,,,ViT-Base/16-like,
+fixed_ffn,,,,,,ViT-Base/16-like,
+automatic_region_dp,,,,,,ViT-Base/16-like,

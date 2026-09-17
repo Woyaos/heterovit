@@ -1,0 +1,19 @@
+{
+  "tasks": 137,
+  "edges": 272,
+  "input_dags": [
+    "D:\\VS_project\\heterogeneous\\simgrid_baseline\\08_coarse_vit_dag\\results\\vit_batch1_coarse_dag.json",
+    "D:\\VS_project\\heterogeneous\\simgrid_baseline\\18_auto_block_partition\\results\\default\\mixed_dag.json"
+  ],
+  "capability_status": "unverified_simulation_assumption",
+  "activation_bytes_per_element_planned": 2,
+  "task_measurement_rows": 173,
+  "gpu_rows": 137,
+  "fpga_rows": 36,
+  "transfer_payload_sizes": 11,
+  "transfer_measurement_rows": 66,
+  "heldout_end_to_end_template_rows": 4,
+  "transfer_directions": 6,
+  "largest_payload_bytes": 4194304,
+  "status": "waiting_for_target_hardware"
+}

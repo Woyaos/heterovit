@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "If you use HeteroViT Infra, please cite this software."
+title: "HeteroViT Infra: Communication-Aware GPU-FPGA Infrastructure for Vision Transformer Inference"
+type: software
+authors:
+  - name: "HeteroViT Infra contributors"
+version: 0.1.0
+date-released: 2026-09-18
+license: Apache-2.0
+repository-code: "https://github.com/Woyaos/heterovit"
+keywords:
+  - heterogeneous computing
+  - AI infrastructure
+  - GPU
+  - FPGA
+  - Vision Transformer
+  - scheduling
+  - SimGrid
+  - IRIS

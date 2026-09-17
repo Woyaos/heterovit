@@ -1,0 +1,19 @@
+{
+  "policy": "fixed_ffn",
+  "buffers": 1,
+  "requests": 1,
+  "makespan_us": 17993.789119999998,
+  "request_completion_us": [
+    {
+      "request_id": 0,
+      "completion_us": 17993.789119999998
+    }
+  ],
+  "task_count": 101,
+  "transfer_stage_count": 48,
+  "execution_mode": "simgrid_event_replay_sensitivity_parameters",
+  "valid_for_target_prediction": false,
+  "model_variant": "ViT-Base/16-like",
+  "activation_precision": "FP16",
+  "profile_name": "rf880_agx_orin_pcie_x4_hardware_informed_sensitivity"
+}
