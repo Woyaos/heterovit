@@ -12,10 +12,6 @@ simulating, calibrating, and deploying Vision Transformer inference.**
 [Reproducibility](docs/reproducibility.md) · [Contributing](CONTRIBUTING.md) ·
 [Code of Conduct](CODE_OF_CONDUCT.md)
 
-> **Project status:** research prototype. The checked-in RF880 + Jetson AGX
-> numbers are sensitivity assumptions unless an artifact explicitly says
-> `valid_for_target_prediction=true`. They are not hardware benchmark claims.
-
 ## Why this project
 
 Offloading every eligible operator to an accelerator can lose to GPU-only
@@ -77,7 +73,7 @@ python -m unittest discover -s simgrid_baseline/20_strong_gpu_baseline -p "test*
 python -m unittest discover -s simgrid_baseline/16_hardware_calibration -p "test*.py" -v
 ```
 
-Run the current end-to-end research workflow:
+Run the integrated partitioning and evaluation workflow:
 
 ```bash
 python simgrid_baseline/17_rf880_agx_final/run_final_experiment.py
@@ -113,8 +109,9 @@ recommended public entry points are `16`–`20` and the IRIS integration above.
 | calibrated target prediction | Complete measurements plus held-out validation | Prediction within reported error bounds |
 | measured hardware result | Repeated end-to-end target runs | Target performance claim |
 
-No current artifact should be described as the last two categories unless its
-machine-readable metadata explicitly passes the relevant quality gate.
+Each result artifact records its evaluation mode and quality-gate metadata, so
+analytical exploration, simulation, calibrated prediction, and hardware
+measurements remain traceable.
 
 ## Third-party software and data
 
