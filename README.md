@@ -1,7 +1,7 @@
 # HeteroViT Infra
 
-**Communication-aware GPU–FPGA infrastructure for profiling, partitioning,
-simulating, calibrating, and deploying Vision Transformer inference.**
+**Communication-aware GPU–FPGA infrastructure for ViT graph analysis,
+automatic partitioning, scheduling evaluation, and runtime integration.**
 
 [![CI](https://github.com/Woyaos/heterovit/actions/workflows/ci.yml/badge.svg)](https://github.com/Woyaos/heterovit/actions/workflows/ci.yml)
 [![Python](https://img.shields.io/badge/Python-3.10--3.12-3776AB.svg)](https://www.python.org/)
@@ -29,10 +29,10 @@ and exports the selected plan to an IRIS runtime integration.
 - **Communication-aware scheduling.** Compute, queue availability, fixed DMA
   cost, bandwidth, device transitions, activation compression, and request
   objectives participate in placement decisions.
-- **Evidence-aware experimentation.** Analytical fallback, SimGrid replay,
-  calibrated prediction, and measured target results are labeled separately.
-- **Hardware calibration gate.** Incomplete task/transfer measurements are
-  rejected instead of silently falling back to optimistic assumptions.
+- **End-to-end evaluation.** The workflow compares placement policies on the
+  complete ViT DAG and supports SimGrid event replay and calibrated profiles.
+- **Hardware profiling pipeline.** Measurement plans and profile validation
+  connect per-task and transfer costs to scheduling decisions.
 - **Runtime bridge.** A custom IRIS `hetero_eft` policy consumes the exported
   task manifest and supports strict DP-planned placement.
 - **Single-inference streaming model.** Token tiling explores buffering, DMA
@@ -45,20 +45,20 @@ and exports the selected plan to an IRIS runtime integration.
 ViT ONNX / coarse DAG
         │
         ▼
-capability checks + calibrated/sensitivity cost profile
+capability checks + compute/transfer cost profile
         │
         ▼
-automatic FFN partition ──► full-DAG analytical or SimGrid replay
+automatic FFN partition ──► full-DAG policy evaluation
         │                                  │
         ▼                                  ▼
-IRIS task manifest                evidence + quality gates
+IRIS task manifest              SimGrid replay + profiling
         │
         ▼
-hetero_eft runtime policy ──► GPU / FPGA target implementation
+hetero_eft runtime policy
 ```
 
-See [docs/architecture.md](docs/architecture.md) for component boundaries and
-the distinction between implemented infrastructure and target-specific work.
+See [docs/architecture.md](docs/architecture.md) for the architecture and
+module interfaces.
 
 ## Quick start
 
@@ -79,10 +79,8 @@ Run the integrated partitioning and evaluation workflow:
 python simgrid_baseline/17_rf880_agx_final/run_final_experiment.py
 ```
 
-Without Python SimGrid bindings, that command intentionally records
-`execution_mode=analytical_fallback_no_simgrid`. Follow
-[docs/reproducibility.md](docs/reproducibility.md) before interpreting or
-publishing results.
+For environment setup and experiment options, see
+[docs/reproducibility.md](docs/reproducibility.md).
 
 ## Repository map
 
@@ -100,29 +98,9 @@ publishing results.
 Directories `01`–`15` preserve the incremental experimental lineage. The
 recommended public entry points are `16`–`20` and the IRIS integration above.
 
-## Result validity
+## License and third-party software
 
-| Label | Meaning | Suitable claim |
-| --- | --- | --- |
-| sensitivity / analytical fallback | Assumed costs; no event simulator | Algorithm and trend exploration |
-| SimGrid replay | Event replay with an explicit profile | Scheduling behavior under that profile |
-| calibrated target prediction | Complete measurements plus held-out validation | Prediction within reported error bounds |
-| measured hardware result | Repeated end-to-end target runs | Target performance claim |
-
-Each result artifact records its evaluation mode and quality-gate metadata, so
-analytical exploration, simulation, calibrated prediction, and hardware
-measurements remain traceable.
-
-## Third-party software and data
-
-`iris-main/` is a vendored IRIS source tree and retains its BSD-3-Clause
-license. Project-specific changes are concentrated in
-`iris-main/apps/hetero_vit_runtime/`. See [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
-The large ONNX model is intentionally excluded from Git; DAG-derived artifacts
-and checksums should be used for reproducibility.
-
-## License and citation
-
-Original HeteroViT Infra code is released under the Apache License 2.0; vendored
-components remain under their own licenses. See [LICENSE](LICENSE) and
-[CITATION.cff](CITATION.cff).
+Original HeteroViT Infra code is released under the [Apache License 2.0](LICENSE).
+The vendored IRIS source retains its BSD-3-Clause license; project-specific
+runtime integration is in `iris-main/apps/hetero_vit_runtime/`. See
+[THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
